@@ -4,6 +4,7 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import SignIn from './pages/Register/SignIn';
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />}> </Route>
         <Route path="/signIn" element={<SignIn />}> </Route>
         <Route path="/about" element={<About />}> </Route>
+        <Route path="/contact" element={<Contact />}> </Route>
       </Routes>
       <Footer/>
     </>
