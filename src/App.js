@@ -11,6 +11,7 @@ import ReceiveSingleCall from './pages/ReceiveSingleCall/ReceiveSingleCall';
 import SingleCall from './pages/SingleCall/SingleCall';
 import GroupCall from './pages/GroupCall/GroupCall';
 import SupportPage from './pages/SupportPage/SupportPage';
+import ChatRoom from './pages/ChatRoom/ChatRoom';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/receive" element={<ReceiveSingleCall />}> </Route>
         <Route path="/video" element={<GroupCall/>}> </Route>
         <Route path="/support" element={<SupportPage/>}> </Route>
+        <Route path="/chat" element={<ChatRoom/>}> </Route>
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
       </Routes>

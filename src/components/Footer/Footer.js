@@ -23,7 +23,7 @@ const Footer = () => {
                     <span class="footer-title">Feature</span> 
                     <Link to='/single' class="link link-hover">Single</Link>
                     <Link to='/receive' class="link link-hover">Receive</Link>
-                    <a class="link link-hover">Audio</a>
+                    <Link to='/chat' class="link link-hover">Chat</Link>
                     <a class="link link-hover">Video</a>
                 </div>
                 <div>
