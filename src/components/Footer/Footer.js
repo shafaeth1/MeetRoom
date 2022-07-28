@@ -20,10 +20,11 @@ const Footer = () => {
                     <a class="link link-hover">Advertisement</a>
                 </div> 
                 <div>
-                    <span class="footer-title">Support</span> 
-                    <a class="link link-hover">Terms of use</a>
-                    <a class="link link-hover">Privacy policy</a>
-                    <a class="link link-hover">Cookie policy</a>
+                    <span class="footer-title">Feature</span> 
+                    <Link to='/single' class="link link-hover">Single</Link>
+                    <Link to='/receive' class="link link-hover">Receive</Link>
+                    <a class="link link-hover">Audio</a>
+                    <a class="link link-hover">Video</a>
                 </div>
                 <div>
                     <span class="footer-title">Legal</span> 
