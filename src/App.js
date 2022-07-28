@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
+import Join from './pages/Join/Join';
 import SignIn from './pages/Register/SignIn';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signIn" element={<SignIn />}> </Route>
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
+        <Route path="/join" element={<Join />}> </Route>
       </Routes>
       <Footer/>
     </>
