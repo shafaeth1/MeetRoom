@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import background from "../../Assets/Images/man-computer.png"
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
         <div>
           <h1 class="min-w-md text-5xl font-bold">MeetRoom: Video,Audio conferencing made simple</h1>
           <p class="py-6 text-xl">There's lots to love about MeetRoom.Add flexibility, not complexity</p>
-          <button class="btn btn-primary">Get Started Meeting</button>
+          <Link to='/join' class="btn btn-primary">Get Started Meeting</Link>
         </div>
       </div>
     </div>
