@@ -11,7 +11,7 @@ const Join = () => {
                         <input type="text" placeholder="Id or Link" class="input input-bordered w-full max-w-xs" />
                         <input type="submit" value="Join" class="btn btn-primary"/>
                     </form>
-                    <p className='text-xs py-4'>By clicking "Join", you agree to our Terms of Services and Privacy Statement</p>
+                    <p className='text-xs py-4'>By clicking "Join", you agree to our Terms of Services and Privacy Statement.</p>
                 </div>
             </div>
             
