@@ -7,6 +7,10 @@ import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import Join from './pages/Join/Join';
 import SignIn from './pages/Register/SignIn';
+import ReceiveSingleCall from './pages/ReceiveSingleCall/ReceiveSingleCall';
+import SingleCall from './pages/SingleCall/SingleCall';
+import GroupCall from './pages/GroupCall/GroupCall';
+import SupportPage from './pages/SupportPage/SupportPage';
 
 function App() {
   return (
@@ -15,9 +19,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}> </Route>
         <Route path="/signIn" element={<SignIn />}> </Route>
+        <Route path="/join" element={<Join />}> </Route>
+        <Route path="/single" element={<SingleCall />}> </Route>
+        <Route path="/receive" element={<ReceiveSingleCall />}> </Route>
+        <Route path="/video" element={<GroupCall/>}> </Route>
+        <Route path="/support" element={<SupportPage/>}> </Route>
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
-        <Route path="/join" element={<Join />}> </Route>
       </Routes>
       <Footer/>
     </>
