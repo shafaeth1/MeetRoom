@@ -20,7 +20,7 @@ const ChatOnline = () => {
                     src="https://i.ibb.co/TvLVLVJ/IMG-0795.jpg" alt="" />
                     <div className='chatOnlineBadge'></div>
                 </div>
-                <span className='chatOnlineName'>Hossain</span>
+                <span className='chatOnlineName'>Hasan</span>
             </div>
             <div className='chatOnlineFriend'>
                 <div className='chatOnlineImgContainer'>
@@ -29,7 +29,7 @@ const ChatOnline = () => {
                     src="https://i.ibb.co/TvLVLVJ/IMG-0795.jpg" alt="" />
                     <div className='chatOnlineBadge'></div>
                 </div>
-                <span className='chatOnlineName'>Hossain</span>
+                <span className='chatOnlineName'>Roctim</span>
             </div>
             <div className='chatOnlineFriend'>
                 <div className='chatOnlineImgContainer'>
@@ -38,7 +38,7 @@ const ChatOnline = () => {
                     src="https://i.ibb.co/TvLVLVJ/IMG-0795.jpg" alt="" />
                     <div className='chatOnlineBadge'></div>
                 </div>
-                <span className='chatOnlineName'>Hossain</span>
+                <span className='chatOnlineName'>Alamin</span>
             </div>
         </div>
     );
