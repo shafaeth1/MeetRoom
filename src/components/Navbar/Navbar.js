@@ -21,7 +21,7 @@ const Navbar = () => {
                         <li><Link to='/join'>Join</Link></li>
                         <li><a href='support#'>Support</a></li>
                         <li>{user ? <button  onClick={logout}  className="">Sign Out</button>
-:<Link to="/login">Sign In</Link>}</li>
+:<Link to="/signIn">Sign In</Link>}</li>
                     </ul>
                 </div>
             </div>

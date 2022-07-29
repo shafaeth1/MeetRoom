@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 import { useForm } from "react-hook-form";
 
@@ -18,23 +18,23 @@ const SignIn = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-
+    const [signInWithFacebook, Fuser, Floading, Ferror] = useSignInWithFacebook(auth);
     let signInError;
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        if (user || gUser) {
+        if (user || gUser|| Fuser) {
             navigate(from, { replace: true });
         }
     }, [user, gUser, from, navigate])
 
-    if (loading || gLoading) {
+    if (loading || gLoading || Floading) {
         return <Loading></Loading>
     }
 
-    if (error || gError) {
+    if (error || gError || Ferror) {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
 
@@ -107,6 +107,10 @@ const SignIn = () => {
                         onClick={() => signInWithGoogle()}
                         className="btn btn-outline"
                     >Continue with Google</button>
+                     <button onClick={()=> signInWithFacebook()
+                    }
+                    className="btn bg-blue-500  text-white">
+                        Continue with Facebook</button>
                 </div>
             </div>
         </div >
