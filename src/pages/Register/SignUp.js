@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -23,15 +23,16 @@ const SignUp = () => {
         await updateProfile({ displayName : data?.name });
         
     };
+    const [signInWithFacebook, Fuser, Floading, Ferror] = useSignInWithFacebook(auth);
     
-      if(gUser || user){
+      if(gUser || user|| Fuser){
         navigate(from, { replace: true });
       }
       let errorMessage;
-      if(error || gError || UpError){
+      if(error || gError || UpError|| Ferror){
         errorMessage= <p className='text-red-600'>{error?.message}|| {UpError?.message}</p>
       }
-      if(loading || updating){
+      if(loading || updating|| Floading || gLoading){
         return <p>Loading...</p>;
       }
     return (
@@ -120,6 +121,10 @@ const SignUp = () => {
                         onClick={() => signInWithGoogle()}
                         className="btn btn-outline"
                     >Continue with Google</button>
+                    <button onClick={()=> signInWithFacebook()
+                    }
+                    className="btn bg-blue-500  text-white">
+                        Continue with Facebook</button>
                 </div>
             </div>
         </div >
