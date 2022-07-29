@@ -11,7 +11,7 @@ const Navbar = () => {
                 <div class="flex-none">
                     <ul class="menu menu-horizontal p-0 md:text-xl">
                         <li><Link to='/join'>Join</Link></li>
-                        <li><a href='support#'>Support</a></li>
+                        <li><Link to='/support'>Support</Link></li>
                         <li><Link to="/signIn">Sign In</Link></li>
                     </ul>
                 </div>

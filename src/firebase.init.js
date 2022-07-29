@@ -13,7 +13,14 @@ const firebaseConfig = {
     storageBucket: "meetsrooms.appspot.com",
     messagingSenderId: "213637425652",
     appId: "1:213637425652:web:8669b127deb947c014b1a1",
-    measurementId: "G-7WG9HLP9V1"
+    measurementId: "G-7WG9HLP9V1",
+    // apiKey:process.env.REACT_APP_apiKey,
+    // authDomain:process.env.REACT_APP_authDomain,
+    // projectId:process.env.REACT_APP_projectId,
+    // storageBucket:process.env.REACT_APP_storageBucket,
+    // messagingSenderId:process.env.REACT_APP_messagingSenderId,
+    // appId:process.env.REACT_APP_appId,
+    // measurementId:process.env.REACT_APP_measurementId
 };
 
 // Initialize Firebase
