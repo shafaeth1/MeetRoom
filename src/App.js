@@ -13,6 +13,7 @@ import GroupCall from './pages/GroupCall/GroupCall';
 import SupportPage from './pages/SupportPage/SupportPage';
 import ChatRoom from './pages/ChatRoom/ChatRoom';
 import SignUp from './pages/Register/SignUp';
+import LiveChat from './components/LiveChat/LiveChat';
 
 function App() {
   return (
@@ -21,18 +22,19 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}> </Route>
         <Route path="/signIn" element={<SignIn />}> </Route>
-        <Route path="/signup" element={<SignUp/>}> </Route>
+        <Route path="/signup" element={<SignUp />}> </Route>
         <Route path="/join" element={<Join />}> </Route>
+        <Route path="/liveChat" element={<LiveChat />}> </Route>
         <Route path="/single" element={<SingleCall />}> </Route>
         <Route path="/receive" element={<ReceiveSingleCall />}> </Route>
-        <Route path="/video" element={<GroupCall/>}> </Route>
-        <Route path="/support" element={<SupportPage/>}> </Route>
-        <Route path="/chat" element={<ChatRoom/>}> </Route>
+        <Route path="/video" element={<GroupCall />}> </Route>
+        <Route path="/support" element={<SupportPage />}> </Route>
+        <Route path="/chat" element={<ChatRoom />}> </Route>
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
-        
+
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 }

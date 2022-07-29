@@ -22,7 +22,8 @@ const Navbar = () => {
                     <span className="text-xl font-bold px-10">{time}</span>
                     <ul class="menu menu-horizontal p-0 md:text-xl">
                         <li><Link to='/join'>Join</Link></li>
-                        <li><a href='support#'>Support</a></li>
+                        <li><Link to='/liveChat'>Live Chat</Link></li>
+                        <li><Link to='/support'>Support</Link></li>
                         <li>{user ? <button  onClick={logout}  className="">Sign Out</button>:<Link to="/signIn">Sign In</Link>}</li>
                     </ul>
                 </div>
