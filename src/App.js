@@ -13,6 +13,7 @@ import GroupCall from './pages/GroupCall/GroupCall';
 import SupportPage from './pages/SupportPage/SupportPage';
 import ChatRoom from './pages/ChatRoom/ChatRoom';
 import SignUp from './pages/Register/SignUp';
+import LiveChat from './components/LiveChat/LiveChat';
 
 function App() {
   return (
