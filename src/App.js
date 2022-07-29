@@ -12,6 +12,7 @@ import SingleCall from './pages/SingleCall/SingleCall';
 import GroupCall from './pages/GroupCall/GroupCall';
 import SupportPage from './pages/SupportPage/SupportPage';
 import ChatRoom from './pages/ChatRoom/ChatRoom';
+import SignUp from './pages/Register/SignUp';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}> </Route>
         <Route path="/signIn" element={<SignIn />}> </Route>
+        <Route path="/signup" element={<SignUp/>}> </Route>
         <Route path="/join" element={<Join />}> </Route>
         <Route path="/single" element={<SingleCall />}> </Route>
         <Route path="/receive" element={<ReceiveSingleCall />}> </Route>
@@ -28,6 +30,7 @@ function App() {
         <Route path="/chat" element={<ChatRoom/>}> </Route>
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
+        
       </Routes>
       <Footer/>
     </>
