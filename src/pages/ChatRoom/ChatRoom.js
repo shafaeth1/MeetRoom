@@ -1,7 +1,7 @@
 import React from 'react';
 import ChatOnline from '../../components/ChatOnline/ChatOnline';
-import Conversation from '../../components/Conversation/Conversation';
-import Message from '../../components/Message/Message';
+import Conversation from '../../components/Chat/Conversation';
+import Message from '../../components/Chat/Message';
 import './ChatRoom.css'
 
 const ChatRoom = () => {

@@ -14,6 +14,7 @@ import SupportPage from './pages/SupportPage/SupportPage';
 import ChatRoom from './pages/ChatRoom/ChatRoom';
 import SignUp from './pages/Register/SignUp';
 import LiveChat from './components/LiveChat/LiveChat';
+import VideoConference from './pages/VideoConference/VideoConference';
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
         <Route path="/chat" element={<ChatRoom />}> </Route>
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
-
+        <Route path="/conference" element={<VideoConference />}> </Route>
       </Routes>
       <Footer />
     </>
