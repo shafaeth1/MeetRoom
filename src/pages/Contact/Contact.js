@@ -25,34 +25,33 @@ const Contact = () => {
                     </div>
                 </div>
                 {/* End contact Form */}
-                <div class=" lex-shrink-0 w-full max-w-5xl text-center lg:text-left">
-                    <h1 class="text-5xl font-bold">Contact now!</h1>
-                    <p class="py-6 pr-0 lg:pr-8">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <div class=" lex-shrink-0 w-full max-w-5xl text-center lg:text-left pt-4 lg:pt-0 px-2 lg:px-0">
+                    <h1 class="text-lg lg:text-5xl font-bold">Contact now!</h1>
+                    <p class="py-2 lg:py-6 pr-0 lg:pr-8 text-justify">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
 
                     <div className="flex justify-center gap-1 flex-col lg:flex-row-reverse">
-						<div className="flex gap-2 w-full">
-							<div className="w-12/12 lg:w-3/12">
+						
+							<div className="md:w-12/12 lg:w-3/12">
                                 <h3 className='text-lg font-semibold'>Colaborate</h3>
                                 <p>Support@example.com</p>
                                 <p>+880-1617892323</p>
 							</div>
-							<div className="w-12/12 lg:w-3/12">
+							<div className="md:w-12/12 lg:w-3/12">
                                 <h3 className='text-lg font-semibold'>Support</h3>
                                 <p>Support@example.com</p>
                                 <p>+880-1617892323</p>
                             </div>
                             
-                            <div className="w-12/12 lg:w-3/12">
+                            <div className="md:w-12/12 lg:w-3/12">
                                 <h3 className='text-lg font-semibold'>Join our team</h3>
                                 <p>Support@example.com</p>
                                 <p>+880-1617892323</p>
                             </div>
-                            <div className="w-12/12 lg:w-3/12">
+                            <div className="md:w-12/12 lg:w-3/12">
                                 <h3 className='text-lg font-semibold'>Say hello</h3>
                                 <p>Support@example.com</p>
                                 <p>+880-1617892323</p>
                             </div>
-						</div>
                     </div>
                 </div>
                 
@@ -65,7 +64,7 @@ const Contact = () => {
         <div class="hero-overlay py-8 bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
             <div class="max-w-md">
-                <h1 class="mb-5 text-5xl font-bold">Looking for new career?</h1>
+                <h1 class="mb-5 text-xl lg:text-5xl font-bold">Looking for new career?</h1>
                 <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                 <button class="btn btn-primary">We are Hiring</button>
             </div>
