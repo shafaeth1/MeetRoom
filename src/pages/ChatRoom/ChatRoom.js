@@ -1,5 +1,5 @@
 import React from 'react';
-import ChatOnline from '../../components/ChatOnline/ChatOnline';
+import ChatOnline from '../../components/Chat/ChatOnline';
 import Conversation from '../../components/Chat/Conversation';
 import Message from '../../components/Chat/Message';
 import './ChatRoom.css'
