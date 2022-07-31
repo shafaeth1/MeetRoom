@@ -9,13 +9,14 @@ import Join from './pages/Join/Join';
 import SignIn from './pages/Register/SignIn';
 import ReceiveSingleCall from './pages/ReceiveSingleCall/ReceiveSingleCall';
 import SingleCall from './pages/SingleCall/SingleCall';
-import GroupCall from './pages/GroupCall/GroupCall';
+// import GroupCall from './pages/GroupCall/GroupCall';
 import SupportPage from './pages/SupportPage/SupportPage';
 import ChatRoom from './pages/ChatRoom/ChatRoom';
 import SignUp from './pages/Register/SignUp';
 import LiveChat from './components/LiveChat/LiveChat';
 import VideoConference from './pages/VideoConference/VideoConference';
-import Profile from './pages/Profile/Profile';
+import Video from './components/Video/Video';
+import Slider from 'react-slick';
 
 function App() {
   return (
@@ -29,13 +30,13 @@ function App() {
         <Route path="/liveChat" element={<LiveChat />}> </Route>
         <Route path="/single" element={<SingleCall />}> </Route>
         <Route path="/receive" element={<ReceiveSingleCall />}> </Route>
-        <Route path="/video" element={<GroupCall />}> </Route>
         <Route path="/support" element={<SupportPage />}> </Route>
         <Route path="/chat" element={<ChatRoom />}> </Route>
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
         <Route path="/conference" element={<VideoConference />}> </Route>
-        <Route path="/profile" element={<Profile/>}> </Route>
+        <Route path="/Video" element={<Video/>}> </Route>
+        <Route path="/slide" element={<Slider />}> </Route>
       </Routes>
       <Footer />
     </>

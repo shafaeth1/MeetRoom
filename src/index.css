@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color Code */
+.bg-green{
+  background-color: #70DEAD;
+}
+.bg-chat{
+  background-color: #6FDDAC;
+}
+.bg-video{
+  background-color: #334F43;
+}
+.bg-hover{
+  background-color: #4FBD8C;
+}
+.bg-overlay{
+  background-color: #7CCC97;
+}
+.bg-red{
+  background-color: #FE0000;
+}
+/* OverWriting CSS */
 .logo .btn-ghost:hover, .btn-ghost.btn-active {
   --tw-border-opacity: 0;
   background-color: transparent;
