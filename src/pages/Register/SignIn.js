@@ -28,7 +28,7 @@ const SignIn = () => {
         if (user || gUser|| Fuser) {
             navigate(from, { replace: true });
         }
-    }, [user, gUser, from, navigate])
+    }, [user, gUser, Fuser, from, navigate])
 
     if (loading || gLoading || Floading) {
         return <Loading></Loading>
