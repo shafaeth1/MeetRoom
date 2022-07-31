@@ -1,14 +1,15 @@
 import React from 'react';
-import { AiOutlinePushpin } from "react-icons/ai"
-import { FaCreativeCommons } from "react-icons/fa"
-import { BsRecordCircle, BsPlus } from "react-icons/bs"
-import { IoPeopleOutline } from "react-icons/io5"
+import { AiOutlinePushpin } from "react-icons/ai";
+import { FaCreativeCommons } from "react-icons/fa";
+import { BsRecordCircle, BsPlus } from "react-icons/bs";
+import { IoPeopleOutline } from "react-icons/io5";
+import user from "../../Assets/Images/user.png"
 
 
 const Video = () => {
     return (
-        <div className='bg-slate-500'>
-            <div className='px-10 py-20 bg-dark-500 w-full mx-auto'>
+        // <div className='bg-slate-500'>
+            <div className='w-full mx-auto'>
                 <div className='flex list-none items-center text-white'>
                     <h2 className='text-xl text-white'>Discuss About Our New Projects</h2>
                     <div className='flex items-center rounded px-2 ml-6 bg-green-600'>
@@ -26,26 +27,31 @@ const Video = () => {
                         <li className='px-2'>Add user to the class</li>
                     </div>
                 </div>
-                <div className='rounded-xl bg-green-200'>
 
-                    <div className='text-white list-none text-xl flex gap-3 justify-start  p-4'>
+                <div className='rounded-xl bg-green-200 relative'>
+                    <div className='text-white list-none text-xl flex gap-3 justify-start p-4 absolute'>
                         <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl px-1 py-1 '><FaCreativeCommons /></li>
                         <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl px-1 py-1 '><AiOutlinePushpin /></li>
 
                     </div>
-                    <div className='grid grid-rows min-h-screen justify-center items-center'>
-                        <h2 className='bg-green-300 text-white px-2'>This is the week thats we can more presentation..</h2>
-                        <div className='grid grid-cols-5 gap-2 justify-center place-items-end text-white rounded-2xl font-bold cursor-pointer list-none'>
-                            <li className='py-4 bg-green-400 rounded-xl px-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'><i class="fal fa-microphone font-bold"></i></li>
-                            <li className='bg-green-400 rounded-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-4 py-2 font-bold'><i class="fal fa-video font-bold"></i></li>
-                            <li className='bg-red-500 rounded-xl text-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-4 py-2'><i class="far fa-phone-alt font-bold"></i></li>
-                            <li className='bg-green-400 rounded-xl transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 px-4 py-2 '><i class="far fa-arrow-circle-up font-bold"></i></li>
-                            <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl px-4 py-2 '><i class="far fa-ellipsis-v font-bold"></i></li>
+                    
+                    <div className="flex justify-center items-baseline">
+                        <img src={user} alt="Main user" className='p-4'/>
+                    </div>
+
+                    <div className='grid grid-rows justify-center items-baseline pb-4'>
+                        <h2 className='bg-green-300 text-white mb-2 p-1'>This is the week thats we can more presentation..</h2>
+                        <div className='flex gap-2 md:gap-4 justify-center place-items-end text-white font-bold cursor-pointer list-none'>
+                            <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'><i className="fal fa-microphone font-bold"></i></li>
+                            <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'><i className="fal fa-video font-bold"></i></li>
+                            <li className='bg-red-500 rounded-md text-lg lg:text-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-2 lg:py-2'><i className="far fa-phone-alt font-bold"></i></li>
+                            <li className='bg-green-400 rounded-md transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 '><i className="far fa-arrow-circle-up font-bold"></i></li>
+                            <li className='bg-green-400 rounded-md transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 '><i className="far fa-ellipsis-v font-bold"></i></li>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        // </div>
     );
 };
 
