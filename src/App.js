@@ -16,7 +16,7 @@ import SignUp from './pages/Register/SignUp';
 import LiveChat from './components/LiveChat/LiveChat';
 import VideoConference from './pages/VideoConference/VideoConference';
 import Video from './components/Video/Video';
-import Slider from 'react-slick';
+import Slider from './components/Slider/Slider';
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
         <Route path="/conference" element={<VideoConference />}> </Route>
-        <Route path="/Video" element={<Video/>}> </Route>
+        <Route path="/Video" element={<Video />}> </Route>
         <Route path="/slide" element={<Slider />}> </Route>
       </Routes>
       <Footer />
