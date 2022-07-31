@@ -16,7 +16,7 @@ export default class PauseOnHover extends Slider {
             pauseOnHover: true
         };
         return (
-            <div className="p-10 bg-gray-800 text-white">
+            <div className="p-10 bg-gray-800 text-white min-h-screen">
                 <h2 >Online</h2>
                 <Slider {...settings}>
                     <div class="avatar">

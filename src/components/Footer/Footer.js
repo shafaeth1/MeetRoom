@@ -9,15 +9,15 @@ const Footer = () => {
                     <span class="footer-title">About</span>
                     <Link to="/about">About us</Link>
                     <Link to="/contact">Contact us</Link>
-                    <a class="link link-hover">Jobs</a>
-                    <a class="link link-hover">Press kit</a>
+                    <a href="#ok" class="link link-hover">Jobs</a>
+                    <a href="#ok" class="link link-hover">Press kit</a>
                 </div>
                 <div>
                     <span class="footer-title">Download</span>
-                    <a class="link link-hover">Branding</a>
-                    <a class="link link-hover">Design</a>
-                    <a class="link link-hover">Marketing</a>
-                    <a class="link link-hover">Advertisement</a>
+                    <a href="#ok" class="link link-hover">Branding</a>
+                    <a href="#ok" class="link link-hover">Design</a>
+                    <a href="#ok" class="link link-hover">Marketing</a>
+                    <a href="#ok" class="link link-hover">Advertisement</a>
                 </div>
                 <div>
                     <span class="footer-title">Feature</span>
@@ -28,9 +28,9 @@ const Footer = () => {
                 </div>
                 <div>
                     <span class="footer-title">Legal</span>
-                    <a class="link link-hover">Terms of use</a>
-                    <a class="link link-hover">Privacy policy</a>
-                    <a class="link link-hover">Cookie policy</a>
+                    <a href="#ok" class="link link-hover">Terms of use</a>
+                    <a href="#ok" class="link link-hover">Privacy policy</a>
+                    <a href="#ok" class="link link-hover">Cookie policy</a>
                 </div>
             </div>
             <div className='flex justify-between bg-neutral text-neutral-content px-2 lg:px-12 pb-2'>
