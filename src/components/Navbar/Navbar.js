@@ -10,15 +10,15 @@ const Navbar = () => {
         signOut(auth);
        
       };
-    const showdate = new Date()
-    const time = showdate.getHours() + ":" + showdate.getMinutes();
+    // const showdate = new Date()
+    // const time = showdate.getHours() + ":" + showdate.getMinutes();
     return (
         <header className="px-4 border-b-2">
             <div class="navbar">
                 <div class="navbar-start">
                     <div class="dropdown">
                         <label tabindex="0" class="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        <i class="fad fa-align-left text-2xl"></i>
                         </label>
                         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                 <li><Link to='/join'>Join</Link></li>
@@ -42,6 +42,9 @@ const Navbar = () => {
                     <ul class="menu menu-horizontal p-0">
                         <li>{user ? <button  onClick={logout}  className="">Sign Out</button>:<Link to="/signIn">Sign In</Link>}</li>
                     </ul>
+                    <label for="my-drawer-2" class="btn btn-ghost lg:hidden">
+                    <i class="fad fa-align-right text-2xl"></i>
+                    </label>
                 </div>
             </div>
 

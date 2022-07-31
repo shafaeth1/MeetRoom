@@ -4,9 +4,9 @@ const SupportPage = () => {
     return (
         <section className=''>
         <div className="my-16 text-gray-800">
-            <div class="text-center px-8 my-8">
-                <h2 class="text-3xl border-x-8 leading-normal font-bold text-gray-800 dark:text-gray-100">
-                    <span class="font-light">Why</span> <span className='border-b-2'>We Best!</span>
+            <div className="text-center px-8 my-8">
+                <h2 className="text-3xl border-x-8 leading-normal font-bold text-gray-800 dark:text-gray-100">
+                    <span className="font-light">Why</span> <span className='border-b-2'>We Best!</span>
                 </h2>
             </div>
             <div className="flex flex-wrap items-center">

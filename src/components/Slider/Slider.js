@@ -19,63 +19,63 @@ export default class PauseOnHover extends Slider {
             <div className="p-10 bg-gray-800 text-white min-h-screen">
                 <h2 >Online</h2>
                 <Slider {...settings}>
-                    <div class="avatar">
-                        <div class="w-24 rounded-xl">
+                    <div className="avatar">
+                        <div className="w-24 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="" />
                         </div>
                     </div>
-                    <div class="avatar">
-                        <div class="w-24 rounded-xl">
+                    <div className="avatar">
+                        <div className="w-24 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="" />
                         </div>
                     </div>
-                    <div class="avatar">
-                        <div class="w-24 rounded-xl">
+                    <div className="avatar">
+                        <div className="w-24 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="" />
                         </div>
                     </div>
-                    <div class="avatar">
-                        <div class="w-24 rounded-xl">
+                    <div className="avatar">
+                        <div className="w-24 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="" />
                         </div>
                     </div>
-                    <div class="avatar">
-                        <div class="w-24 rounded-xl">
+                    <div className="avatar">
+                        <div className="w-24 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="" />
                         </div>
                     </div>
-                    <div class="avatar">
-                        <div class="w-24 rounded-xl">
+                    <div className="avatar">
+                        <div className="w-24 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="" />
                         </div>
                     </div>
-                    <div class="avatar">
-                        <div class="w-24 rounded-xl">
+                    <div className="avatar">
+                        <div className="w-24 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="" />
                         </div>
                     </div>
-                    <div class="avatar">
-                        <div class="w-24 rounded-xl">
+                    <div className="avatar">
+                        <div className="w-24 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="" />
                         </div>
                     </div>
-                    <div class="avatar">
-                        <div class="w-24 rounded-xl">
+                    <div className="avatar">
+                        <div className="w-24 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="" />
                         </div>
                     </div>
-                    <div class="avatar">
-                        <div class="w-24 rounded-xl">
+                    <div className="avatar">
+                        <div className="w-24 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="" />
                         </div>
                     </div>
-                    <div class="avatar">
-                        <div class="w-24 rounded-xl">
+                    <div className="avatar">
+                        <div className="w-24 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="" />
                         </div>
                     </div>
-                    <div class="avatar">
-                        <div class="w-24 rounded-xl">
+                    <div className="avatar">
+                        <div className="w-24 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="" />
                         </div>
                     </div>
