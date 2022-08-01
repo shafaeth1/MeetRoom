@@ -4,6 +4,7 @@ import Slider from '../Slider/Slider';
 // import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
+import ChatTab from '../ChatTab/ChatTab';
 
 const LeftNavbar = () => {
     // const [user] = useAuthState(auth);
@@ -26,8 +27,7 @@ const LeftNavbar = () => {
 					</div>
                     {/* ========Right Sidebar ========*/}
 					<div className="md:w-12/12 lg:w-4/12">
-                       <h1>Chat</h1>
-            
+                       <ChatTab></ChatTab>
                     </div>
                 </div>
                 
