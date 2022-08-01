@@ -74,37 +74,37 @@ export default class Responsive extends Slider {
                         <div className="w-full px-2">
                             <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                         </div>
-                        <i className="fal fa-microphone font-bold text-md text-white bg-green-300 p-1 absolute bottom-4 right-4"></i>
+                        <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute bottom-4 right-4 rounded-md"></i>
                     </div>
                     <div className="avatar">
                         <div className="w-full px-2 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                         </div>
-                        <i className="fal fa-microphone font-bold text-md text-white bg-green-300 p-1 absolute bottom-4 right-4"></i>
+                        <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute bottom-4 right-4 rounded-md"></i>
                     </div>
                     <div className="avatar">
                         <div className="w-full px-2 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                         </div>
-                        <i className="fal fa-microphone font-bold text-md text-white bg-green-300 p-1 absolute bottom-4 right-4"></i>
+                        <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute bottom-4 right-4 rounded-md"></i>
                     </div>
                     <div className="avatar">
                         <div className="w-full px-2 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                         </div>
-                        <i className="fal fa-microphone font-bold text-md text-white bg-green-300 p-1 absolute bottom-4 right-4"></i>
+                        <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute bottom-4 right-4 rounded-md"></i>
                     </div>
                     <div className="avatar">
                         <div className="w-full px-2 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                         </div>
-                        <i className="fal fa-microphone font-bold text-md text-white bg-green-300 p-1 absolute bottom-4 right-4"></i>
+                        <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute bottom-4 right-4 rounded-md"></i>
                     </div>
                     <div className="avatar">
                         <div className="w-full px-2 rounded-xl">
                             <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                         </div>
-                        <i className="fal fa-microphone font-bold text-md text-white bg-green-300 p-1 absolute bottom-4 right-4"></i>
+                        <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute bottom-4 right-4 rounded-md"></i>
                     </div>
                 </Slider>
             </div>

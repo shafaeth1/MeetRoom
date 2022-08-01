@@ -9,17 +9,15 @@ import Join from './pages/Join/Join';
 import SignIn from './pages/Register/SignIn';
 import ReceiveSingleCall from './pages/ReceiveSingleCall/ReceiveSingleCall';
 import SingleCall from './pages/SingleCall/SingleCall';
-// import GroupCall from './pages/GroupCall/GroupCall';
 import SupportPage from './pages/SupportPage/SupportPage';
 import SignUp from './pages/Register/SignUp';
 import LiveChat from './components/LiveChat/LiveChat';
 import VideoConference from './pages/VideoConference/VideoConference';
 import RequireAuth from './pages/Register/RequireAuth';
-import Video from './components/Video/Video';
-import Slider from './components/Slider/Slider';
 import Chat from './components/Chat/Chat';
 import auth from './firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Participant from './components/Participant/Participant';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -38,13 +36,10 @@ function App() {
         <Route path="/support" element={<SupportPage />}> </Route>
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
-        <Route path="/conference" element={<RequireAuth>
-          <VideoConference></VideoConference>
-        </RequireAuth>}> </Route>
-        <Route path="/conference" element={<VideoConference />}> </Route>
-        <Route path="/Video" element={<Video />}> </Route>
-        <Route path="/slide" element={<Slider />}> </Route>
+        <Route path="/conference" element={<RequireAuth><VideoConference/></RequireAuth>}> 
+        </Route>
         <Route path="/chat" element={<Chat />}> </Route>
+        <Route path="/chat" element={<Participant />}> </Route>
       </Routes>
       {!user? <Footer /> : ''}
     </>
