@@ -24,7 +24,7 @@ const Footer = () => {
                     <Link to='/single' className="link link-hover">Single</Link>
                     <Link to='/receive' className="link link-hover">Receive</Link>
                     <Link to='/chat' className="link link-hover">Chat</Link>
-                    <Link to='/video' className="link link-hover">Video</Link>
+                    <Link to='/participant' className="link link-hover">Video</Link>
                 </div>
                 <div>
                     <span className="footer-title">Legal</span>
