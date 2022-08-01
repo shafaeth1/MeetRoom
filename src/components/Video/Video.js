@@ -11,20 +11,20 @@ const Video = () => {
         // <div className='bg-slate-500'>
             <div className='w-full mx-auto'>
                 <div className='flex list-none items-center text-white'>
-                    <h2 className='text-xl text-white'>Discuss About Our New Projects</h2>
+                    <h2 className='md:text-md lg:text-xl text-white'>Discuss About Our New Projects</h2>
                     <div className='flex items-center rounded px-2 ml-6 bg-green-600'>
                         <li><IoPeopleOutline /></li>
-                        <li className='px-3'>37+ </li>
+                        <li className='px-1 lg:px-3'>37+ </li>
                     </div>
                 </div>
                 <div className='text-white flex justify-between my-4'>
                     <div className='flex list-none items-center'>
                         <li className='bg-red-500 rounded-full'><BsRecordCircle /></li>
-                        <li className='px-2'>REQ : 00.02.36s </li>
+                        <li className='text-sm lg:text-md md:px-1 lg:px-2'>REQ : 00.02.36s </li>
                     </div>
                     <div className='flex list-none items-center text-white'>
                         <li className='bg-green-500 rounded-full cursor-pointer'><BsPlus /></li>
-                        <li className='px-2'>Add user to the class</li>
+                        <li className='text-sm lg:text-md px-2'>Add user to the class</li>
                     </div>
                 </div>
 

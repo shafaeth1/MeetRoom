@@ -6,7 +6,7 @@ const LeftNavbar = () => {
     return (
         <div className="drawer drawer-mobile rounded-md">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col p-4 bg-slate-900 lg:border-l-2">
+            <div className="drawer-content flex flex-col p-4 bg-slate-900 lg:border-l-2 body">
                 {/* =======Main Body======= */}
                 <div className="flex justify-center gap-1 flex-col lg:flex-row">
 					<div className="md:w-12/12 lg:w-8/12">

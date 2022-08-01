@@ -3,27 +3,27 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "green" }}
-        onClick={onClick}
-      />
-    );
-  }
+// function SampleNextArrow(props) {
+//     const { className, style, onClick } = props;
+//     return (
+//       <div
+//         className={className}
+//         style={{ ...style, display: "block", color: "green" }}
+//         onClick={onClick}
+//       />
+//     );
+//   }
   
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "green" }}
-        onClick={onClick}
-      />
-    );
-  }
+//   function SamplePrevArrow(props) {
+//     const { className, style, onClick } = props;
+//     return (
+//       <div
+//         className={className}
+//         style={{ ...style, display: "block", color: "green" }}
+//         onClick={onClick}
+//       />
+//     );
+//   }
 
 export default class Responsive extends Slider {
     render() {
@@ -38,8 +38,8 @@ export default class Responsive extends Slider {
             slidesToShow: 5,
             slidesToScroll: 5,
             initialSlide: 0,
-            nextArrow: <SampleNextArrow />,
-            prevArrow: <SamplePrevArrow />,
+            // nextArrow: <SampleNextArrow />,
+            // prevArrow: <SamplePrevArrow />,
             responsive: [
               {
                 breakpoint: 1024,
