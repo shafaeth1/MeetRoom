@@ -43,7 +43,7 @@ const Navbar = () => {
                         <li>{user ? <button  onClick={logout}  className="">Sign Out</button>:<Link to="/signIn">Sign In</Link>}</li>
                     </ul>
                     <label for="my-drawer-2" class="btn btn-ghost lg:hidden">
-                    <i class="fad fa-align-right text-2xl"></i>
+                        <i class="fad fa-align-right text-2xl"></i>
                     </label>
                 </div>
             </div>

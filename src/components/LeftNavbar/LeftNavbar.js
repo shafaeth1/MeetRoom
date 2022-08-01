@@ -1,10 +1,21 @@
 import React from 'react';
 import Video from '../Video/Video';
 import Slider from '../Slider/Slider';
+// import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const LeftNavbar = () => {
+    // const [user] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+       
+      };
     return (
         <div className="drawer drawer-mobile rounded-md">
+            <label for="my-drawer-2" class="btn btn-ghost lg:hidden">
+                        <i class="fad fa-align-right text-2xl"></i>
+                    </label>
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col p-4 bg-slate-900 lg:border-l-2 body">
                 {/* =======Main Body======= */}
@@ -35,6 +46,10 @@ const LeftNavbar = () => {
                     <li><a href="#home"><i className="fas fa-calendar-alt text-white text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></a></li>
                     <li><a href="#home"><i className="fal fa-bell text-white text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></a></li>
                     <li><a href="#home"><i className="fal fa-cog text-white text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></a></li>
+                    <div className="absolute left-1/3 bottom-2 cursor-pointer">
+                    <button onClick={logout}  ><i className="fal fa-sign-out-alt text-white text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></button>
+                
+                    </div>
                 </ul>
             </div>
             {/* end leftNavbar content */}

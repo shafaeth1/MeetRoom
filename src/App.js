@@ -18,11 +18,15 @@ import RequireAuth from './pages/Register/RequireAuth';
 import Video from './components/Video/Video';
 import Slider from './components/Slider/Slider';
 import Chat from './components/Chat/Chat';
+import auth from './firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function App() {
+  const [user] = useAuthState(auth);
   return (
     <>
-      <Navbar />
+    {!user? <Navbar /> : ''}
+      
       <Routes>
         <Route path="/" element={<Home />}> </Route>
         <Route path="/signIn" element={<SignIn />}> </Route>
@@ -42,7 +46,7 @@ function App() {
         <Route path="/slide" element={<Slider />}> </Route>
         <Route path="/chat" element={<Chat />}> </Route>
       </Routes>
-      <Footer />
+      {!user? <Footer /> : ''}
     </>
   );
 }
