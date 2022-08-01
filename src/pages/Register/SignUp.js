@@ -113,7 +113,7 @@ const SignUp = () => {
                         </div>
 
                         {errorMessage}
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Sign Up" />
+                        <input className='btn w-full max-w-xs text-gray-200' type="submit" value="Sign Up" />
                     </form>
                     <p><small>Already have account <Link className='text-primary' to="/signin">Login</Link></small></p>
                     <div className="divider">OR</div>
@@ -123,7 +123,7 @@ const SignUp = () => {
                     >Continue with Google</button>
                     <button onClick={()=> signInWithFacebook()
                     }
-                    className="btn bg-blue-500  text-white">
+                    className="btn bg-blue-500  text-gray-200">
                         Continue with Facebook</button>
                 </div>
             </div>
