@@ -14,8 +14,8 @@ const LeftNavbar = () => {
       };
     return (
         <div className="drawer drawer-mobile rounded-md">
-            <label for="my-drawer-2" class="btn btn-ghost lg:hidden">
-                        <i class="fad fa-align-right text-2xl"></i>
+            <label for="my-drawer-2" className="btn btn-ghost lg:hidden">
+                        <i className="fad fa-align-right text-2xl"></i>
                     </label>
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col p-4 bg-slate-900 lg:border-l-2 body">
