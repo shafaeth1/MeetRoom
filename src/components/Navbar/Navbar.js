@@ -27,7 +27,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="flex display-flex">
-                        <Link to="/" class="btn btn-ghost normal-case md:text-xl"><img src='favicon.ico' className='w-1/6'/> MeetRoom</Link>
+                        <Link to="/" class="flex items-center lg:pl-6 gap-1 normal-case md:text-xl"><img src='favicon.ico' className='w-1/6 text-left'/> MeetRoom</Link>
                     </div>
                 </div>
                 <div class="navbar-start hidden lg:flex">
