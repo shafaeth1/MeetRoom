@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Chat from '../Chat/Chat';
+import Participant from '../Participant/Participant';
 const ChatTab = () => {
     return (
         <Tabs className='w-full px-2 lg:px-4 text-gray-200'>
@@ -15,13 +16,7 @@ const ChatTab = () => {
         </TabPanel>
 
         <TabPanel>
-          <p>
-            ictional character featured in video games and related media
-            released by Nintendo. Created by prominent game designer Shigeru Miyamoto, Luigi is portrayed
-            as the slightly younger but taller fraternal twin brother of Nintendo's mascot Mario, and
-            appears in many games throughout the Mario franchise, often as a sidekick to his brother.
-          </p>
-         
+          <Participant/>
         </TabPanel>
         </div>
       </Tabs>

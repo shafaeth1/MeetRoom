@@ -13,7 +13,7 @@ const VideoConference = () => {
             </div>
             {/* ========Right Sidebar ========*/}
             <div className="md:w-12/12 lg:w-4/12">
-            <ChatTab></ChatTab>
+                <ChatTab></ChatTab>
             </div>
         </div>
     );

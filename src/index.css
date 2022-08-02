@@ -6,6 +6,12 @@
 .bg-header{
   background-color: #1D4354;
 }
+.bg-transparent{
+  background-color: #ffffff13;
+}
+.bg-clock{
+  background-color: #e5989854;
+}
 .bg-green{
   background-color: #70DEAD;
 }
