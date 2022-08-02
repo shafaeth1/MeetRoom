@@ -1,15 +1,9 @@
 import React from 'react';
-import auth from '../../firebase.init';
-import { signOut } from 'firebase/auth';
 import { Link, Outlet } from 'react-router-dom';
 import LeftNavbar from '../../components/LeftNavbar/LeftNavbar';
 import logo from '../../Assets/Images/logo.png'
 
 const ConferenceRoom = () => {
-    const logout = () => {
-        signOut(auth);
-       
-      };
     return (
         <section className='py-2 lg:py-4 bg-green-400'>
             <div className="flex justify-between px-2 md:hidden">
