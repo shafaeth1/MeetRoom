@@ -8,7 +8,6 @@ import user from "../../Assets/Images/user.png"
 
 const Video = () => {
     return (
-        // <div className='bg-slate-500'>
         <div className='w-full mx-auto'>
             <div className='flex list-none items-center text-gray-200'>
                 <h2 className='md:text-md lg:text-xl text-gray-200'>Discuss About Our New Projects</h2>
@@ -51,7 +50,6 @@ const Video = () => {
                 </div>
             </div>
         </div>
-        // </div>
     );
 };
 

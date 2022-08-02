@@ -13,12 +13,12 @@ const Navbar = () => {
     // const showdate = new Date()
     // const time = showdate.getHours() + ":" + showdate.getMinutes();
     return (
-        <header className="px-4 border-b-2">
-            <div class="navbar">
+        <header className="px-4 bg-header text-gray-200">
+            <div class="navbar sticky">
                 <div class="navbar-start">
                     <div class="dropdown">
                         <label tabindex="0" class="btn btn-ghost lg:hidden">
-                        <i class="fad fa-align-left text-2xl"></i>
+                            <i class="fad fa-align-left text-2xl"></i>
                         </label>
                         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                 <li><Link to='/join'>Join</Link></li>
@@ -26,8 +26,8 @@ const Navbar = () => {
                                 <li><Link to='/support'>Support</Link></li>
                         </ul>
                     </div>
-                    <div className="logo">
-                        <Link to="/" class="btn btn-ghost normal-case md:text-xl">MeetRoom</Link>
+                    <div className="flex display-flex">
+                        <Link to="/" class="btn btn-ghost normal-case md:text-xl"><img src='favicon.ico' className='w-1/6'/> MeetRoom</Link>
                     </div>
                 </div>
                 <div class="navbar-start hidden lg:flex">
