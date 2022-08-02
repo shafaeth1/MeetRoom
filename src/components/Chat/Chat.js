@@ -4,7 +4,7 @@ import user from "../../Assets/Images/user.png"
 const Chat = () => {
     return (
         <div className='w-full'>
-            <div className='rounded-lg mb-2 overflow-y-auto max-h-96'>
+            <div className='rounded-lg mb-2 tab-bar overflow-y-auto max-h-96'>
 
                 <div className='flex items-center py-1 justify-start'>
                     <img src={user} alt="Main user" className='w-12 h-12 p-1 border mr-1 rounded-full' />
@@ -82,7 +82,7 @@ const Chat = () => {
 
             <div className='flex items-center gap-2 bg-green-600 rounded p-2 mt-4'>
                 <button><i className="far fa-image text-3xl text-gray-200"></i></button>
-                <input type="text" placeholder="Type here" class="p-2 rounded-md border-none w-full px-2" />
+                <input type="text" placeholder="Type here" className="p-2 rounded-md border-none w-full px-2" />
                 <button> <i className="far fa-paper-plane text-2xl font-medium"></i> </button>
             </div>
 
