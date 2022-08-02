@@ -14,6 +14,8 @@ import SignUp from './pages/Register/SignUp';
 import LiveChat from './components/LiveChat/LiveChat';
 import VideoConference from './pages/VideoConference/VideoConference';
 import RequireAuth from './pages/Register/RequireAuth';
+import Video from './components/Video/Video';
+import Slider from './components/Slider/Slider';
 import Chat from './components/Chat/Chat';
 import auth from './firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -30,17 +32,19 @@ function App() {
         <Route path="/" element={<Home />}> </Route>
         <Route path="/signIn" element={<SignIn />}> </Route>
         <Route path="/signup" element={<SignUp />}> </Route>
-        <Route path="/join" element={<Join />}> </Route>
         <Route path="/liveChat" element={<LiveChat />}> </Route>
         <Route path="/single" element={<SingleCall />}> </Route>
         <Route path="/receive" element={<ReceiveSingleCall />}> </Route>
         <Route path="/support" element={<SupportPage />}> </Route>
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
+        <Route path="/Video" element={<Video />}> </Route>
+        <Route path="/slide" element={<Slider />}> </Route>
+        <Route path="/chat" element={<Chat />}> </Route>
         <Route path="/conference" element={<RequireAuth><VideoConference /></RequireAuth>}>
         </Route>
         <Route path="/chat" element={<Chat />}> </Route>
-        <Route path="/chat" element={<Participant />}> </Route>
+        <Route path="/participant" element={<Participant />}> </Route>
         <Route path="/hero" element={<Hero />}> </Route>
       </Routes>
       {!user ? <Footer /> : ''}

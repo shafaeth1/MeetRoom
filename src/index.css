@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /* Color Code */
+.bg-header{
+  background-color: #1D4354;
+}
 .bg-green{
   background-color: #70DEAD;
 }
