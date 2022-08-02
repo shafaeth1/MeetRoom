@@ -68,10 +68,10 @@ export default class Responsive extends Slider {
             ]
           };
         return (
-            <div className="p-8">
+            <div className="p-4 lg:p-8">
                 <Slider {...settings}>
                     <div className="avatar">
-                        <div className="w-full px-2">
+                        <div className="w-full px-0 lg:px-2">
                             <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                         </div>
                         <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute bottom-4 right-4 rounded-md"></i>

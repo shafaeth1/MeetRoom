@@ -5,9 +5,6 @@ import Calendar from 'react-calendar';
 import 'react-clock/dist/Clock.css';
 import 'react-calendar/dist/Calendar.css';
 
-
-
-
 const Hero = () => {
     const [value, setValue] = useState(new Date());
     const [value2, onChange] = useState(new Date());
