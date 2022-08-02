@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWith
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from './Loading';
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -33,10 +34,10 @@ const SignUp = () => {
         errorMessage= <p className='text-red-600'>{error?.message}|| {UpError?.message}</p>
       }
       if(loading || updating|| Floading || gLoading){
-        return <p>Loading...</p>;
+        return <Loading/>;
       }
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex min-h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Sign Up</h2>
@@ -113,9 +114,9 @@ const SignUp = () => {
                         </div>
 
                         {errorMessage}
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Sign Up" />
+                        <input className='btn w-full max-w-xs text-gray-200' type="submit" value="Sign Up" />
                     </form>
-                    <p><small>Already have account <Link className='text-primary' to="/signin">Login</Link></small></p>
+                    <p><small>Already have account <Link className='text-green-500' to="/signin">Login</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
@@ -123,7 +124,7 @@ const SignUp = () => {
                     >Continue with Google</button>
                     <button onClick={()=> signInWithFacebook()
                     }
-                    className="btn bg-blue-500  text-white">
+                    className="btn bg-blue-500  text-gray-200">
                         Continue with Facebook</button>
                 </div>
             </div>

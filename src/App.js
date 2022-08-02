@@ -1,43 +1,74 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import Hasan from './pages/Indivisual/Hasan';
+import Roctim from './pages/Indivisual/Roctim';
+import Alamin from './pages/Indivisual/Alamin';
+import Hossain from './pages/Indivisual/Hossain';
+import Ariful from './pages/Indivisual/Ariful';
+import Nibras from './pages/Indivisual/Nibras';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
-import Join from './pages/Join/Join';
 import SignIn from './pages/Register/SignIn';
 import ReceiveSingleCall from './pages/ReceiveSingleCall/ReceiveSingleCall';
 import SingleCall from './pages/SingleCall/SingleCall';
-import GroupCall from './pages/GroupCall/GroupCall';
 import SupportPage from './pages/SupportPage/SupportPage';
-import ChatRoom from './pages/ChatRoom/ChatRoom';
 import SignUp from './pages/Register/SignUp';
 import LiveChat from './components/LiveChat/LiveChat';
-import VideoConference from './pages/VideoConference/VideoConference';
-import Profile from './pages/Profile/Profile';
+import RequireAuth from './pages/Register/RequireAuth';
+import Video from './components/Video/Video';
+import Slider from './components/Slider/Slider';
+import Chat from './components/Chat/Chat';
+import auth from './firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import Participant from './components/Participant/Participant';
+import Hero from './components/Hero/Hero';
+import UserConference from './pages/ConferenceRoom/UserConference/UserConference';
+import ConferenceRoom from './pages/ConferenceRoom/ConferenceRoom';
+import VideoConference from './pages/ConferenceRoom/VideoConference/VideoConference';
 
 function App() {
+  const [user] = useAuthState(auth);
   return (
     <>
-      <Navbar />
+      {!user ? <Navbar /> : ''}
+
       <Routes>
+        {/* ================Indivisual Route =================*/}
+        <Route path="/hasan" element={<Hasan />}> </Route>
+        <Route path="/roctim" element={<Roctim />}> </Route>
+        <Route path="/alamin" element={<Alamin />}> </Route>
+        <Route path="/hossain" element={<Hossain />}> </Route>
+        <Route path="/ariful" element={<Ariful />}> </Route>
+        <Route path="/nibras" element={<Nibras />}> </Route>
+
+        {/*============== Frontend Route ====================*/}
         <Route path="/" element={<Home />}> </Route>
         <Route path="/signIn" element={<SignIn />}> </Route>
         <Route path="/signup" element={<SignUp />}> </Route>
-        <Route path="/join" element={<Join />}> </Route>
         <Route path="/liveChat" element={<LiveChat />}> </Route>
         <Route path="/single" element={<SingleCall />}> </Route>
         <Route path="/receive" element={<ReceiveSingleCall />}> </Route>
-        <Route path="/video" element={<GroupCall />}> </Route>
         <Route path="/support" element={<SupportPage />}> </Route>
-        <Route path="/chat" element={<ChatRoom />}> </Route>
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
-        <Route path="/conference" element={<VideoConference />}> </Route>
-        <Route path="/profile" element={<Profile/>}> </Route>
+        <Route path="/Video" element={<Video />}> </Route>
+        <Route path="/slide" element={<Slider />}> </Route>
+        <Route path="/chat" element={<Chat />}> </Route>
+        <Route path="/participant" element={<Participant />}> </Route>
+        <Route path="/hero" element={<Hero />}> </Route>
+      
+
+        {/* ============Video Conference Room Route ===============*/}
+        <Route path="/room" element={<RequireAuth><ConferenceRoom /></RequireAuth>}>
+          <Route index element={<VideoConference/>}></Route>
+          <Route path="video" element={<VideoConference/>}></Route>
+          <Route path="users" element={<UserConference/>}></Route>
+        </Route>
       </Routes>
-      <Footer />
+      {!user ? <Footer /> : ''}
     </>
   );
 }

@@ -28,7 +28,7 @@ const SignIn = () => {
         if (user || gUser|| Fuser) {
             navigate(from, { replace: true });
         }
-    }, [user, gUser, from, navigate])
+    }, [user, gUser, Fuser, from, navigate])
 
     if (loading || gLoading || Floading) {
         return <Loading></Loading>
@@ -43,7 +43,7 @@ const SignIn = () => {
     }
 
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex min-h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Login</h2>
@@ -99,17 +99,17 @@ const SignIn = () => {
                         </div>
 
                         {signInError}
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
+                        <input className='btn w-full max-w-xs text-gray-200' type="submit" value="Login" />
                     </form>
-                    <p><small>New to MeetRoom <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
+                    <p><small>New to MeetRoom <Link className='text-green-500' to="/signup">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-outline"
+                        className="btn btn-outline border-b"
                     >Continue with Google</button>
                      <button onClick={()=> signInWithFacebook()
                     }
-                    className="btn bg-blue-500  text-white">
+                    className="btn bg-blue-600  text-gray-200">
                         Continue with Facebook</button>
                 </div>
             </div>

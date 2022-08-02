@@ -21,23 +21,21 @@ const LiveChat = () => {
     return (
         <div className='LiveChat'>
             {!showChat ? (
-                <div className="joinChatContainer">
-                    <h3>Join Your MeetRoom</h3>
-                    <input
-                        type="text"
-                        placeholder="John..."
-                        onChange={(event) => {
-                            setUsername(event.target.value);
-                        }}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Room ID..."
-                        onChange={(event) => {
-                            setRoom(event.target.value);
-                        }}
-                    />
-                    <button onClick={joinRoom}>Join A Room</button>
+                <div className="">
+                    <h2 className='text-center font-bold text-4xl pt-8 pb-2'>Joining Now</h2>
+                    <form className='flex gap-1'>
+                        <input type="text" placeholder="Enter Your Name" className="input input-bordered w-full max-w-xs"
+                            onChange={(event) => {
+                                setUsername(event.target.value);
+                            }}
+                        />
+                        <input type="text" placeholder="MeetRoom Id or Link" className="input input-bordered w-full max-w-xs"
+                            onChange={(event) => {
+                                setRoom(event.target.value);
+                            }}
+                        />
+                        <input onClick={joinRoom} type="submit" value="Start Now" className="py-2 px-4 bg-green-700 text-gray-200 rounded" />
+                    </form>
                 </div>
             ) : (
                 <Chat socket={socket} username={username} room={room} />
