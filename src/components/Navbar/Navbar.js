@@ -3,6 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import logo from '../../Assets/Images/logo.png';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
@@ -10,8 +11,6 @@ const Navbar = () => {
         signOut(auth);
 
     };
-    // const showdate = new Date()
-    // const time = showdate.getHours() + ":" + showdate.getMinutes();
     return (
         <header className="lg:px-4 bg-header uppercase">
             <div className="navbar">
@@ -27,7 +26,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="flex display-flex">
-                        <Link to="/" className="flex items-center lg:pl-6 gap-1 normal-case md:text-xl font-semibold text-gray-200"><img src='favicon.ico' className='w-1/6 text-left' alt='' /> MeetRoom</Link>
+                        <Link to="/" className="flex items-center lg:pl-6 gap-1 normal-case md:text-xl font-semibold text-gray-200"><img src={logo} className='w-1/6 text-left' alt='' /> MeetRoom</Link>
                     </div>
                 </div>
                 <div className="navbar-start hidden lg:flex">
