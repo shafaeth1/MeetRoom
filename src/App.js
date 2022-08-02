@@ -1,5 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import Hasan from './pages/Indivisual/Hasan';
+import Roctim from './pages/Indivisual/Roctim';
+import Alamin from './pages/Indivisual/Alamin';
+import Hossain from './pages/Indivisual/Hossain';
+import Ariful from './pages/Indivisual/Ariful';
+import Nibras from './pages/Indivisual/Nibras';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import About from './pages/About/About';
@@ -11,7 +17,6 @@ import SingleCall from './pages/SingleCall/SingleCall';
 import SupportPage from './pages/SupportPage/SupportPage';
 import SignUp from './pages/Register/SignUp';
 import LiveChat from './components/LiveChat/LiveChat';
-import VideoConference from './pages/VideoConference/VideoConference';
 import RequireAuth from './pages/Register/RequireAuth';
 import Video from './components/Video/Video';
 import Slider from './components/Slider/Slider';
@@ -20,12 +25,9 @@ import auth from './firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Participant from './components/Participant/Participant';
 import Hero from './components/Hero/Hero';
-import Hasan from './pages/Indivisual/Hasan';
-import Roctim from './pages/Indivisual/Roctim';
-import Alamin from './pages/Indivisual/Alamin';
-import Hossain from './pages/Indivisual/Hossain';
-import Ariful from './pages/Indivisual/Ariful';
-import Nibras from './pages/Indivisual/Nibras';
+import UserConference from './pages/ConferenceRoom/UserConference/UserConference';
+import ConferenceRoom from './pages/ConferenceRoom/ConferenceRoom';
+import VideoConference from './pages/ConferenceRoom/VideoConference/VideoConference';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -34,6 +36,15 @@ function App() {
       {!user ? <Navbar /> : ''}
 
       <Routes>
+        {/* ================Indivisual Route =================*/}
+        <Route path="/hasan" element={<Hasan />}> </Route>
+        <Route path="/roctim" element={<Roctim />}> </Route>
+        <Route path="/alamin" element={<Alamin />}> </Route>
+        <Route path="/hossain" element={<Hossain />}> </Route>
+        <Route path="/ariful" element={<Ariful />}> </Route>
+        <Route path="/nibras" element={<Nibras />}> </Route>
+
+        {/*============== Frontend Route ====================*/}
         <Route path="/" element={<Home />}> </Route>
         <Route path="/signIn" element={<SignIn />}> </Route>
         <Route path="/signup" element={<SignUp />}> </Route>
@@ -46,19 +57,16 @@ function App() {
         <Route path="/Video" element={<Video />}> </Route>
         <Route path="/slide" element={<Slider />}> </Route>
         <Route path="/chat" element={<Chat />}> </Route>
-        <Route path="/conference" element={<RequireAuth><VideoConference /></RequireAuth>}>
-        </Route>
-        <Route path="/chat" element={<Chat />}> </Route>
         <Route path="/participant" element={<Participant />}> </Route>
         <Route path="/hero" element={<Hero />}> </Route>
-        
-        {/* Indivisual Route */}
-        <Route path="/hasan" element={<Hasan />}> </Route>
-        <Route path="/roctim" element={<Roctim />}> </Route>
-        <Route path="/alamin" element={<Alamin />}> </Route>
-        <Route path="/hossain" element={<Hossain />}> </Route>
-        <Route path="/ariful" element={<Ariful />}> </Route>
-        <Route path="/nibras" element={<Nibras />}> </Route>
+      
+
+        {/* ============Video Conference Room Route ===============*/}
+        <Route path="/room" element={<RequireAuth><ConferenceRoom /></RequireAuth>}>
+          <Route index element={<VideoConference/>}></Route>
+          <Route path="video" element={<VideoConference/>}></Route>
+          <Route path="users" element={<UserConference/>}></Route>
+        </Route>
       </Routes>
       {!user ? <Footer /> : ''}
     </>
