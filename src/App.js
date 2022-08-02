@@ -5,7 +5,6 @@ import Navbar from './components/Navbar/Navbar';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
-import Join from './pages/Join/Join';
 import SignIn from './pages/Register/SignIn';
 import ReceiveSingleCall from './pages/ReceiveSingleCall/ReceiveSingleCall';
 import SingleCall from './pages/SingleCall/SingleCall';
@@ -21,6 +20,12 @@ import auth from './firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Participant from './components/Participant/Participant';
 import Hero from './components/Hero/Hero';
+import Hasan from './pages/Indivisual/Hasan';
+import Roctim from './pages/Indivisual/Roctim';
+import Alamin from './pages/Indivisual/Alamin';
+import Hossain from './pages/Indivisual/Hossain';
+import Ariful from './pages/Indivisual/Ariful';
+import Nibras from './pages/Indivisual/Nibras';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -46,6 +51,14 @@ function App() {
         <Route path="/chat" element={<Chat />}> </Route>
         <Route path="/participant" element={<Participant />}> </Route>
         <Route path="/hero" element={<Hero />}> </Route>
+        
+        {/* Indivisual Route */}
+        <Route path="/hasan" element={<Hasan />}> </Route>
+        <Route path="/roctim" element={<Roctim />}> </Route>
+        <Route path="/alamin" element={<Alamin />}> </Route>
+        <Route path="/hossain" element={<Hossain />}> </Route>
+        <Route path="/ariful" element={<Ariful />}> </Route>
+        <Route path="/nibras" element={<Nibras />}> </Route>
       </Routes>
       {!user ? <Footer /> : ''}
     </>

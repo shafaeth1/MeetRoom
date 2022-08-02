@@ -7,7 +7,7 @@ const VideoConference = () => {
         <section className='py-2 lg:py-8 bg-green-400'>
             <div className="flex justify-between px-2 md:hidden">
                 <div className="flex display-flex">
-                    <Link to="/" class="flex items-center lg:pl-6 gap-1 normal-case md:text-xl font-semibold"><img src='favicon.ico' className='w-1/6 text-left'/> MeetRoom</Link>
+                    <Link to="/" class="flex items-center lg:pl-6 gap-1 normal-case md:text-xl font-semibold"><img src='favicon.ico' alt='Logo' className='w-1/6 text-left'/> MeetRoom</Link>
                 </div>
                 <label for="my-drawer-2" class="btn btn-ghost ml-2 border">
                     <i class="fad fa-align-left text-2xl"></i>
