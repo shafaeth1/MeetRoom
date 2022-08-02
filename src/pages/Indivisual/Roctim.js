@@ -1,4 +1,6 @@
 import React from 'react';
+import Hero from '../../components/Hero/Hero';
+import LiveChat from '../../components/LiveChat/LiveChat';
 
 const Roctim = () => {
     return (
@@ -18,10 +20,12 @@ const Roctim = () => {
             <div className='flex flex-col lg:flex-row gap-4 p-4'>
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
                     <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Your first Col code</h1>
+                    <Hero></Hero>
                 </div>
                 {/* end col */}
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
                     <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>your Second Col Code</h1>
+                    <LiveChat></LiveChat>
                 </div>
                 {/* end col */}
             </div>
@@ -38,7 +42,7 @@ const Roctim = () => {
                 {/* end col */}
             </div>
             {/* end row */}
-            
+
         </section>
     );
 };
