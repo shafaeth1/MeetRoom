@@ -23,7 +23,6 @@ const LiveChat = () => {
             {!showChat ? (
                 <div className="">
                     <h2 className='text-center font-bold text-4xl pt-8 pb-2'>Joining Now</h2>
-                    {/* <h3>Join Your MeetRoom</h3> */}
                     <form className='flex gap-1'>
                         <input type="text" placeholder="Enter Your Name" className="input input-bordered w-full max-w-xs"
                             onChange={(event) => {
@@ -35,8 +34,7 @@ const LiveChat = () => {
                                 setRoom(event.target.value);
                             }}
                         />
-                        <input onClick={joinRoom} type="submit" value="Join" className="btn btn-primary" />
-                        {/* <button onClick={joinRoom}>Join A Room</button> */}
+                        <input onClick={joinRoom} type="submit" value="Start Now" className="py-2 px-4 bg-green-700 text-gray-200 rounded" />
                     </form>
                 </div>
             ) : (
