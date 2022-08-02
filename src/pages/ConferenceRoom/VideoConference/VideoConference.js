@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import ChatTab from '../../../components/ChatTab/ChatTab';
-import LeftNavbar from '../../../components/LeftNavbar/LeftNavbar';
 import Video from '../../../components/Video/Video';
 
 const VideoConference = () => {
