@@ -64,8 +64,34 @@ const Chat = () => {
             </div>
 
 
+            <div className="rounded-lg  bg-green-200 p-10">
+                <div className="flex justify-between">
+                    <h2>lfahfk</h2>
+                    <img src={img} alt="Main user" className='w-10 rounded-full mx-5 text-red-200' />
+                </div>
+                <div className="flex ">
+                    <img src={img} alt="Main user" className='w-10 rounded-full  text-red-200' />
+                    <p><small>10:00-11:00</small></p>
+                    <div class="divider divider-horizontal"></div>
+                    <p><small>start in 8 hours</small></p>
+                </div>
+                <div className='flex justify-between mt-5'>
+                    <div className="flex">
+                        <img src={img} alt="Main user" className='w-10 rounded-full  text-red-200' />
+                        <img src={img} alt="Main user" className='w-10 rounded-full  text-red-200' />
+                        <img src={img} alt="Main user" className='w-10 rounded-full  text-red-200' />
+                    </div>
+                    <div className="flex">
+                        <button className="mx-2 bg-chat p-2 rounded text-white">Id</button>
+                        <button className="mx-2 bg-primary p-2 rounded"> Start</button>
 
-        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div >
+
 
 
     )
