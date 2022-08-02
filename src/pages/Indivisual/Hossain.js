@@ -1,4 +1,5 @@
 import React from 'react';
+import Schedule from '../../components/Schedule/Schedule'
 
 const Hossain = () => {
     return (
@@ -8,8 +9,9 @@ const Hossain = () => {
                 <p className='text-gray-200 bg-green-700 p-2'>Contribute on this project</p>
             </div>
             <div className='flex flex-col lg:flex-row gap-4 p-4'>
-                <div className='w-12/12 md:w-6/12 border p-2'>
+                <div className='w-12/12 md:w-12/12 border p-2'>
                     <h1>Your first Col code</h1>
+                    <Schedule />
                 </div>
                 {/* end col */}
                 <div className='w-12/12 md:w-6/12 border p-2'>
