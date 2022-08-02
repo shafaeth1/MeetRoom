@@ -101,15 +101,15 @@ const SignIn = () => {
                         {signInError}
                         <input className='btn w-full max-w-xs text-gray-200' type="submit" value="Login" />
                     </form>
-                    <p><small>New to MeetRoom <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
+                    <p><small>New to MeetRoom <Link className='text-green-500' to="/signup">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-outline"
+                        className="btn btn-outline border-b"
                     >Continue with Google</button>
                      <button onClick={()=> signInWithFacebook()
                     }
-                    className="btn bg-blue-500  text-gray-200">
+                    className="btn bg-blue-600  text-gray-200">
                         Continue with Facebook</button>
                 </div>
             </div>
