@@ -20,6 +20,7 @@ import Chat from './components/Chat/Chat';
 import auth from './firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Participant from './components/Participant/Participant';
+import Hero from './components/Hero/Hero';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -31,7 +32,6 @@ function App() {
         <Route path="/" element={<Home />}> </Route>
         <Route path="/signIn" element={<SignIn />}> </Route>
         <Route path="/signup" element={<SignUp />}> </Route>
-        <Route path="/join" element={<Join />}> </Route>
         <Route path="/liveChat" element={<LiveChat />}> </Route>
         <Route path="/single" element={<SingleCall />}> </Route>
         <Route path="/receive" element={<ReceiveSingleCall />}> </Route>
@@ -45,6 +45,7 @@ function App() {
         </Route>
         <Route path="/chat" element={<Chat />}> </Route>
         <Route path="/participant" element={<Participant />}> </Route>
+        <Route path="/hero" element={<Hero />}> </Route>
       </Routes>
       {!user ? <Footer /> : ''}
     </>
