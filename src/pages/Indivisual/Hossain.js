@@ -1,4 +1,6 @@
 import React from 'react';
+import MeetingSchedule from '../../components/MeetingSchedule/MeetingSchedule';
+
 
 const Hossain = () => {
     return (
@@ -11,6 +13,7 @@ const Hossain = () => {
             <div className='flex flex-col lg:flex-row gap-4 p-4'>
                 <div className='w-12/12 border p-2 w-full'>
                     <h1 className='text-center py-2 font-semibold text-green-600'>Working Now</h1>
+          <MeetingSchedule />
                 </div>
             </div>
 
@@ -43,4 +46,4 @@ const Hossain = () => {
     );
 };
 
-export default Hossain;
+export default Hossain
