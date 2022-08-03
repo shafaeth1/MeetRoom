@@ -7,7 +7,7 @@ import 'react-calendar/dist/Calendar.css';
 
 const HomeConference = () => {
     const [value, setValue] = useState(new Date());
-    const [value2, onChange] = useState(new Date());
+    // const [value2, onChange] = useState(new Date());
     const current = new Date();
     const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
 
