@@ -12,22 +12,16 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
 import SignIn from './pages/Register/SignIn';
-import ReceiveSingleCall from './pages/ReceiveSingleCall/ReceiveSingleCall';
-import SingleCall from './pages/SingleCall/SingleCall';
 import SupportPage from './pages/SupportPage/SupportPage';
 import SignUp from './pages/Register/SignUp';
 import LiveChat from './components/LiveChat/LiveChat';
 import RequireAuth from './pages/Register/RequireAuth';
-import Video from './components/Video/Video';
-import Slider from './components/Slider/Slider';
-import Chat from './components/Chat/Chat';
 import auth from './firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import Participant from './components/Participant/Participant';
-import Hero from './components/Hero/Hero';
 import UserConference from './pages/ConferenceRoom/UserConference/UserConference';
 import ConferenceRoom from './pages/ConferenceRoom/ConferenceRoom';
 import VideoConference from './pages/ConferenceRoom/VideoConference/VideoConference';
+import HomeConference from './pages/ConferenceRoom/HomeConference/HomeConference';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -48,22 +42,14 @@ function App() {
         <Route path="/" element={<Home />}> </Route>
         <Route path="/signIn" element={<SignIn />}> </Route>
         <Route path="/signup" element={<SignUp />}> </Route>
-        <Route path="/liveChat" element={<LiveChat />}> </Route>
-        <Route path="/single" element={<SingleCall />}> </Route>
-        <Route path="/receive" element={<ReceiveSingleCall />}> </Route>
         <Route path="/support" element={<SupportPage />}> </Route>
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
-        <Route path="/Video" element={<Video />}> </Route>
-        <Route path="/slide" element={<Slider />}> </Route>
-        <Route path="/chat" element={<Chat />}> </Route>
-        <Route path="/participant" element={<Participant />}> </Route>
-        <Route path="/hero" element={<Hero />}> </Route>
-      
+        <Route path="/liveChat" element={<LiveChat />}> </Route>     
 
         {/* ============Video Conference Room Route ===============*/}
         <Route path="/room" element={<RequireAuth><ConferenceRoom /></RequireAuth>}>
-          <Route index element={<VideoConference/>}></Route>
+          <Route index element={<HomeConference/>}></Route>
           <Route path="video" element={<VideoConference/>}></Route>
           <Route path="users" element={<UserConference/>}></Route>
         </Route>

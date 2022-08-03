@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Notification from '../../components/Notification/Notification';
+
 const Alamin = () => {
     return (
         <section>
@@ -11,6 +13,7 @@ const Alamin = () => {
             <div className='flex flex-col lg:flex-row gap-4 p-4'>
                 <div className='w-12/12 border p-2 w-full'>
                     <h1 className='text-center py-2 font-semibold text-green-600'>Working Now</h1>
+                    <Notification/>
                 </div>
             </div>
 
