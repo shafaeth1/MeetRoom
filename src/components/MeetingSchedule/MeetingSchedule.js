@@ -2,44 +2,47 @@ import { format } from 'date-fns';
 import React, { useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
+import { Link } from 'react-router-dom';
 
 const MeetingSchedule = () => {
     const [selectedDay, setSelectedDay] = useState(new Date());
 
     return (
-        <div class="card w-10/12 mx-auto mt- bg-base-100 shadow-xl">
+        <div class="card w-full mx-auto shadow-xl">
             <div class="card-body">
-                <div class="card-actions justify-end">
-                    <button class="btn rounded btn-sm">Cancel
+                <div class="card-actions flex justify-between lg:justify-end">
+                    <Link to="/room" class="btn rounded btn-sm">Cancel
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
+                    </Link>
                     <button class="btn rounded btn-sm">Save </button>
                 </div>
-                <div className='card-actions justify-start'>
-                    <h1 className='text-3xl font-bold'>Schedule Meeting</h1>
+                <div className='card-actions justify-center lg:justify-start'>
+                    <h1 className='text-lg lg:text-3xl text-gray-200 font-bold text-center lg:text-left'>Schedule Meeting</h1>
                 </div>
-                <div className='flex justify-around'>
-                    <div>
-                        <div className='border-2 border-black rounded-lg mt-4 w-80'>
-                            <p className='pl-4 pt-2 font-semibold'>Select a data</p>
+                <div className='flex flex-col lg:flex-row lg:gap-x-2'>
+                    <div className='w-12/12 lg:w-6/12'>
+                        <div className='rounded-lg my-4 flex justify-center lg:justify-start'>
+                            {/* <p className='p-2 text-gray-200 font-semibold'>Select a data</p> */}
                             <DayPicker
                                 mode="single"
                                 required
                                 selected={selectedDay}
                                 onSelect={setSelectedDay}
+                                className="text-gray-200 border border-gray-500 p-2 rounded-md text-2xl"
                             />
                         </div>
                     </div>
-                    <div className=''>
-                        <div class="form-control w-full max-w-xs">
+                    
+                    <div className='w-12/12 lg:w-6/12'>
+                        <div class="form-control w-full">
                             <label class="label">
-                                <span class="label-text font-semibold">Meeting Purpose</span>
+                                <span class="label-text font-semibold text-gray-200">Meeting Purpose</span>
                             </label>
-                            <input type="text" value='' className="input input-bordered w-full max-w-xs" placeholder='Writing...' />
+                            <input type="text" value='' className="input input-bordered w-full" placeholder='Type here..' />
                         </div>
-                        <div class="form-control w-full max-w-xs pb-2">
+                        <div class="form-control w-full pb-2">
                             <label class="label">
-                                <span class="label-text font-semibold">Select Your Time Zone</span>
+                                <span class="label-text font-semibold text-gray-200">Select Your Time Zone</span>
                             </label>
                             <select class="select select-bordered">
                                 <option selected>GWT</option>
@@ -51,8 +54,8 @@ const MeetingSchedule = () => {
                             </select>
                         </div>
 
-                        <p className=' font-semibold pb-2'>Select meeting time</p>
-                        <div className='flex'>
+                        <p className='font-semibold pb-2 text-gray-200'>Select meeting time</p>
+                        <div className='flex items-center'>
                             <div className='pr-4'>
                                 <select class="select select-bordered">
                                     <option selected>12:00</option>
@@ -76,11 +79,11 @@ const MeetingSchedule = () => {
                             </div>
                         </div>
                         <div>
-                            <div class="form-control w-full max-w-xs">
+                            <div class="form-control w-full">
                                 <label class="label">
-                                    <span class="label-text font-semibold">Meeting Date</span>
+                                    <span class="label-text font-semibold text-gray-200">Meeting Date</span>
                                 </label>
-                                <input type="text" value={format(selectedDay, 'PP')} class="input input-bordered w-full max-w-xs" />
+                                <input type="text" value={format(selectedDay, 'PP')} class="input input-bordered w-full" />
                             </div>
                         </div>
                     </div>

@@ -25,6 +25,7 @@ import HomeConference from './pages/ConferenceRoom/HomeConference/HomeConference
 import ScheduleConference from './pages/ConferenceRoom/ScheduleConference/ScheduleConference';
 import NotificationConference from './pages/ConferenceRoom/NotificationConference/NotificationConference';
 import SettingConference from './pages/ConferenceRoom/SettingConference/SettingConference';
+import MeetingSchedule from './components/MeetingSchedule/MeetingSchedule';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -48,7 +49,8 @@ function App() {
         <Route path="/support" element={<SupportPage />}> </Route>
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
-        <Route path="/liveChat" element={<LiveChat />}> </Route>     
+        <Route path="/liveChat" element={<LiveChat />}> </Route>
+        <Route path="/schedule" element={<MeetingSchedule />}> </Route>     
 
         {/* ============Video Conference Room Route ===============*/}
         <Route path="/room" element={<RequireAuth><ConferenceRoom /></RequireAuth>}>

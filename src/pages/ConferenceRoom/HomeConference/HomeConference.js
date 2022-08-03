@@ -23,7 +23,7 @@ const HomeConference = () => {
             <div className="md:w-12/12 lg:w-9/12">
                 <div className='w-full mx-auto cursor-pointer'>
                     <div className="flex flex-col lg:flex-row gap-2">
-                        <div className="card w-12/12 lg:w-8/12 bg-base-100 shadow-xl h-full" style={{backgroundImage: 'url(https://placeimg.com/400/225/arch)'}}>
+                        <div className="card w-12/12 lg:w-8/12 bg-base-100 shadow-xl h-full" style={{backgroundImage: 'url(https://placeimg.com/400/225/arch)', backgroundSize:'cover'}}>
                             <div className="card-body bg-clock text-gray-300">
                                 <div className="flex justify-between">
                                     <Clock value={value} />
