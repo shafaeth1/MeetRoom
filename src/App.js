@@ -20,6 +20,7 @@ import Chat from './components/Chat/Chat';
 import auth from './firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Participant from './components/Participant/Participant';
+import Schdul from './components/Schdule/Schdul';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -44,6 +45,7 @@ function App() {
         <Route path="/conference" element={<RequireAuth><VideoConference /></RequireAuth>}>
         </Route>
         <Route path="/chat" element={<Chat />}> </Route>
+        <Route path="/Schdul" element={<Schdul />}> </Route>
         <Route path="/participant" element={<Participant />}> </Route>
       </Routes>
       {!user ? <Footer /> : ''}
