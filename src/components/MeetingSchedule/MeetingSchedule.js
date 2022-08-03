@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 
-const Schedule = () => {
+const MeetingSchedule = () => {
     const [selectedDay, setSelectedDay] = useState(new Date());
 
     return (
@@ -91,4 +91,4 @@ const Schedule = () => {
     );
 };
 
-export default Schedule;
+export default MeetingSchedule;
