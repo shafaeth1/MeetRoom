@@ -1,58 +1,31 @@
 import React from 'react';
-import Video from '../Video/Video';
-import Slider from '../Slider/Slider';
-// import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
-import ChatTab from '../ChatTab/ChatTab';
+import { Link } from 'react-router-dom';
 
 const LeftNavbar = () => {
-    // const [user] = useAuthState(auth);
     const logout = () => {
         signOut(auth);
        
       };
     return (
-        <div className="drawer drawer-mobile rounded-md">
-            <label for="my-drawer-2" class="btn btn-ghost lg:hidden">
-                        <i class="fad fa-align-right text-2xl"></i>
-                    </label>
-            <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col p-4 bg-slate-900 lg:border-l-2 body">
-                {/* =======Main Body======= */}
-                <div className="flex justify-center gap-1 flex-col lg:flex-row">
-					<div className="md:w-12/12 lg:w-8/12">
-                        <Video></Video>
-                        <Slider></Slider>
-					</div>
-                    {/* ========Right Sidebar ========*/}
-					<div className="md:w-12/12 lg:w-4/12">
-                       <ChatTab></ChatTab>
-                    </div>
-                </div>
-                
-            </div> 
-            {/* end page content */}
-
-            <div className="drawer-side">
-                <label for="my-drawer-2" className="drawer-overlay"></label> 
+        <div className="drawer-side">
+            <label for="my-drawer-2" className="drawer-overlay"></label> 
                 <ul className="menu p-4 overflow-y-auto w-24 bg-black text-gray-200">
                     <div className="side-logo text-center bg-green-500 py-4 mb-0 lg:mb-12 rounded-full">
-                        <i className="fas fa-video text-3x bg-white pr-2 pl-2 py-2 text-green-500 rounded-full"></i>
+                       <Link to='/' onClick={logout}><i className="fas fa-video text-3x bg-white pr-2 pl-2 py-2 text-green-500 rounded-full"></i></Link>
                     </div>
-                    <li><a href="#home"><i className="fal fa-home text-gray-200 text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform active:text-green-500"></i></a></li>
-                    <li><a href="#home"><i className="fal fa-users text-gray-200 text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform focus:text-green-500"></i></a></li>
-                    <li><a href="#home"><i className="fal fa-video text-gray-200 text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></a></li>
-                    <li><a href="#home"><i className="fas fa-calendar-alt text-gray-200 text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></a></li>
-                    <li><a href="#home"><i className="fal fa-bell text-gray-200 text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></a></li>
-                    <li><a href="#home"><i className="fal fa-cog text-gray-200 text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></a></li>
+                    <li><Link to="/room"><i className="fal fa-home text-gray-200 text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform active:text-green-500"></i></Link></li>
+                    <li><Link to="/room/users"><i className="fal fa-users text-gray-200 text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform focus:text-green-500"></i></Link></li>
+                    <li><Link to="/room/video"><i className="fal fa-video text-gray-200 text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></Link></li>
+                    <li><Link to="/room/schedule"><i className="fas fa-calendar-alt text-gray-200 text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></Link></li>
+                    <li><Link to="/room/notifications"><i className="fal fa-bell text-gray-200 text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></Link></li>
+                    <li><Link to="/room/settings"><i className="fal fa-cog text-gray-200 text-lg lg:text-3xl hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></Link></li>
                     <div className="absolute left-1/3 bottom-2 cursor-pointer">
-                    <button onClick={logout}  ><i className="fal fa-sign-out-alt text-lg lg:text-3xl text-red-500 hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></button>
+                    <Link to='/' onClick={logout}><i className="fal fa-sign-out-alt text-lg lg:text-3xl text-red-500 hover:text-green-400 hover:translate-x-0.5 transition-transform"></i></Link>
                 
                     </div>
                 </ul>
-            </div>
-            {/* end leftNavbar content */}
         </div>
     );
 };
