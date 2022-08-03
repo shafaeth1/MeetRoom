@@ -8,9 +8,10 @@ import JoinMeetingModel from '../../pages/ConferenceRoom/Modal/JoinMeetingModel'
 
 const Hero = () => {
     const [value, setValue] = useState(new Date());
-    // const [value2, onChange] = useState(new Date());
     const current = new Date();
-    const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+    const dayName = current.toString().split(' ')[0];
+    const monthName = current.toString().split(' ')[1];
+    const date = `${dayName}, ${current.getDate()} ${monthName} ${current.getFullYear()}`;
 
     useEffect(() => {
         const interval = setInterval(() => setValue(new Date()), 1000);
@@ -26,7 +27,7 @@ const Hero = () => {
                     <div className="card-body bg-clock text-gray-300">
                         <div className="flex justify-between">
                             <Clock value={value} />
-                            <h2 className="card-title">{date}</h2>
+                            <h2 className="card-title text-4xl">{date}</h2>
                         </div>
                     </div>
                 </div>
