@@ -1,7 +1,7 @@
 
 import React from 'react';
 import user from "../../Assets/Images/user.png"
-import Schdul from '../Schdule/Schdul';
+import Schedule from '../Schedule/Schedule';
 
 
 const Chat = () => {
@@ -88,12 +88,7 @@ const Chat = () => {
                 <button><i className="far fa-image text-3xl text-gray-200"></i></button>
                 <input type="text" placeholder="Type here" className="p-2 rounded-md border border-gray-500-none w-full px-2" />
                 <button> <i className="far fa-paper-plane text-2xl font-medium"></i> </button>
-            </div>
-
-
-            {/* next part */}
-            <Schdul></Schdul>
-
+            </div>            
         </div>
 
 

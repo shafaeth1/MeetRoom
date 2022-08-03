@@ -3,6 +3,7 @@ import React from 'react';
 import ChatTab from '../../../components/ChatTab/ChatTab';
 import Video from '../../../components/Video/Video';
 import Slider from '../../../components/Slider/Slider';
+import Schedule from '../../../components/Schedule/Schedule';
 
 const VideoConference = () => {
     return (
@@ -14,6 +15,13 @@ const VideoConference = () => {
             {/* ========Right Sidebar ========*/}
             <div className="md:w-12/12 lg:w-4/12">
                 <ChatTab></ChatTab>
+                {/*====== Next Schedule===== */}
+                <div className="mt-4">
+                    <h2 className='text-gray-300 font-semibold p-2'>Next Schedule is:</h2>
+                    <div className="rounded-lg first-letter:mb-2 overflow-y-auto max-h-40 px-3 py-4">
+                    <Schedule></Schedule>
+                    </div>
+                </div>
             </div>
         </div>
     );

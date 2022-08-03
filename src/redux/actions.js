@@ -5,8 +5,8 @@ const Actions = {
     SET_ROOM_ID: "SET_ROOM_ID",
     SET_SHOW_OVERLAY: "SET_SHOW_OVERLAY",
     SET_PARTICIPANTS: "SET_PARTICIPANTS",
-};
 
+}
 export const setIsRoomHost = (isRoomHost) => {
     return {
         type: Actions.SET_IS_ROOM_HOST,

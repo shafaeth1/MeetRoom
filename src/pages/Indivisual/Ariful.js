@@ -1,5 +1,6 @@
 import React from 'react';
-import Schdul from '../../components/Schdule/Schdul';
+
+import Schedule from '../../components/Schedule/Schedule';
 import JoinMeetingModel from '../ConferenceRoom/Modal/JoinMeetingModel';
 import NewMeetingModel from '../ConferenceRoom/Modal/NewMeetingModel';
 import SignIn from '../Register/SignIn';
@@ -23,9 +24,11 @@ const Ariful = () => {
             <div className='flex flex-col lg:flex-row gap-4 p-4'>
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
                     <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Create Design and apply authentication</h1>
-                    <Schdul></Schdul>
+
+                    <Schedule></Schedule>
 
 
+                    <Schedule></Schedule>
                 </div>
                 {/* end col */}
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
