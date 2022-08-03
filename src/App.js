@@ -18,6 +18,7 @@ import LiveChat from './components/LiveChat/LiveChat';
 import RequireAuth from './pages/Register/RequireAuth';
 import auth from './firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
+
 import UserConference from './pages/ConferenceRoom/UserConference/UserConference';
 import ConferenceRoom from './pages/ConferenceRoom/ConferenceRoom';
 import VideoConference from './pages/ConferenceRoom/VideoConference/VideoConference';
@@ -42,7 +43,6 @@ function App() {
         <Route path="/ariful" element={<Ariful />}> </Route>
         <Route path="/nibras" element={<Nibras />}> </Route>
 
-        {/*============== Frontend Route ====================*/}
         <Route path="/" element={<Home />}> </Route>
         <Route path="/signIn" element={<SignIn />}> </Route>
         <Route path="/signup" element={<SignUp />}> </Route>
@@ -50,17 +50,17 @@ function App() {
         <Route path="/about" element={<About />}> </Route>
         <Route path="/contact" element={<Contact />}> </Route>
         <Route path="/liveChat" element={<LiveChat />}> </Route>
-        <Route path="/schedule" element={<MeetingSchedule />}> </Route>     
+        <Route path="/schedule" element={<MeetingSchedule />}> </Route>
 
-        {/* ============Video Conference Room Route ===============*/}
         <Route path="/room" element={<RequireAuth><ConferenceRoom /></RequireAuth>}>
-          <Route index element={<HomeConference/>}></Route>
-          <Route path="users" element={<UserConference/>}></Route>
-          <Route path="video" element={<VideoConference/>}></Route>
-          <Route path="schedule" element={<ScheduleConference/>}></Route>
-          <Route path="notifications" element={<NotificationConference/>}></Route>
-          <Route path="settings" element={<SettingConference/>}></Route>
+          <Route index element={<HomeConference />}></Route>
+          <Route path="users" element={<UserConference />}></Route>
+          <Route path="video" element={<VideoConference />}></Route>
+          <Route path="schedule" element={<ScheduleConference />}></Route>
+          <Route path="notifications" element={<NotificationConference />}></Route>
+          <Route path="settings" element={<SettingConference />}></Route>
         </Route>
+
       </Routes>
       {!user ? <Footer /> : ''}
     </>
