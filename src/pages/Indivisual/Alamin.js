@@ -1,6 +1,10 @@
 import React from 'react';
 
 import Notification from '../../components/Notification/Notification';
+import Video from '../../components/Video/Video';
+import Home from '../Home/Home';
+import GroupCall from '../../components/GroupCall/GroupCall';
+import SingleCall from '../../components/SingleCall/SingleCall';
 
 const Alamin = () => {
     return (
@@ -20,11 +24,13 @@ const Alamin = () => {
             {/* ==========Finished Component======= */}
             <div className='flex flex-col lg:flex-row gap-4 p-4'>
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
-                    <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Your first Col code</h1>
+                    <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Create Home Pages</h1>
+                    <Home></Home>
                 </div>
                 {/* end col */}
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
-                    <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>your Second Col Code</h1>
+                    <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Desgin Video Component</h1>
+                    <Video></Video>
                 </div>
                 {/* end col */}
             </div>
@@ -32,11 +38,13 @@ const Alamin = () => {
 
             <div className='flex flex-col lg:flex-row gap-4 p-4'>
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
-                    <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Your first Col code</h1>
+                    <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Single Calling Style</h1>
+                    <SingleCall/>
                 </div>
                 {/* end col */}
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
-                    <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>your Second Col Code</h1>
+                    <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Group Calling Style</h1>
+                    <GroupCall/>
                 </div>
                 {/* end col */}
             </div>
