@@ -26,7 +26,7 @@ const Hasan = () => {
             <div className='flex flex-col lg:flex-row gap-4 p-4'>
                 <div className='w-12/12 md:w-8/12 border p-2 overflow-y-scroll max-h-96'>
                     <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Create Main Conference Layout</h1>
-                    <ConferenceRoom/>
+                    <ConferenceRoom />
                 </div>
                 {/* end col */}
                 <div className='w-12/12 md:w-4/12 border p-2 overflow-y-scroll max-h-96'>
@@ -40,12 +40,12 @@ const Hasan = () => {
             <div className='flex flex-col lg:flex-row gap-4 p-4'>
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
                     <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Redesign Header Section with responsive</h1>
-                    <Navbar/>
+                    <Navbar />
                 </div>
                 {/* end col */}
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
                     <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Design Footer Section</h1>
-                    <Footer/>
+                    <Footer />
                 </div>
                 {/* end col */}
             </div>
@@ -59,7 +59,7 @@ const Hasan = () => {
                 {/* end col */}
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
                     <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Design About Page</h1>
-                    <About/>
+                    <About />
                 </div>
                 {/* end col */}
             </div>
@@ -78,7 +78,7 @@ const Hasan = () => {
                 {/* end col */}
             </div>
             {/* end row */}
-            
+
         </section>
     );
 };

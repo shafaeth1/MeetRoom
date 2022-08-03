@@ -5,48 +5,48 @@ const Actions = {
     SET_ROOM_ID: "SET_ROOM_ID",
     SET_SHOW_OVERLAY: "SET_SHOW_OVERLAY",
     SET_PARTICIPANTS: "SET_PARTICIPANTS",
-  };
 
-  export const setIsRoomHost = (isRoomHost) => {
+}
+export const setIsRoomHost = (isRoomHost) => {
     return {
-      type: Actions.SET_IS_ROOM_HOST,
-      isRoomHost,
+        type: Actions.SET_IS_ROOM_HOST,
+        isRoomHost,
     };
-  };
-  
-  export const setConnectOnlyWithAudio = (onlyWithAudio) => {
+};
+
+export const setConnectOnlyWithAudio = (onlyWithAudio) => {
     return {
-      type: Actions.SET_CONNECT_ONLY_WITH_AUDIO,
-      onlyWithAudio,
+        type: Actions.SET_CONNECT_ONLY_WITH_AUDIO,
+        onlyWithAudio,
     };
-  };
-  
-  export const setIdentity = (identity) => {
+};
+
+export const setIdentity = (identity) => {
     return {
-      type: Actions.SET_IDENTITY,
-      identity,
+        type: Actions.SET_IDENTITY,
+        identity,
     };
-  };
-  
-  export const setRoomId = (roomId) => {
+};
+
+export const setRoomId = (roomId) => {
     return {
-      type: Actions.SET_ROOM_ID,
-      roomId,
+        type: Actions.SET_ROOM_ID,
+        roomId,
     };
-  };
-  
-  export const setShowOverlay = (showOverlay) => {
+};
+
+export const setShowOverlay = (showOverlay) => {
     return {
-      type: Actions.SET_SHOW_OVERLAY,
-      showOverlay,
+        type: Actions.SET_SHOW_OVERLAY,
+        showOverlay,
     };
-  };
-  
-  export const setParticipants = (participants) => {
+};
+
+export const setParticipants = (participants) => {
     return {
-      type: Actions.SET_PARTICIPANTS,
-      participants,
+        type: Actions.SET_PARTICIPANTS,
+        participants,
     };
-  };
-  
+};
+
 export default Actions;
