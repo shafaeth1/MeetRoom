@@ -25,9 +25,9 @@ const Hero = () => {
             <div className="flex flex-col lg:flex-row gap-2">
                 <div className="card w-12/12 lg:w-8/12 bg-base-100 shadow-xl h-full" style={{ backgroundImage: 'url(https://placeimg.com/400/225/arch)', backgroundSize: 'cover' }}>
                     <div className="card-body bg-clock text-gray-300">
-                        <div className="flex justify-between">
-                            <Clock value={value} />
-                            <h2 className="card-title text-4xl">{date}</h2>
+                        <div className="flex flex-col md:flex-row justify-center lg:justify-between mx-auto">
+                            <Clock value={value}/>
+                            <h2 className="card-title text-md lg:text-4xl p-2">{date}</h2>
                         </div>
                     </div>
                 </div>
