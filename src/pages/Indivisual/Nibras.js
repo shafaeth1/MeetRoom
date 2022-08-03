@@ -1,11 +1,13 @@
 import React from 'react';
+import SignUp from '../Register/SignUp';
 
 const Nibras = () => {
     return (
         <section>
             <div className="text-center">
                 <h1 className='bg-green-800 text-white p-4 text-lg font-semibold'>Nibras</h1>
-                <p className='text-gray-200 bg-green-700 p-2'>Contribute on this project</p>
+                <p className='text-gray-200 bg-green-700 p-2'>REgister authentication</p>
+                <SignUp></SignUp>
             </div>
             {/* ============Working Component========== */}
             <div className='flex flex-col lg:flex-row gap-4 p-4'>
@@ -38,7 +40,7 @@ const Nibras = () => {
                 {/* end col */}
             </div>
             {/* end row */}
-            
+
         </section>
     );
 };
