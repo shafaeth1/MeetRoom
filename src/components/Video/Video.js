@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlinePushpin } from "react-icons/ai";
 import { FaCreativeCommons } from "react-icons/fa";
 import { BsRecordCircle, BsPlus } from "react-icons/bs";
 import { IoPeopleOutline } from "react-icons/io5";
-import user from "../../Assets/Images/user.png"
+import user from "../../Assets/Images/user.png";
+import * as webRTCHandler from "../../utils/webRTCHandler";
+import { connect } from 'react-redux';
 
+const Video = (props) => {
+    const { connectOnlyWithAudio } = props;
+    const [isLocalVideoDisabled, setIsLocalVideoDisabled] = useState(false);
+    const [isMicMuted, setIsMicMuted] = useState(false);
 
-const Video = () => {
+    //=======Video Camera Button======
+    const handleCameraButtonPressed = () => {
+        webRTCHandler.toggleCamera(isLocalVideoDisabled);
+        setIsLocalVideoDisabled(!isLocalVideoDisabled);
+    };
+    //======= Mic Button=========
+    const handleMicButtonPressed = () => {
+      webRTCHandler.toggleMic(isMicMuted);
+      setIsMicMuted(!isMicMuted);
+    };
+    // ========Handle Room Disconnected=======
+    const handleRoomDisconnection = () => {
+        const siteUrl = window.location.origin;
+        window.location.href = siteUrl;
+      };
+    //========Conncect only audio======
     return (
         <div className='w-full mx-auto'>
             <div className='flex list-none items-center text-gray-200'>
@@ -33,7 +54,7 @@ const Video = () => {
                     <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl px-1 py-1 '><AiOutlinePushpin /></li>
 
                 </div>
-
+                
                 <div className="flex justify-center items-baseline">
                     <img src={user} alt="Main user" className='p-4' />
                 </div>
@@ -41,9 +62,20 @@ const Video = () => {
                 <div className='grid grid-rows justify-center items-baseline pb-4'>
                     <h2 className='bg-green-400 text-white mb-2 p-1'>This is the week thats we can more presentation..</h2>
                     <div className='flex gap-2 md:gap-4 justify-center place-items-end text-gray-200 font-bold cursor-pointer list-none'>
-                        <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'><i className="fal fa-microphone font-bold"></i></li>
-                        <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'><i className="fal fa-video font-bold"></i></li>
-                        <li className='bg-red-500 rounded-md text-lg lg:text-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-2 lg:py-2'><i className="far fa-phone-alt font-bold"></i></li>
+                        <button onClick={handleMicButtonPressed}>
+                        <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>
+                            
+                            {isMicMuted? <i className="fal fa-microphone font-bold"></i>: <i className="fas fa-microphone-slash font-bold"></i>}    
+                        </li>
+                        </button>
+                        <button onClick={handleCameraButtonPressed}>
+                            <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>
+                                {isLocalVideoDisabled ? <i className="fal fa-video font-bold"></i> : <i className="fas fa-video-slash font-bold"></i>}
+                            </li>
+                        </button>
+                        <button onClick={handleRoomDisconnection}>
+                            <li className='bg-red-500 rounded-md text-lg lg:text-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-2 lg:py-2'><i className="far fa-phone-alt font-bold"></i></li>
+                        </button>
                         <li className='bg-green-400 rounded-md transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 '><i className="far fa-arrow-circle-up font-bold"></i></li>
                         <li className='bg-green-400 rounded-md transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 '><i className="far fa-ellipsis-v font-bold"></i></li>
                     </div>
@@ -53,4 +85,10 @@ const Video = () => {
     );
 };
 
-export default Video;
+const mapStoreStateToProps = (state) => {
+    return {
+      ...state,
+    };
+};
+
+export default connect(mapStoreStateToProps)(Video);
