@@ -1,20 +1,42 @@
 import { format } from 'date-fns';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
+import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
 const MeetingSchedule = () => {
     const [selectedDay, setSelectedDay] = useState(new Date());
+
+    const { register, handleSubmit, } = useForm();
+
+    const onSubmit = data => {
+        console.log(data)
+        const url =`http://localhost:5000/schedule`
+        fetch(url,{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(result =>{
+            console.log(result);
+          
+        })
+
+
+    };
+
 
     return (
         <div class="card w-full mx-auto shadow-xl">
             <div class="card-body">
                 <div class="card-actions flex justify-between lg:justify-end">
                     <Link to="/room" class="btn rounded btn-sm">Cancel
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                     </Link>
-                    <button class="btn rounded btn-sm">Save </button>
+
                 </div>
                 <div className='card-actions justify-center lg:justify-start'>
                     <h1 className='text-lg lg:text-3xl text-gray-200 font-bold text-center lg:text-left'>Schedule Meeting</h1>
@@ -28,54 +50,52 @@ const MeetingSchedule = () => {
                                 required
                                 selected={selectedDay}
                                 onSelect={setSelectedDay}
-                                className="text-gray-200 border border-gray-500 p-2 rounded-md text-2xl"
+                                className="text-gray-200 border border-gray-500 p-2 rounded-md text-2xl mt-8"
                             />
                         </div>
                     </div>
-                    
-                    <div className='w-12/12 lg:w-6/12'>
+
+                    <form onSubmit={handleSubmit(onSubmit)} className='w-96 mx-auto ml-4'>
                         <div class="form-control w-full">
                             <label class="label">
                                 <span class="label-text font-semibold text-gray-200">Meeting Purpose</span>
                             </label>
-                            <input type="text" value='' className="input input-bordered w-full" placeholder='Type here..' />
+                            <input className="input input-bordered w-full" {...register("meetingPurpose")} />
                         </div>
                         <div class="form-control w-full pb-2">
                             <label class="label">
                                 <span class="label-text font-semibold text-gray-200">Select Your Time Zone</span>
                             </label>
-                            <select class="select select-bordered">
-                                <option selected>GWT</option>
-                                <option>Star Wars</option>
-                                <option>Harry Potter</option>
-                                <option>Lord of the Rings</option>
-                                <option>Planet of the Apes</option>
-                                <option>Star Trek</option>
-                            </select>
+                            <select class="select select-bordered" {...register("timeZone")}>
+                            <option selected="Landone">Landon</option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Newwork">Newwork</option>
+                            <option value="Sidne">Sidne</option>
+                            <option value="Dille">Dille</option>
+                        </select>
                         </div>
 
                         <p className='font-semibold pb-2 text-gray-200'>Select meeting time</p>
                         <div className='flex items-center'>
                             <div className='pr-4'>
-                                <select class="select select-bordered">
-                                    <option selected>12:00</option>
-                                    <option>1:00</option>
-                                    <option>2:00</option>
-                                    <option>6:00</option>
-                                    <option>10:00</option>
-                                    <option>11:00</option>
-                                </select>
+                            <select placeholder='Date' id="countries"  class="select select-bordered"  {...register("startTime")}    >
+                                <option selected="10.00 AM">10.00 AM</option>
+                                <option value="02.00 PM">02.00 PM</option>
+                                <option value="04.00 PM">04.00 PM</option>
+                                <option value="06.00 PM">06.00 PM</option>
+                                <option value="08.00 PM">08.00 PM</option>
+
+                            </select>
                             </div>
-                            <p className='pr-4'>To</p>
+                            <p className=' pl-6 text-white font-bold text-1xl'>To</p>
                             <div>
-                                <select class="select select-bordered">
-                                    <option selected>12:00</option>
-                                    <option>1:00</option>
-                                    <option>2:00</option>
-                                    <option>6:00</option>
-                                    <option>10:00</option>
-                                    <option>11:00</option>
-                                </select>
+                           <select placeholder='Date' id="countries"  class="select select-bordered"  {...register("endTime")}    >
+                                <option selected="10.00 AM">10.30 AM</option>
+                                <option value="02.30 PM">02.00 PM</option>
+                                <option value="04.30 PM">04.00 PM</option>
+                                <option value="06.30 PM">06.00 PM</option>
+                                <option value="08.30 PM">08.00 PM</option>
+                            </select>
                             </div>
                         </div>
                         <div>
@@ -83,10 +103,11 @@ const MeetingSchedule = () => {
                                 <label class="label">
                                     <span class="label-text font-semibold text-gray-200">Meeting Date</span>
                                 </label>
-                                <input type="text" value={format(selectedDay, 'PP')} class="input input-bordered w-full" />
+                               <input defaultValue={format(selectedDay, 'PP')} {...register("date")} class="input input-bordered w-full"  {...register("date")} />
                             </div>
                         </div>
-                    </div>
+                        <button className="btn rounded btn-block mt-4">Save </button>
+                    </form> 
                 </div>
             </div>
         </div>
