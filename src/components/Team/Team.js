@@ -2,17 +2,17 @@ import React from 'react';
 
 const Team = () => {
     return (
-            <div className="relative bg-white dark:bg-gray-800">
+            <div className="relative bg-gray-100 rounded-md">
                 <div className="container">
-                    <div className="text-center my-8">
-                        <h2 className="text-3xl border-x-8 leading-normal font-bold text-gray-800 dark:text-gray-100">
-                            <span className="font-light">Our</span> <span className='border-b-2'>Team!</span>
+                    <div className="text-center my-4">
+                        <h2 className="text-3xl leading-normal font-bold text-gray-600 dark:text-gray-200">
+                            <span className="font-light">Our</span> <span className='border-b'>Team!</span>
                         </h2>
                     </div>
 
-                    <div className="flex flex-wrap flex-row justify-center">
-                        <div className="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/3 xl:px-6">
-                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s">
+                    <div className="grid grid-cols-2 lg:grid-cols-6">
+                        <div className="p-1">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-600">
                                 <div className="relative overflow-hidden px-6">
                                     <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar1.png" className="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"/>
                                 </div>
@@ -37,9 +37,9 @@ const Team = () => {
                             </div>
                             {/* <!-- end team block --> */}
                         </div>
-                        <div className="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/3 xl:px-6">
+                        <div className="p-1">
                             {/* <!-- team block --> */}
-                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800" data-wow-delay=".1s">
                                 <div className="relative overflow-hidden px-6">
                                     <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png" className="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"/>
                                 </div>
@@ -65,9 +65,9 @@ const Team = () => {
                             </div>
                             {/* <!-- end team block --> */}
                         </div>
-                        <div className="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/3 xl:px-6">
+                        <div className="p-1">
                             {/* <!-- team block --> */}
-                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800" data-wow-delay=".3s">
                                 <div className="relative overflow-hidden px-6">
                                     <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png" className="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"/>
                                 </div>
@@ -93,9 +93,9 @@ const Team = () => {
                             </div>
                             {/* <!-- end team block --> */}
                         </div>
-                        <div className="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/3 xl:px-6">
+                        <div className="p-1">
                             {/* <!-- team block --> */}
-                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800">
                                 <div className="relative overflow-hidden px-6">
                                     <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar4.png" className="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"/>
                                 </div>
@@ -121,9 +121,9 @@ const Team = () => {
                             </div>
                             {/* <!-- end team block --> */}
                         </div>
-                        <div className="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/3 xl:px-6">
+                        <div className="p-1">
                             {/* <!-- team block --> */}
-                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800">
                                 <div className="relative overflow-hidden px-6">
                                     <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar4.png" className="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"/>
                                 </div>
@@ -149,9 +149,9 @@ const Team = () => {
                             </div>
                             {/* <!-- end team block --> */}
                         </div>
-                        <div className="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/3 xl:px-6">
+                        <div className="p-1">
                             {/* <!-- team block --> */}
-                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800">
                                 <div className="relative overflow-hidden px-6">
                                     <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar4.png" className="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"/>
                                 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import user from "../../Assets/Images/user.png"
+import user from "../../assets/images/user.png"
 
 const Participant = () => {
     return (

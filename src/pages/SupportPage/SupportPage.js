@@ -3,14 +3,13 @@ import React from 'react';
 const SupportPage = () => {
     return (
         <section className=''>
-        <div className="my-16 text-gray-800">
-            <div className="text-center px-8 my-8">
-                <h2 className="text-3xl border-x-8 leading-normal font-bold text-gray-800 dark:text-gray-100">
-                    <span className="font-light">Why</span> <span className='border-b-2'>We Best!</span>
+        <div className="my-2 lg:my-4 text-gray-600">
+            <div className="text-center px-4">
+                <h2 className="text-3xl leading-normal font-bold text-gray-600 dark:text-gray-200">
+                    <span className="font-light">Why</span> <span className='border-b'>We Best!</span>
                 </h2>
             </div>
-            <div className="flex flex-wrap items-center">
-        
+            <div className="flex flex-col-reverse lg:flex-row items-center mt-4">
                 <div className="grow-0 shrink-0 basis-auto w-full lg:w-7/12 md:px-6">
                     <div className="flex mb-12 border-b-2 pb-2">
                         <div className="shrink-0">
@@ -20,8 +19,8 @@ const SupportPage = () => {
                                 </svg>
                             </div>
                         </div>
-                        <div className="grow ml-4">
-                            <p className="font-semibold uppercase mb-1 text-2xl">Support 24/7</p>
+                        <div className="grow mx-4">
+                            <p className="font-semibold uppercase mb-1 text-xl">Support 24/7</p>
                             <p className="text-gray-500 text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil quisquam quibusdam modi sapiente magni molestias pariatur facilis reprehenderit facere aliquam ex.</p>
                         </div>
                     </div>
@@ -33,8 +32,8 @@ const SupportPage = () => {
                                 </svg>
                             </div>
                         </div>
-                        <div className="grow ml-4">
-                            <p className="font-semibold uppercase mb-1 text-2xl">Safe and solid</p>
+                        <div className="grow mx-4">
+                            <p className="font-semibold uppercase mb-1 text-xl">Safe and solid</p>
                             <p className="text-gray-500 text-justify">Eum nostrum fugit numquam, voluptates veniam neque quibusdam ullam aspernatur odio soluta, quisquam dolore animi mollitia a omnis praesentium, expedita nobis!</p>
                         </div>
                     </div>
@@ -46,8 +45,8 @@ const SupportPage = () => {
                                 </svg>
                             </div>
                         </div>
-                        <div className="grow ml-4">
-                            <p className="font-semibold uppercase mb-1 text-2xl">Extremely fast</p>
+                        <div className="grow mx-4">
+                            <p className="font-semibold uppercase mb-1 text-xl">Extremely fast</p>
                             <p className="text-gray-500 text-justify">Enim cupiditate, minus nulla dolor cumque iure eveniet facere ullam beatae hic voluptatibus dolores exercitationem? Facilis debitis aspernatur amet nisi iure eveniet facere?</p>
                         </div>
                     </div>
@@ -59,16 +58,16 @@ const SupportPage = () => {
                                 </svg>
                             </div>
                         </div>
-                        <div className="grow ml-4">
-                            <p className="font-semibold uppercase mb-1 text-2xl">Live analytics</p>
+                        <div className="grow mx-4">
+                            <p className="font-semibold uppercase mb-1 text-xl">Live analytics</p>
                             <p className="text-gray-500 text-justify">Illum doloremque ea, blanditiis sed dolor laborum praesentium maxime sint, consectetur atque ipsum ab adipisci ullam aspernatur odio soluta, quisquam dolore</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="grow-0 shrink-0 basis-auto w-full lg:w-5/12 mb-12 lg:mb-0 md:px-6">
+                <div className="grow-0 shrink-0 basis-auto w-full lg:w-5/12 mb-12 lg:mb-0 md:px-6 mt-4 lg:mt-0">
                     <div className="relative overflow-hidden bg-no-repeat bg-cover rounded-lg shadow-lg" data-mdb-ripple="true" data-mdb-ripple-color="light">
-                        <img src="https://i.imgur.com/Q6ZXZJ7.jpg" className="w-full" alt=''/>
+                        <img src="https://i.imgur.com/Q6ZXZJ7.jpg" className="w-full" alt='support'/>
                     </div>
                 </div>
                 
