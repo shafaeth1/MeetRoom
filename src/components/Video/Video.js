@@ -3,7 +3,7 @@ import { AiOutlinePushpin } from "react-icons/ai";
 import { FaCreativeCommons } from "react-icons/fa";
 import { BsRecordCircle, BsPlus } from "react-icons/bs";
 import { IoPeopleOutline } from "react-icons/io5";
-import user from "../../Assets/Images/user.png";
+import user from "../../assets/images/user.png";
 import * as webRTCHandler from "../../utils/webRTCHandler";
 import { connect } from 'react-redux';
 

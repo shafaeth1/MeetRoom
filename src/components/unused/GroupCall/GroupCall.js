@@ -1,5 +1,4 @@
 import React from 'react';
-import Slider from '../Slider/Slider';
 
 const GroupCall = () => {
     return (
@@ -10,7 +9,6 @@ const GroupCall = () => {
                 </video>
 
             </div>
-            <Slider></Slider>
         </div>
     );
 };

@@ -3,8 +3,8 @@ import React from 'react';
 import Notification from '../../components/Notification/Notification';
 import Video from '../../components/Video/Video';
 import Home from '../Home/Home';
-import GroupCall from '../../components/GroupCall/GroupCall';
-import SingleCall from '../../components/SingleCall/SingleCall';
+import GroupCall from '../../components/unused/GroupCall/GroupCall';
+import SingleCall from '../../components/unused/SingleCall/SingleCall';
 
 const Alamin = () => {
     return (

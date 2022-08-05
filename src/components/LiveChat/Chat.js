@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
-import user from "../../Assets/Images/user.png";
+import user from "../../assets/images/user.png";
 
 
 const Chat = ({ socket, username, room }) => {

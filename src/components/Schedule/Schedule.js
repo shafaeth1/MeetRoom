@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import user from "../../Assets/Images/user.png"
+import user from "../../assets/images/user.png"
 
 const Schedule = () => {
     const [schedule, setSchedule] = useState()
