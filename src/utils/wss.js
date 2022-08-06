@@ -12,12 +12,13 @@ export const connectWithSocketIOServer = () => {
 
   socket.on("connect", () => {
     console.log("successfully connected with socket io server");
-    console.log(socket.id);
+    // console.log(socket.id);
   });
 
   socket.on("room-id", (data) => {
     const { roomId } = data;
     store.dispatch(setRoomId(roomId));
+    console.log(roomId)
   });
 
   socket.on("room-update", (data) => {

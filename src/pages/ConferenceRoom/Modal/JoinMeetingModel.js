@@ -1,8 +1,64 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { useNavigate } from "react-router-dom";
+import {setConnectOnlyWithAudio, setIdentity, setRoomId,} from "../../../redux/actions";
+import { getRoomExists } from "../../../utils/api";
 
-const JoinMeetingModel = () => {
+const JoinMeetingModel = ({ isRoomHost, setConnectOnlyWithAudio, connectOnlyWithAudio, setIdentityAction, setRoomIdAction }) => {
+    const [roomIdValue, setRoomIdValue] = useState("");
+    const [nameValue, setNameValue] = useState("");
+    const [errorMessage, setErrorMessage] = useState(null);
+    const titleText = isRoomHost ? "Host meeting" : "Join meeting";
+  
+    let navigate = useNavigate();
+    const pushToJoinRoomPage = () => {
+        navigate("/room/video");
+    };
+    
+    const handleRoomIdValueChange = (event) => {
+        setRoomIdValue(event.target.value);
+    };
+    
+    const handleNameValueChange = (event) => {
+        setNameValue(event.target.value);
+    };
+  
+    const handleConnectionTypeChange = () => {
+        setConnectOnlyWithAudio(!connectOnlyWithAudio);
+    };
+
+    const handleJoinRoom = async () => {
+      setIdentityAction(nameValue);
+      if (isRoomHost) {
+        createRoom();
+      } else {
+        await joinRoom();
+      }
+    };
+  
+    const joinRoom = async () => {
+      const responseMessage = await getRoomExists(roomIdValue);
+  
+      const { roomExists, full } = responseMessage;
+  
+      if (roomExists) {
+        if (full) {
+          setErrorMessage("Meeting is full. Please try again later.");
+        } else {
+          // join a room !
+          setRoomIdAction(roomIdValue);
+          navigate("/room");
+        }
+      } else {
+        setErrorMessage("Meeting not found. Check your meeting id.");
+      }
+    };
+  
+    const createRoom = () => {
+      navigate("/room");
+    };
+
     return (
         <div className=' items-center justify-center'>
             <label for="my-modal-3" class="hover:cursor-pointer"><i className="fal fa-plus-square font-bold text-3xl bg-clock bg-transparent border border-gray-400 p-2"></i></label>
@@ -11,22 +67,50 @@ const JoinMeetingModel = () => {
             <input type="checkbox" id="my-modal-3" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle  ">
                 <div class="modal-box bg-chat h-auto  mx-auto  ">
-                    <h2 className="text-center text-2xl divide-y">Joining a Meeting Now</h2>
+                    <h2 className="text-center text-2xl divide-y">{titleText}</h2>
 
-                    <input type="text" placeholder="Meeting ID" class="input w-full my-3 bg-slate-800 rounded" />
-                    <input type="text" placeholder="Enter your Name" class="input bg-slate-800 rounded w-full" />
+                    <input type="text" placeholder="Meeting ID" class="input w-full my-3 bg-slate-800 rounded" 
+                    value={roomIdValue}
+                    changeHandler={handleRoomIdValueChange}
+                    />
+                    <input type="text" placeholder="Enter your Name" class="input bg-slate-800 rounded w-full" 
+                    value={nameValue}
+                    changeHandler={handleNameValueChange}
+                    />
+                    
                     <div className='flex justify-end gap-3'>
                         <div class="modal-action">
-                            <label for="my-modal-3" class="btn ">Cancel</label>
+                            <label for="my-modal-3" class="btn">Cancel</label>
                         </div>
                         <div class="modal-action">
-                            <label for="my-modal-3" class="btn btn-primary"><Link to='/room/video'>Join</Link></label>
+                            <label for="my-modal-3" class="btn btn-primary">
+                                <button for="my-modal-3" class="btn btn-primary" onClick={()=>pushToJoinRoomPage()}>Start Now</button>
+                            </label>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     );
 };
 
-export default JoinMeetingModel;
+const mapStoreStateToProps = (state) => {
+    return {
+      ...state,
+    };
+};
+
+const mapActionsToProps = (dispatch) => {
+    return {
+      setConnectOnlyWithAudio: (onlyWithAudio) =>
+        dispatch(setConnectOnlyWithAudio(onlyWithAudio)),
+      setIdentityAction: (identity) => dispatch(setIdentity(identity)),
+      setRoomIdAction: (roomId) => dispatch(setRoomId(roomId)),
+    };
+};
+
+export default connect(
+    mapStoreStateToProps,
+    mapActionsToProps
+  )(JoinMeetingModel);

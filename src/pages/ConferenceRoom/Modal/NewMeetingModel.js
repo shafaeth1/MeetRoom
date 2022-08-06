@@ -1,7 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const NewMeetingModel = () => {
+    let navigate = useNavigate();
+    const pushToJoinRoomPageAsHost = () => {
+        navigate("/join-room?host=true");
+      };
+    
     return (
         <div className=' items-center justify-center'>
             <label for="my-modal-4" class="hover:cursor-pointer"><i className="fal fa-video font-bold text-3xl bg-clock bg-transparent border border-gray-400 p-2"></i></label>
@@ -17,7 +22,7 @@ const NewMeetingModel = () => {
                             <label for="my-modal-4" class="btn ">Cancel</label>
                         </div>
                         <div class="modal-action">
-                            <Link to='/room/video' for="my-modal-4" class="btn btn-primary">Start Now</Link>
+                            <button for="my-modal-4" class="btn btn-primary" onClick={()=>pushToJoinRoomPageAsHost()}>Start Now</button>
                         </div>
                     </div>
                 </div>
