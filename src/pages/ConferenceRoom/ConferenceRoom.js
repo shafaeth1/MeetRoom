@@ -16,8 +16,8 @@ const ConferenceRoom = () => {
                     <i className="fad fa-align-left text-2xl"></i>
                 </label>
             </div>
-            <div className='p-2'>
-                <div className="drawer drawer-mobile rounded-md">
+            <div className='p-0'>
+                <div className="drawer drawer-mobile">
                     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content flex flex-col p-4 bg-slate-900 lg:border-l-2 body">
                         {/* =======Main Body======= */}

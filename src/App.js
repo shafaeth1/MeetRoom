@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Hasan from './pages/Indivisual/Hasan';
 import Roctim from './pages/Indivisual/Roctim';
@@ -27,9 +27,11 @@ import ScheduleConference from './pages/ConferenceRoom/ScheduleConference/Schedu
 import NotificationConference from './pages/ConferenceRoom/NotificationConference/NotificationConference';
 import SettingConference from './pages/ConferenceRoom/SettingConference/SettingConference';
 import MeetingSchedule from './components/MeetingSchedule/MeetingSchedule';
+import { connectWithSocketIOServer } from './utils/wss';
 
 function App() {
   const [user] = useAuthState(auth);
+  useEffect(()=>connectWithSocketIOServer(),[])
   return (
     <>
       {!user ? <Navbar /> : ''}
