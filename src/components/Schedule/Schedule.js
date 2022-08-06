@@ -1,22 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import user from "../../assets/images/user.png"
+import useSchedules from '../../hooks/useSchedules';
 
 const Schedule = () => {
-    const [schedule, setSchedule] = useState()
+    const {schedules} =  useSchedules()
     // const {_id ,meetingPurpose,timeZone,startTime,endTime}= schedule
 
-    useEffect(() => {
-        const url = `http://localhost:5000/schedule`
-        console.log(url);
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setSchedule(data))
-    }, [])
 
     return (
         <div className="bg-chat">
             {
-                schedule?.map((item) =>
+                schedules?.map((item) =>
                     <div className='border border-gray-500 p-2'>
                         <div className="flex justify-between">
                             <h2 className='text-xl text-white'>Meeting Purpose:{item.meetingPurpose}</h2>
