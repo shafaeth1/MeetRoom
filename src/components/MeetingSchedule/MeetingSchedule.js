@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { useForm } from 'react-hook-form';
@@ -12,7 +12,7 @@ const MeetingSchedule = () => {
 
     const onSubmit = data => {
         console.log(data)
-        const url =`http://localhost:5000/schedule`
+        const url =`https://meetrooms.herokuapp.com/schedule`
         fetch(url,{
             method: 'POST',
             headers: {
@@ -32,30 +32,27 @@ const MeetingSchedule = () => {
 
     return (
         <div class="card w-full mx-auto shadow-xl">
-            <div class="card-body">
+            <div class="pr-2 py-2">
                 <div class="card-actions flex justify-between lg:justify-end">
-                    <Link to="/room" class="btn rounded btn-sm">Cancel
-                    </Link>
-
+                    <Link to="/room" class="btn rounded btn-sm">Cancel</Link>
                 </div>
                 <div className='card-actions justify-center lg:justify-start'>
-                    <h1 className='text-lg lg:text-3xl text-gray-200 font-bold text-center lg:text-left'>Schedule Meeting</h1>
+                    <h1 className='text-lg lg:text-2xl text-gray-200 font-bold text-center lg:text-left mt-4 lg:mt-0'>Schedule Meeting</h1>
                 </div>
                 <div className='flex flex-col lg:flex-row lg:gap-x-2'>
-                    <div className='w-12/12 lg:w-6/12'>
-                        <div className='rounded-lg my-4 flex justify-center lg:justify-start'>
-                            {/* <p className='p-2 text-gray-200 font-semibold'>Select a data</p> */}
+                    <div className='w-full lg:w-6/12'>
+                        <div className='rounded-lg my-2 flex justify-center lg:justify-start'>
                             <DayPicker
                                 mode="single"
                                 required
                                 selected={selectedDay}
                                 onSelect={setSelectedDay}
-                                className="text-gray-200 border border-gray-500 p-2 rounded-md text-2xl mt-8"
+                                className="text-gray-200 border border-gray-500 p-2 rounded lg:text-lg mt-0 lg:mt-4"
                             />
                         </div>
                     </div>
 
-                    <form onSubmit={handleSubmit(onSubmit)} className='w-96 mx-auto ml-4'>
+                    <form onSubmit={handleSubmit(onSubmit)} className='w-full mx-auto ml-0 lg:ml-4'>
                         <div class="form-control w-full">
                             <label class="label">
                                 <span class="label-text font-semibold text-gray-200">Meeting Purpose</span>

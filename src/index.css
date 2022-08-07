@@ -56,7 +56,7 @@
  /* Scroll */
 .body::-webkit-scrollbar {
   width: 6px;
-  background-color: black;
+  background-color: rgba(63, 63, 63, 0);
 }
 /* Track */
 .body::-webkit-scrollbar-track {
@@ -82,7 +82,7 @@
  /* Scroll */
  .tab-bar::-webkit-scrollbar {
   width: 6px;
-  background-color: #1d1e36;
+  background-color: #24253fe5;
 }
 /* Track */
 .tab-bar::-webkit-scrollbar-track {
@@ -92,7 +92,7 @@
 }
 /* Handle */
 .tab-bar::-webkit-scrollbar-thumb {
-  background: #656570;
+  background: rgb(12, 12, 12);
   border: 1px solid #1d1e36;
   border-radius: 10px;
   height: 50px;
