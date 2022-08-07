@@ -1,9 +1,9 @@
 import { format } from 'date-fns';
 import React, { useState } from 'react';
 import { DayPicker } from 'react-day-picker';
-import 'react-day-picker/dist/style.css';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import 'react-day-picker/dist/style.css';
 
 const MeetingSchedule = () => {
     const [selectedDay, setSelectedDay] = useState(new Date());
@@ -11,7 +11,6 @@ const MeetingSchedule = () => {
     const { register, handleSubmit, } = useForm();
 
     const onSubmit = data => {
-        console.log(data)
         const url =`https://meetrooms.herokuapp.com/schedule`
         fetch(url,{
             method: 'POST',

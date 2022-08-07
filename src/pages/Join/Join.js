@@ -2,7 +2,7 @@ import React from 'react';
 
 const Join = () => {
     return (
-        <div className='h-full'>
+        <div className='min-h-screen'>
             <h2 className='text-center font-bold text-4xl pt-8 pb-2'>Joining Now</h2>
             <div className="flex items-center justify-center py-8">
                 <div className="form-control w-full max-w-xs pt-4">

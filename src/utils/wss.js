@@ -12,13 +12,12 @@ export const connectWithSocketIOServer = () => {
 
   socket.on("connect", () => {
     console.log("successfully connected with socket io server");
-    // console.log(socket.id);
+    console.log(socket.id);
   });
 
   socket.on("room-id", (data) => {
     const { roomId } = data;
     store.dispatch(setRoomId(roomId));
-    console.log(roomId)
   });
 
   socket.on("room-update", (data) => {
@@ -26,7 +25,7 @@ export const connectWithSocketIOServer = () => {
     store.dispatch(setParticipants(connectedUsers));
   });
 
-  socket.on("conn-prepare", (data) => {
+  socket.on("connect-prepare", (data) => {
     const { connUserSocketId } = data;
 
     webRTCHandler.prepareNewPeerConnection(connUserSocketId, false);
@@ -49,25 +48,23 @@ export const connectWithSocketIOServer = () => {
   });
 };
 
-export const createNewRoom = (identity, onlyAudio) => {
+export const createNewRoom = (identity) => {
   // emit an event to server that we would like to create new room
   const data = {
     identity,
-    onlyAudio,
   };
 
   socket.emit("new-room", data);
 };
 
-export const joinRoom = (identity, roomId, onlyAudio) => {
+export const joinRoom = (identity, roomId) => {
   //emit an event to server that we would to join a room
   const data = {
     roomId,
     identity,
-    onlyAudio,
   };
 
-  socket.emit("join_room", data);
+  socket.emit("join-room", data);
 };
 
 export const signalPeerData = (data) => {
