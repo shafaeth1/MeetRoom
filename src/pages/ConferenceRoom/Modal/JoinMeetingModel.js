@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useNavigate } from "react-router-dom";
-import {setConnectOnlyWithAudio, setIdentity, setRoomId,} from "../../../redux/actions";
+import {setIdentity, setRoomId,} from "../../../redux/actions";
 import { getRoomExists } from "../../../utils/api";
 
-const JoinMeetingModel = ({ isRoomHost, setConnectOnlyWithAudio, connectOnlyWithAudio, setIdentityAction, setRoomIdAction }) => {
+const JoinMeetingModel = ({ isRoomHost, setIdentityAction, setRoomIdAction }) => {
     const [roomIdValue, setRoomIdValue] = useState("");
     const [nameValue, setNameValue] = useState("");
     const [errorMessage, setErrorMessage] = useState(null);
@@ -24,9 +24,9 @@ const JoinMeetingModel = ({ isRoomHost, setConnectOnlyWithAudio, connectOnlyWith
         setNameValue(event.target.value);
     };
   
-    const handleConnectionTypeChange = () => {
-        setConnectOnlyWithAudio(!connectOnlyWithAudio);
-    };
+    // const handleConnectionTypeChange = () => {
+    //     setConnectOnlyWithAudio(!connectOnlyWithAudio);
+    // };
 
     const handleJoinRoom = async () => {
       setIdentityAction(nameValue);
@@ -56,7 +56,7 @@ const JoinMeetingModel = ({ isRoomHost, setConnectOnlyWithAudio, connectOnlyWith
     };
   
     const createRoom = () => {
-      navigate("/room");
+      navigate("/room/video");
     };
 
     return (
@@ -103,10 +103,10 @@ const mapStoreStateToProps = (state) => {
 
 const mapActionsToProps = (dispatch) => {
     return {
-      setConnectOnlyWithAudio: (onlyWithAudio) =>
-        dispatch(setConnectOnlyWithAudio(onlyWithAudio)),
       setIdentityAction: (identity) => dispatch(setIdentity(identity)),
       setRoomIdAction: (roomId) => dispatch(setRoomId(roomId)),
+      // setConnectOnlyWithAudio: (onlyWithAudio) =>
+      // dispatch(setConnectOnlyWithAudio(onlyWithAudio)),
     };
 };
 
