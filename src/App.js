@@ -28,6 +28,7 @@ import NotificationConference from './pages/ConferenceRoom/NotificationConferenc
 import SettingConference from './pages/ConferenceRoom/SettingConference/SettingConference';
 import MeetingSchedule from './components/MeetingSchedule/MeetingSchedule';
 import { connectWithSocketIOServer } from './utils/wss';
+import Error from './components/Error/Error';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -45,6 +46,7 @@ function App() {
         <Route path="/ariful" element={<Ariful />}> </Route>
         <Route path="/nibras" element={<Nibras />}> </Route>
 
+        {/* ================Website Route =================*/}
         <Route path="/" element={<Home />}> </Route>
         <Route path="/signIn" element={<SignIn />}> </Route>
         <Route path="/signup" element={<SignUp />}> </Route>
@@ -54,6 +56,7 @@ function App() {
         <Route path="/liveChat" element={<LiveChat />}> </Route>
         <Route path="/schedule" element={<MeetingSchedule />}> </Route>
 
+        {/* ================Application Route =================*/}
         <Route path="/room" element={<RequireAuth><ConferenceRoom /></RequireAuth>}>
           <Route index element={<HomeConference />}></Route>
           <Route path="users" element={<UserConference />}></Route>
@@ -62,7 +65,7 @@ function App() {
           <Route path="notifications" element={<NotificationConference />}></Route>
           <Route path="settings" element={<SettingConference />}></Route>
         </Route>
-
+        <Route path='*' element={<Error/>}></Route>
       </Routes>
       {!user ? <Footer /> : ''}
     </>

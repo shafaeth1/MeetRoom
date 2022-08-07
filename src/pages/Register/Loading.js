@@ -1,9 +1,10 @@
 import React from 'react';
+import load from '../../assets/images/load.gif'
 
 const Loading = () => {
     return (
         <div className='h-screen flex justify-center items-center'>
-            <button className='btn loading'>Loading</button>
+            <img src={load} alt="loading" className='w-1/6' />
         </div>
     );
 };

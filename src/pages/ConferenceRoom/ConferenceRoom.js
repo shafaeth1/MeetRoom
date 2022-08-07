@@ -19,7 +19,7 @@ const ConferenceRoom = () => {
             <div className='p-0'>
                 <div className="drawer drawer-mobile">
                     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                    <div className="drawer-content flex flex-col p-4 bg-slate-900 lg:border-l-2 body">
+                    <div className="drawer-content flex flex-col p-4 bg-slate-900 lg:border-l border-gray-500 body">
                         {/* =======Main Body======= */}
                         <Outlet></Outlet> 
                     </div> 

@@ -19,7 +19,7 @@ const Notification = () => {
             <div className='mt-4'>
                 <div className='flex flex-col gap-4'>
                     <textarea class="textarea textarea-bordered" placeholder="Type your messege" rows={5}></textarea>
-                    <button type="text" className='btn btn-primary rounded-md' >Send Notification</button>
+                    <button type="text" className='btn bg-green-600 rounded-md' >Send Notification</button>
                 </div>
             {/* <div className='my-4 '>
                 <h2 className='text-center py-4'>Share with your friend</h2>
