@@ -5,16 +5,21 @@ import {store} from '../src/redux/store';
 import App from './App';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
+import {QueryClient, QueryClientProvider,} from 'react-query'
+
+const queryClient = new QueryClient()
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </BrowserRouter>
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
+  </QueryClientProvider>
 );
 
 
