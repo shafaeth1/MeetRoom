@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 import {setIdentity, setRoomId,} from "../../../redux/actions";
 import { getRoomExists } from "../../../utils/api";
 
-const JoinMeetingModel = ({ isRoomHost, setIdentityAction, setRoomIdAction }) => {
+const JoinMeetingModel = () => {
     const [roomIdValue, setRoomIdValue] = useState("");
     const [nameValue, setNameValue] = useState("");
     const [errorMessage, setErrorMessage] = useState(null);
-    const titleText = isRoomHost ? "Host meeting" : "Join meeting";
+    // const titleText = isRoomHost ? "Host meeting" : "Join meeting";
   
     let navigate = useNavigate();
     const pushToJoinRoomPage = () => {
@@ -28,36 +28,36 @@ const JoinMeetingModel = ({ isRoomHost, setIdentityAction, setRoomIdAction }) =>
     //     setConnectOnlyWithAudio(!connectOnlyWithAudio);
     // };
 
-    const handleJoinRoom = async () => {
-      setIdentityAction(nameValue);
-      if (isRoomHost) {
-        createRoom();
-      } else {
-        await joinRoom();
-      }
-    };
+    // const handleJoinRoom = async () => {
+    //   setIdentityAction(nameValue);
+    //   if (isRoomHost) {
+    //     createRoom();
+    //   } else {
+    //     await joinRoom();
+    //   }
+    // };
   
-    const joinRoom = async () => {
-      const responseMessage = await getRoomExists(roomIdValue);
+    // const joinRoom = async () => {
+    //   const responseMessage = await getRoomExists(roomIdValue);
   
-      const { roomExists, full } = responseMessage;
+    //   const { roomExists, full } = responseMessage;
   
-      if (roomExists) {
-        if (full) {
-          setErrorMessage("Meeting is full. Please try again later.");
-        } else {
-          // join a room !
-          setRoomIdAction(roomIdValue);
-          navigate("/room");
-        }
-      } else {
-        setErrorMessage("Meeting not found. Check your meeting id.");
-      }
-    };
+    //   if (roomExists) {
+    //     if (full) {
+    //       setErrorMessage("Meeting is full. Please try again later.");
+    //     } else {
+    //       // join a room !
+    //       setRoomIdAction(roomIdValue);
+    //       navigate("/room");
+    //     }
+    //   } else {
+    //     setErrorMessage("Meeting not found. Check your meeting id.");
+    //   }
+    // };
   
-    const createRoom = () => {
-      navigate("/room/video");
-    };
+    // const createRoom = () => {
+    //   navigate("/room/video");
+    // };
 
     return (
         <div className=' items-center justify-center'>
@@ -67,14 +67,14 @@ const JoinMeetingModel = ({ isRoomHost, setIdentityAction, setRoomIdAction }) =>
             <input type="checkbox" id="my-modal-3" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle  ">
                 <div class="modal-box bg-chat h-auto  mx-auto  ">
-                    <h2 className="text-center text-2xl divide-y">{titleText}</h2>
+                    <h2 className="text-center text-2xl divide-y">Name</h2>
 
                     <input type="text" placeholder="Meeting ID" class="input w-full my-3 bg-slate-800 rounded" 
-                    value={roomIdValue}
+                    defaultValue={roomIdValue}
                     changeHandler={handleRoomIdValueChange}
                     />
                     <input type="text" placeholder="Enter your Name" class="input bg-slate-800 rounded w-full" 
-                    value={nameValue}
+                    defaultValue={nameValue}
                     changeHandler={handleNameValueChange}
                     />
                     
@@ -95,22 +95,19 @@ const JoinMeetingModel = ({ isRoomHost, setIdentityAction, setRoomIdAction }) =>
     );
 };
 
-const mapStoreStateToProps = (state) => {
-    return {
-      ...state,
-    };
-};
+// const mapStoreStateToProps = (state) => {
+//     return {
+//       ...state,
+//     };
+// };
 
-const mapActionsToProps = (dispatch) => {
-    return {
-      setIdentityAction: (identity) => dispatch(setIdentity(identity)),
-      setRoomIdAction: (roomId) => dispatch(setRoomId(roomId)),
-      // setConnectOnlyWithAudio: (onlyWithAudio) =>
-      // dispatch(setConnectOnlyWithAudio(onlyWithAudio)),
-    };
-};
+// const mapActionsToProps = (dispatch) => {
+//     return {
+//       setIdentityAction: (identity) => dispatch(setIdentity(identity)),
+//       setRoomIdAction: (roomId) => dispatch(setRoomId(roomId)),
+//       // setConnectOnlyWithAudio: (onlyWithAudio) =>
+//       // dispatch(setConnectOnlyWithAudio(onlyWithAudio)),
+//     };
+// };
 
-export default connect(
-    mapStoreStateToProps,
-    mapActionsToProps
-  )(JoinMeetingModel);
+export default JoinMeetingModel;
