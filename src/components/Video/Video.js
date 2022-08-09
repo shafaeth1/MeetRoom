@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { AiOutlinePushpin } from "react-icons/ai";
 import { FaCreativeCommons } from "react-icons/fa";
 import { BsRecordCircle, BsPlus } from "react-icons/bs";
