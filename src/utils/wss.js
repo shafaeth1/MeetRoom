@@ -3,7 +3,7 @@ import { setRoomId, setParticipants } from "../redux/actions";
 import store from "../redux/store";
 import * as webRTCHandler from "./webRTCHandler";
 
-const SERVER = "http://localhost:5000";
+const SERVER = "https://meetrooms.herokuapp.com";
 
 let socket = null;
 
@@ -12,7 +12,7 @@ export const connectWithSocketIOServer = () => {
 
   socket.on("connect", () => {
     console.log("successfully connected with socket io server");
-    // console.log(socket.id);
+    store.dispatch(setRoomId(socket.id));
   });
 
   socket.on("room-id", (data) => {

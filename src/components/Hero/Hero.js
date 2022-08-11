@@ -5,6 +5,7 @@ import 'react-clock/dist/Clock.css';
 import 'react-calendar/dist/Calendar.css';
 import NewMeetingModel from '../../pages/ConferenceRoom/Modal/NewMeetingModel';
 import JoinMeetingModel from '../../pages/ConferenceRoom/Modal/JoinMeetingModel';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     const [value, setValue] = useState(new Date());
@@ -55,9 +56,9 @@ const Hero = () => {
                 <div className="card w-12/12 lg:w-6/12 bg-lime-500 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="card-actions justify-start">
-                            <i className="fal fa-calendar-alt font-bold text-3xl bg-clock bg-transparent border border-gray-400 p-2"></i>
+                            <i className="fal fa-calendar-alt font-bold text-3xl bg-clock bg-transparent border border-slate-600 p-2"></i>
                         </div>
-                        <h2 className="text-lg font-semibold">Schedule</h2>
+                        <Link to="/room/schedule" className="text-lg font-semibold">Schedule</Link>
                         <p className='text-sm'>plan your meeting</p>
 
                     </div>
@@ -65,7 +66,7 @@ const Hero = () => {
                 <div className="card w-12/12 lg:w-6/12 bg-amber-500 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="card-actions justify-start">
-                            <i className="fal fa-desktop font-bold text-3xl bg-clock bg-transparent border border-gray-400 p-2"></i>
+                            <i className="fal fa-desktop font-bold text-3xl bg-clock bg-transparent border border-slate-600 p-2"></i>
                         </div>
                         <h2 className="text-lg font-semibold">Share Screen</h2>
                         <p className='text-sm'>show your interface</p>
