@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
-// import { setIdentity } from '../../../redux/actions';
-import reducerSlice from "../../../redux/reducerSlice";
-
+import { setIdentity } from '../../../redux/actions';
 
 const NewMeetingModel = () => {
     const [nameValue, setNameValue] = useState("");
-    // const identity = useSelector(state => state.reducerData.identity)
-    // console.log(nameValue, identity)
     const navigate = useNavigate();
     const dispatch = useDispatch()
     
@@ -17,7 +13,7 @@ const NewMeetingModel = () => {
     };
 
     const handleJoinRoom = (nameValue) => {
-        dispatch(reducerSlice.actions.setIdentity(nameValue));
+        dispatch(setIdentity(nameValue));
         navigate("/room/video");
     };
 
@@ -39,7 +35,7 @@ const NewMeetingModel = () => {
                             <label for="my-modal-4" class="btn ">Cancel</label>
                         </div>
                         <div class="modal-action">
-                            <button for="my-modal-4" class="btn btn-primary" onClick={()=>handleJoinRoom()}>Start Now</button>
+                            <button for="my-modal-4" class="btn btn-primary" onClick={()=>handleJoinRoom(nameValue)}>Start Now</button>
                         </div>
                     </div>
                 </div>

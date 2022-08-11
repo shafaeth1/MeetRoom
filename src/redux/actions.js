@@ -8,6 +8,7 @@ const Actions = {
     SET_MESSAGES: "SET_MESSAGES",
 
 }
+
 export const setIsRoomHost = (isRoomHost) => {
     return {
         type: Actions.SET_IS_ROOM_HOST,
@@ -56,5 +57,6 @@ export const setMessages = (messages) => {
       messages,
     };
  };
+ 
  
 export default Actions;

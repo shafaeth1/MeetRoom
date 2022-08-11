@@ -2,16 +2,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
-// import {setIdentity, setRoomId,} from "../../../redux/actions";
-import reducerSlice from '../../../redux/reducerSlice';
+import {setIdentity, setRoomId,} from "../../../redux/actions";
 import { getRoomExists } from "../../../utils/api";
 
 const JoinMeetingModel = () => {
     const [roomIdValue, setRoomIdValue] = useState("");
     const [nameValue, setNameValue] = useState("");
     const [errorMessage, setErrorMessage] = useState(null);
-    // const data = useSelector(state => state.reducerData.reducerFunction)
-    console.log(roomIdValue, nameValue)
+
     const dispatch = useDispatch()    
   
     let navigate = useNavigate();
@@ -30,24 +28,26 @@ const JoinMeetingModel = () => {
 
 
     const handleJoinRoom = async (nameValue, roomIdValue) => {
-      const responseMessage = await getRoomExists(roomIdValue);
-      console.log(responseMessage)
+        dispatch(setIdentity(nameValue));
+        dispatch(setRoomId(roomIdValue));
+        navigate("/room/video");
+    //   const responseMessage = await getRoomExists(roomIdValue);
+    // //   console.log(responseMessage)
   
-      const { roomExists, full } = responseMessage;
+    //   const { roomExists, full } = responseMessage;
   
-      if (roomExists) {
-        if (full) {
-          setErrorMessage("Meeting is full. Please try again later.");
-        } else {
-            // join a room !
-            // setRoomIdAction(roomIdValue);
-            dispatch(reducerSlice.actions.setIdentity(nameValue));
-            dispatch(reducerSlice.actions.setRoomId(roomIdValue));
-            navigate("/room/video");
-        }
-      } else {
-        setErrorMessage("Meeting not found. Check your meeting id.");
-      }
+    //   if (roomExists) {
+    //     if (full) {
+    //       setErrorMessage("Meeting is full. Please try again later.");
+    //     } else {
+    //         // join a room !
+    //         dispatch(setIdentity(nameValue));
+    //         dispatch(setRoomId(roomIdValue));
+    //         navigate("/room/video");
+    //     }
+    //   } else {
+    //     setErrorMessage("Meeting not found. Check your meeting id.");
+    //   }
     };
 
 
@@ -78,7 +78,7 @@ const JoinMeetingModel = () => {
                         </div>
                         <div class="modal-action">
                             <label for="my-modal-3" class="btn btn-primary">
-                                <button for="my-modal-3" class="btn btn-primary" onClick={()=>handleJoinRoom()}>Start Now</button>
+                                <button for="my-modal-3" class="btn btn-primary" onClick={()=>handleJoinRoom(nameValue, roomIdValue)}>Join Now</button>
                             </label>
                         </div>
                     </div>
@@ -88,20 +88,5 @@ const JoinMeetingModel = () => {
         </div>
     );
 };
-
-// const mapStoreStateToProps = (state) => {
-//     return {
-//       ...state,
-//     };
-// };
-
-// const mapActionsToProps = (dispatch) => {
-//     return {
-//       setIdentityAction: (identity) => dispatch(setIdentity(identity)),
-//       setRoomIdAction: (roomId) => dispatch(setRoomId(roomId)),
-//       // setConnectOnlyWithAudio: (onlyWithAudio) =>
-//       // dispatch(setConnectOnlyWithAudio(onlyWithAudio)),
-//     };
-// };
 
 export default JoinMeetingModel;
