@@ -1,9 +1,9 @@
 import io from "socket.io-client";
 import { setRoomId, setParticipants } from "../redux/actions";
-import store from "../redux/actions";
+import store from "../redux/store";
 import * as webRTCHandler from "./webRTCHandler";
 
-const SERVER = "http://localhost:5000";
+const SERVER = "https://meetrooms.herokuapp.com";
 
 let socket = null;
 
@@ -12,12 +12,13 @@ export const connectWithSocketIOServer = () => {
 
   socket.on("connect", () => {
     console.log("successfully connected with socket io server");
-    // console.log(socket.id);
+    store.dispatch(setRoomId(socket.id));
   });
 
   socket.on("room-id", (data) => {
     const { roomId } = data;
     store.dispatch(setRoomId(roomId));
+    console.log(roomId)
   });
 
   socket.on("room-update", (data) => {
@@ -55,6 +56,7 @@ export const createNewRoom = (identity) => {
   };
 
   socket.emit("new-room", data);
+  console.log(data)
 };
 
 export const joinRoom = (identity, roomId) => {

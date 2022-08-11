@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiOutlinePushpin } from "react-icons/ai";
 import { FaCreativeCommons } from "react-icons/fa";
 import { BsRecordCircle, BsPlus } from "react-icons/bs";
@@ -8,33 +8,28 @@ import * as webRTCHandler from "../../utils/webRTCHandler";
 import { useSelector } from 'react-redux';
 
 const Video = () => {
-    const roomId = useSelector(state => state.reducerData.roomId)
-    const identity = useSelector(state => state.reducerData.identity)
-    console.log(roomId, identity)
+    const data = useSelector(state => state)
+    console.log(data )
 
     const [isLocalVideoDisabled, setIsLocalVideoDisabled] = useState(false);
     const [isMicMuted, setIsMicMuted] = useState(false);
 
     
-
-    // useEffect(() => {
-    //         webRTCHandler.getLocalPreviewAndInitRoomConnection(
-    //         isRoomHost,
-    //         identity,
-    //         roomId,
-    //         connectOnlyWithAudio);
-    //     // if (!isRoomHost && !roomId) {
-    //     //   const siteUrl = window.location.origin +'/room';
-    //     //   window.location.href = siteUrl;
-    //     // } else {
-    //     //   webRTCHandler.getLocalPreviewAndInitRoomConnection(
-    //     //     isRoomHost,
-    //     //     identity,
-    //     //     roomId,
-    //     //     connectOnlyWithAudio
-    //     //   );
-    //     // }
-    //   }, []);
+    useEffect(() => {
+            webRTCHandler.getLocalPreviewAndInitRoomConnection(
+            data.identity,);
+        // if (!isRoomHost && !roomId) {
+        //   const siteUrl = window.location.origin +'/room';
+        //   window.location.href = siteUrl;
+        // } else {
+        //   webRTCHandler.getLocalPreviewAndInitRoomConnection(
+        //     isRoomHost,
+        //     identity,
+        //     roomId,
+        //     connectOnlyWithAudio
+        //   );
+        // }
+      }, [data.identity]);
 
     //=======Video Camera Button======
     const handleCameraButtonPressed = (e) => {
@@ -70,7 +65,7 @@ const Video = () => {
                     <li className='text-sm lg:text-md px-1 lg:px-2'>REQ : 00.02.36s </li>
                 </div>
                 <div className="id">
-                    {/* <p>Share Id{roomId}</p> */}
+                    <p>{data.identity}</p>
                 </div>
                 <div className='flex list-none items-center text-gray-200'>
                     <li className='bg-green-900 rounded-full cursor-pointer'><BsPlus /></li>
@@ -87,7 +82,6 @@ const Video = () => {
                 
                 <div className="flex justify-center items-baseline">
                     <img src={user} alt="Main user" className='p-4' />
-                    {/* <p>{roomId}</p> */}
                 </div>
 
                 <div className='grid grid-rows justify-center items-baseline pb-4'>
