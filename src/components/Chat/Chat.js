@@ -1,8 +1,6 @@
 
 import React from 'react';
 import user from "../../assets/images/user.png"
-import Schedule from '../Schedule/Schedule';
-
 
 const Chat = () => {
     return (
