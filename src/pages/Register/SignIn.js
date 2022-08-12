@@ -25,7 +25,7 @@ const SignIn = () => {
     let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        if (user || gUser|| Fuser) {
+        if (user || gUser || Fuser) {
             navigate(from, { replace: true });
         }
     }, [user, gUser, Fuser, from, navigate])
@@ -107,9 +107,9 @@ const SignIn = () => {
                         onClick={() => signInWithGoogle()}
                         className="btn btn-outline border-b"
                     >Continue with Google</button>
-                     <button onClick={()=> signInWithFacebook()
+                    <button onClick={() => signInWithFacebook()
                     }
-                    className="btn bg-blue-600  text-gray-200">
+                        className="btn bg-blue-600  text-gray-200">
                         Continue with Facebook</button>
                 </div>
             </div>

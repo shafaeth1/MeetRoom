@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWith
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
 import Loading from './Loading';
 
 const SignUp = () => {
@@ -10,7 +11,7 @@ const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [updateProfile, updating, UpError] = useUpdateProfile(auth);
     const navigate = useNavigate()
-    
+
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
     const [
@@ -18,24 +19,25 @@ const SignUp = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-    const onSubmit =async data => {
-       await createUserWithEmailAndPassword(data?.email, data?.password)
-        await updateProfile({ displayName : data?.name });
-        
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data?.email, data?.password)
+        await updateProfile({ displayName: data?.name });
+
     };
     const [signInWithFacebook, Fuser, Floading, Ferror] = useSignInWithFacebook(auth);
-    
-      if(gUser || user|| Fuser){
+
+    if (gUser || user || Fuser) {
         navigate(from, { replace: true });
-      }
-      let errorMessage;
-      if(error || gError || UpError|| Ferror){
-        errorMessage= <p className='text-red-600'>{error?.message}|| {UpError?.message}</p>
-      }
-      if(loading || updating|| Floading || gLoading){
-        return <Loading/>;
-      }
+    }
+    const [token] = useToken(user || gUser || Fuser)
+    let errorMessage;
+    if (error || gError || UpError || Ferror) {
+        errorMessage = <p className='text-red-600'>{error?.message}|| {UpError?.message}</p>
+    }
+    if (loading || updating || Floading || gLoading) {
+        return <Loading />;
+    }
     return (
         <div className='flex min-h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -56,12 +58,12 @@ const SignUp = () => {
                                         value: true,
                                         message: 'Name is Required'
                                     }
-                                    
+
                                 })}
                             />
                             <label className="label">
                                 {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                               
+
                             </label>
                         </div>
                         <div className="form-control w-full max-w-xs">
@@ -122,9 +124,9 @@ const SignUp = () => {
                         onClick={() => signInWithGoogle()}
                         className="btn btn-outline"
                     >Continue with Google</button>
-                    <button onClick={()=> signInWithFacebook()
+                    <button onClick={() => signInWithFacebook()
                     }
-                    className="btn bg-blue-500  text-gray-200">
+                        className="btn bg-blue-500  text-gray-200">
                         Continue with Facebook</button>
                 </div>
             </div>

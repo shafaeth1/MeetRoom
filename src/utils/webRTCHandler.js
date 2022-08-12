@@ -20,7 +20,7 @@ const defaultConstraints = {
 let localStream;
 
 export const getLocalPreviewAndInitRoomConnection = async (
-  // isRoomHost,
+  isRoomHost,
   identity,
   roomId = null,
 ) => {
@@ -37,10 +37,10 @@ export const getLocalPreviewAndInitRoomConnection = async (
 
       // dispatch an action to hide overlay
       store.dispatch(setShowOverlay(false));
-      wss.createNewRoom(identity)
-      // isRoomHost
-      //   ? wss.createNewRoom(identity)
-      //   : wss.joinRoom(identity, roomId);
+
+      isRoomHost
+        ? wss.createNewRoom(identity)
+        : wss.joinRoom(identity, roomId);
     })
     .catch((err) => {
       console.log(

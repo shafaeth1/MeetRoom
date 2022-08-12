@@ -30,10 +30,10 @@ const MeetingSchedule = () => {
 
 
     return (
-        <div className="card w-full mx-auto shadow-xl">
-            <div className="pr-2 py-2">
-                <div className="card-actions flex justify-between lg:justify-end">
-                    <Link to="/room" className="btn rounded btn-sm">Cancel</Link>
+        <div class="card w-full mx-auto shadow-xl">
+            <div class="pr-2 py-2">
+                <div class="card-actions flex justify-between lg:justify-end">
+                    <Link to="/room" class="btn rounded btn-sm">Cancel</Link>
                 </div>
                 <div className='card-actions justify-center lg:justify-start'>
                     <h1 className='text-lg lg:text-2xl text-gray-200 font-bold text-center lg:text-left mt-4 lg:mt-0'>Schedule Meeting</h1>
@@ -46,23 +46,23 @@ const MeetingSchedule = () => {
                                 required
                                 selected={selectedDay}
                                 onSelect={setSelectedDay}
-                                className="text-gray-200 border border-slate-600 p-2 rounded lg:text-lg mt-0 lg:mt-4"
+                                className="text-gray-200 border border-gray-500 p-2 rounded lg:text-lg mt-0 lg:mt-4"
                             />
                         </div>
                     </div>
 
                     <form onSubmit={handleSubmit(onSubmit)} className='w-full mx-auto ml-0 lg:ml-4'>
-                        <div className="form-control w-full">
-                            <label className="label">
-                                <span className="label-text font-semibold text-gray-200">Meeting Purpose</span>
+                        <div class="form-control w-full">
+                            <label class="label">
+                                <span class="label-text font-semibold text-gray-200">Meeting Purpose</span>
                             </label>
                             <input className="input input-bordered w-full" {...register("meetingPurpose")} />
                         </div>
-                        <div className="form-control w-full pb-2">
-                            <label className="label">
-                                <span className="label-text font-semibold text-gray-200">Select Your Time Zone</span>
+                        <div class="form-control w-full pb-2">
+                            <label class="label">
+                                <span class="label-text font-semibold text-gray-200">Select Your Time Zone</span>
                             </label>
-                            <select className="select select-bordered" {...register("timeZone")}>
+                            <select class="select select-bordered" {...register("timeZone")}>
                             <option selected="Landone">Landon</option>
                             <option value="Dhaka">Dhaka</option>
                             <option value="Newwork">Newwork</option>
@@ -72,9 +72,9 @@ const MeetingSchedule = () => {
                         </div>
 
                         <p className='font-semibold pb-2 text-gray-200'>Select meeting time</p>
-                        <div className='flex items-center justify-between'>
+                        <div className='flex items-center'>
                             <div className='pr-4'>
-                            <select placeholder='Date' id="countries"  className="select select-bordered"  {...register("startTime")}    >
+                            <select placeholder='Date' id="countries"  class="select select-bordered"  {...register("startTime")}    >
                                 <option selected="10.00 AM">10.00 AM</option>
                                 <option value="02.00 PM">02.00 PM</option>
                                 <option value="04.00 PM">04.00 PM</option>
@@ -85,7 +85,7 @@ const MeetingSchedule = () => {
                             </div>
                             <p className=' pl-6 text-white font-bold text-1xl'>To</p>
                             <div>
-                           <select placeholder='Date' id="countries"  className="select select-bordered"  {...register("endTime")}    >
+                           <select placeholder='Date' id="countries"  class="select select-bordered"  {...register("endTime")}    >
                                 <option selected="10.00 AM">10.30 AM</option>
                                 <option value="02.30 PM">02.00 PM</option>
                                 <option value="04.30 PM">04.00 PM</option>
@@ -95,11 +95,11 @@ const MeetingSchedule = () => {
                             </div>
                         </div>
                         <div>
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text font-semibold text-gray-200">Meeting Date</span>
+                            <div class="form-control w-full">
+                                <label class="label">
+                                    <span class="label-text font-semibold text-gray-200">Meeting Date</span>
                                 </label>
-                               <input defaultValue={format(selectedDay, 'PP')} {...register("date")} className="input input-bordered w-full"  {...register("date")} />
+                               <input defaultValue={format(selectedDay, 'PP')} {...register("date")} class="input input-bordered w-full"  {...register("date")} />
                             </div>
                         </div>
                         <button className="btn rounded btn-block mt-4">Save </button>

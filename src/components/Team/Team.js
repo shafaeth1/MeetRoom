@@ -12,7 +12,7 @@ const Team = () => {
 
                     <div className="grid grid-cols-2 lg:grid-cols-6">
                         <div className="p-1">
-                            <div className="relative overflow-hidden bg-white dark:bg-slate-600">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-600">
                                 <div className="relative overflow-hidden px-6">
                                     <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar1.png" className="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"/>
                                 </div>

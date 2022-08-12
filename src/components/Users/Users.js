@@ -13,36 +13,14 @@ const Users = () => {
                     <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                 </div>
                 <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
             </div>
             <div className="avatar">
                 <div className="w-full rounded-md">
                     <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                 </div>
                 <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hossain Srkar</p>
-            </div>
-
-            <div className="avatar">
-                <div className="w-full rounded-md">
-                    <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
-                </div>
-                <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Alamin Sarkar</p>
-            </div>
-            <div className="avatar">
-                <div className="w-full rounded-md">
-                    <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
-                </div>
-                <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Rokbul Islam Roctim </p>
-            </div>
-            <div className="avatar">
-                <div className="w-full rounded-md">
-                    <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
-                </div>
-                <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hossain Srkar</p>
             </div>
 
             <div className="avatar">
@@ -50,70 +28,92 @@ const Users = () => {
                     <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                 </div>
                 <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Alamin Sarkar</p>
             </div>
             <div className="avatar">
                 <div className="w-full rounded-md">
                     <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                 </div>
                 <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Rokbul Islam Roctim </p>
             </div>
             <div className="avatar">
                 <div className="w-full rounded-md">
                     <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                 </div>
                 <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+            </div>
+
+            <div className="avatar">
+                <div className="w-full rounded-md">
+                    <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
+                </div>
+                <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
             </div>
             <div className="avatar">
                 <div className="w-full rounded-md">
                     <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                 </div>
                 <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
             </div>
             <div className="avatar">
                 <div className="w-full rounded-md">
                     <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                 </div>
                 <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
             </div>
             <div className="avatar">
                 <div className="w-full rounded-md">
                     <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                 </div>
                 <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
             </div>
             <div className="avatar">
                 <div className="w-full rounded-md">
                     <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                 </div>
                 <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
             </div>
             <div className="avatar">
                 <div className="w-full rounded-md">
                     <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                 </div>
                 <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
             </div>
             <div className="avatar">
                 <div className="w-full rounded-md">
                     <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                 </div>
                 <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
             </div>
             <div className="avatar">
                 <div className="w-full rounded-md">
                     <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
                 </div>
                 <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
-                <p className="text-gray-300 bg-slate-700 text-sm px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+            </div>
+            <div className="avatar">
+                <div className="w-full rounded-md">
+                    <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
+                </div>
+                <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
+            </div>
+            <div className="avatar">
+                <div className="w-full rounded-md">
+                    <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />
+                </div>
+                <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute top-2 left-2 rounded-md"></i>
+                <p className="text-gray-300 bg-user-transparent px-1 absolute bottom-2 right-1 rounded">Md. Hasan Mia</p>
             </div>
         </div>
 
