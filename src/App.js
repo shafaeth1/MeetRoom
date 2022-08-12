@@ -29,10 +29,18 @@ import SettingConference from './pages/ConferenceRoom/SettingConference/SettingC
 import MeetingSchedule from './components/MeetingSchedule/MeetingSchedule';
 import { connectWithSocketIOServer } from './utils/wss';
 import Error from './components/Error/Error';
+import Dashboard from './pages/Dashboard/Dashboard';
+import AllUser from './pages/Dashboard/AllUser';
+import MyReview from './pages/Dashboard/MyReview';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import AddMember from './pages/Dashboard/AddMember';
+import ManageMember from './pages/Dashboard/ManageMember';
+
 
 function App() {
   const [user] = useAuthState(auth);
-  useEffect(()=>connectWithSocketIOServer(),[])
+  useEffect(() => connectWithSocketIOServer(), [])
   return (
     <>
       {!user ? <Navbar /> : ''}
@@ -55,6 +63,12 @@ function App() {
         <Route path="/contact" element={<Contact />}> </Route>
         <Route path="/liveChat" element={<LiveChat />}> </Route>
         <Route path="/schedule" element={<MeetingSchedule />}> </Route>
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path='dashboard/users' element={<><AllUser></AllUser></>}> </Route>
+          <Route path='dashboard/addMembers' element={<><AddMember></AddMember></>}> </Route>
+          <Route path='dashboard/manageMembers' element={<><ManageMember></ManageMember></>}> </Route>
+          <Route index element={<MyReview></MyReview>}></Route>
+        </Route>
 
         {/* ================Application Route =================*/}
         <Route path="/room" element={<RequireAuth><ConferenceRoom /></RequireAuth>}>
@@ -65,8 +79,9 @@ function App() {
           <Route path="notifications" element={<NotificationConference />}></Route>
           <Route path="settings" element={<SettingConference />}></Route>
         </Route>
-        <Route path='*' element={<Error/>}></Route>
+        <Route path='*' element={<Error />}></Route>
       </Routes>
+      <ToastContainer />
       {!user ? <Footer /> : ''}
     </>
   );

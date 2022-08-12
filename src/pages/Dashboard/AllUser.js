@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import SettingRow from './SettingRow';
+import UserRow from './UserRow';
 
-const SettingConference = () => {
+
+const AllUser = () => {
     const [users, setUsers] = useState([]);
     const [isLoad, setIsLoad] = useState(true)
     const [refetch, setRefetch] = useState(true)
@@ -13,41 +14,36 @@ const SettingConference = () => {
             .then(data => setUsers(data, setIsLoad(false), setRefetch(false)))
     }, [isLoad, refetch]);
     return (
-        <div className="flex justify-center gap-1 flex-col lg:flex-row">
-            <div className="md:w-12/12 lg:w-9/12">
-                <h1 className='text-center text-gray-200'>Settings:{users.length}</h1>
-
-                <table class="table w-full h-screen">
+        <div>
+            <h2>AllUser:{users.length}</h2>
+            <div class="overflow-x-auto">
+                <table class="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
                             <th></th>
                             <th>Email</th>
-                            <th> Role</th>
-
+                            <th>Made Admin</th>
+                            <th>Favorite Color</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            users.map((eUser, index) => <SettingRow
-                                key={eUser._id}
-                                eUser={eUser}
+                            users.map((user, index) => <UserRow
+                                key={user._id}
+                                user={user}
                                 index={index}
                                 refetch={refetch}
                                 setRefetch={setRefetch}
-                            ></SettingRow>)
+                            ></UserRow>)
                         }
 
 
                     </tbody>
                 </table>
             </div>
-            {/* ========Right Sidebar ========*/}
-            <div className="">
-
-            </div>
         </div>
     );
 };
 
-export default SettingConference;
+export default AllUser;
