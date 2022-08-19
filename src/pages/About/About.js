@@ -1,5 +1,6 @@
 import React from 'react';
-import Team from '../../components/Team/Team';
+
+import Teams from '../../components/Team/Teams';
 
 const About = () => {
     return (
@@ -8,7 +9,7 @@ const About = () => {
                 <div className="container px-0 lg:px-4 text-gray-600">
                     <div className="flex flex-col lg:flex-row items-center justify-center">
                         <div className="w-full md:w-5/12 lg:w-5/12">
-                            <img className='w-full' src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png" alt="meetrom" loading="lazy"/>
+                            <img className='w-full' src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png" alt="meetrom" loading="lazy" />
                         </div>
                         <div className="w-full md:w-7/12 lg:w-7/12 lg:pt-2">
                             <h2 className="text-3xl text-gray-600 font-bold md:text-4xl">MeetRoom</h2>
@@ -21,7 +22,8 @@ const About = () => {
             {/* End about us */}
 
             <section className='team py-4 px-0 lg:px-4'>
-                <Team></Team>
+
+                <Teams></Teams>
             </section>
         </main>
     );
