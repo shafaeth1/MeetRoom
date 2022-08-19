@@ -19,7 +19,7 @@ const Dashboard = () => {
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
                     <li><Link to="/dashboard">MyReview</Link></li>
-                    {<>
+                    {admin && <>
                         <li><Link to="dashboard/users">AllUser</Link></li>
                         <li><Link to="dashboard/addMembers">Add Member</Link></li>
                         <li><Link to="dashboard/manageMembers">Manage Member </Link></li>
