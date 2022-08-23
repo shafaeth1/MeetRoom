@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Hasan from './pages/Indivisual/Hasan';
-import Roctim from './pages/Indivisual/Roctim';
-import Alamin from './pages/Indivisual/Alamin';
-import Hossain from './pages/Indivisual/Hossain';
-import Ariful from './pages/Indivisual/Ariful';
-import Nibras from './pages/Indivisual/Nibras';
+import Hasan from './Indivisual/Hasan';
+import Roctim from './Indivisual/Roctim';
+import Alamin from './Indivisual/Alamin';
+import Hossain from './Indivisual/Hossain';
+import Ariful from './Indivisual/Ariful';
+import Nibras from './Indivisual/Nibras';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import About from './pages/About/About';
@@ -18,34 +18,33 @@ import LiveChat from './components/LiveChat/LiveChat';
 import RequireAuth from './pages/Register/RequireAuth';
 import auth from './firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
-
-import UserConference from './pages/ConferenceRoom/UserConference/UserConference';
-import ConferenceRoom from './pages/ConferenceRoom/ConferenceRoom';
-import VideoConference from './pages/ConferenceRoom/VideoConference/VideoConference';
-import HomeConference from './pages/ConferenceRoom/HomeConference/HomeConference';
-import ScheduleConference from './pages/ConferenceRoom/ScheduleConference/ScheduleConference';
-import NotificationConference from './pages/ConferenceRoom/NotificationConference/NotificationConference';
-import SettingConference from './pages/ConferenceRoom/SettingConference/SettingConference';
+import UserConference from './ConferenceRoom/UserConference/UserConference';
+import ConferenceRoom from './ConferenceRoom/ConferenceRoom';
+import VideoConference from './ConferenceRoom/VideoConference/VideoConference';
+import HomeConference from './ConferenceRoom/HomeConference/HomeConference';
+import ScheduleConference from './ConferenceRoom/ScheduleConference/ScheduleConference';
+import NotificationConference from './ConferenceRoom/NotificationConference/NotificationConference';
+import SettingConference from './ConferenceRoom/SettingConference/SettingConference';
 import MeetingSchedule from './components/MeetingSchedule/MeetingSchedule';
-import { connectWithSocketIOServer } from './utils/wss';
 import Error from './components/Error/Error';
-import Dashboard from './pages/Dashboard/Dashboard';
-import AllUser from './pages/Dashboard/AllUser';
-import MyReview from './pages/Dashboard/MyReview';
+import Dashboard from './Dashboard/Dashboard';
+import AllUser from './Dashboard/AllUser';
+import MyReview from './Dashboard/MyReview';
 import { ToastContainer } from 'react-toastify';
+import AddMember from './Dashboard/AddMember';
+import ManageMember from './Dashboard/ManageMember';
 import 'react-toastify/dist/ReactToastify.css';
-import AddMember from './pages/Dashboard/AddMember';
-import ManageMember from './pages/Dashboard/ManageMember';
-import useAdmin from './hooks/useAdmin'
+import SingleRoom from './ConferenceRoom/VideoConference/SingleRoom';
+import GroupRoom from './ConferenceRoom/VideoConference/GroupRoom';
+import LiveBroadCast from './ConferenceRoom/VideoConference/LiveBroadCast';
+import ChatLive from './ConferenceRoom/VideoConference/ChatLive';
 
 
 function App() {
   const [user] = useAuthState(auth);
-  const [admin] = useAdmin(user);
-  useEffect(() => connectWithSocketIOServer(), [])
   return (
     <>
-      {admin || !user ? <Navbar /> : ''}
+      {!user ? <Navbar /> : ''}
 
       <Routes>
         {/* ================Indivisual Route =================*/}
@@ -72,19 +71,41 @@ function App() {
           <Route index element={<MyReview></MyReview>}></Route>
         </Route>
 
-        {/* ================Application Route =================*/}
-        <Route path="/room" element={<RequireAuth><ConferenceRoom /></RequireAuth>}>
+        {/* ================VideoConference Room Route =================*/}
+        <Route path="/conference" element={<RequireAuth><ConferenceRoom /></RequireAuth>}>
           <Route index element={<HomeConference />}></Route>
           <Route path="users" element={<UserConference />}></Route>
           <Route path="video" element={<VideoConference />}></Route>
+          {/* single room */}
+          <Route path="room/:roomID" element={<SingleRoom/>} />
+          {/* group room */}
+          <Route path="roomGroup/:roomGroupID" element={<GroupRoom/>} />
+          {/* live broadcast */}
+          <Route path="liveCast" element={<LiveBroadCast/>} />
+          {/* just chat live */}
+          <Route path="ChatLive" element={<ChatLive/>} />
+
           <Route path="schedule" element={<ScheduleConference />}></Route>
           <Route path="notifications" element={<NotificationConference />}></Route>
           <Route path="settings" element={<SettingConference />}></Route>
+
+          {/* <Route path="/" exact element={Mode} />
+          <Route path="/createRoom" element={CreateRoom} />
+          <Route path="/room/:roomID" element={Room} />
+          <Route path="/createRoomGroup" element={CreateRoomGroup} />
+          <Route path="/roomGroup/:roomGroupID" element={RoomGroup} />
+          <Route path="/createRoomBroadcast" element={CreateRoomBroadcast} />
+          <Route path="/createBroadcast" element={CreateBroadcast} />
+          <Route path="/joinBroadcast" element={JoinBroadcast} />
+          <Route path="/ChatModes" element={ChatModes} />
+          <Route path="/ChatRoomOne/:ChatRoomOneID" element={ChatRoomOne} /> */}
+
         </Route>
+
         <Route path='*' element={<Error />}></Route>
       </Routes>
       <ToastContainer />
-      {admin || !user ? <Footer /> : ''}
+      {!user ? <Footer /> : ''}
     </>
   );
 }
