@@ -45,7 +45,7 @@ function App() {
   useEffect(() => connectWithSocketIOServer(), [])
   return (
     <>
-      {admin && !user ? <Navbar /> : ''}
+      {admin || !user ? <Navbar /> : ''}
 
       <Routes>
         {/* ================Indivisual Route =================*/}
@@ -84,7 +84,7 @@ function App() {
         <Route path='*' element={<Error />}></Route>
       </Routes>
       <ToastContainer />
-      {admin && !user ? <Footer /> : ''}
+      {admin || !user ? <Footer /> : ''}
     </>
   );
 }
