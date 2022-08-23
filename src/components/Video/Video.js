@@ -24,21 +24,22 @@ const Video = () => {
     const [isLocalVideoDisabled, setIsLocalVideoDisabled] = useState(false);
     const [isMicMuted, setIsMicMuted] = useState(false);
 
+    
     useEffect(() => {
             webRTCHandler.getLocalPreviewAndInitRoomConnection(identity, roomId);
-        if (!isRoomHost && !roomId) {
-          const siteUrl = window.location.origin +'/room';
-          window.location.href = siteUrl;
-        } else {
-          webRTCHandler.getLocalPreviewAndInitRoomConnection(
-            isRoomHost,
-            identity,
-            roomId,
-            connectOnlyWithAudio
-          );
-        }
+        // if (!isRoomHost && !roomId) {
+        //   const siteUrl = window.location.origin +'/room';
+        //   window.location.href = siteUrl;
+        // } else {
+        //   webRTCHandler.getLocalPreviewAndInitRoomConnection(
+        //     isRoomHost,
+        //     identity,
+        //     roomId,
+        //     connectOnlyWithAudio
+        //   );
+        // }
       }, [identity]);
-      
+
     //=======Video Camera Button======
     const handleCameraButtonPressed = (e) => {
         e.prevent.default()
@@ -60,11 +61,16 @@ const Video = () => {
     //========Conncect only audio======
     return (
         <div className='w-full mx-auto'>
-            <div className='flex list-none items-center text-gray-200'>
-                <h2 className='md:text-md lg:text-xl text-gray-200'>Discuss About Our New Projects</h2>
-                <div className='flex items-center rounded px-2 ml-6 bg-green-900'>
-                    <li><IoPeopleOutline /></li>
-                    <li className='px-1 lg:px-3'>37+ </li>
+            <div className='flex items-center justify-between text-gray-200'>
+                <div className="flex gap-0 lg:gap-1">
+                    <h2 className='text-sm lg:text-xl text-gray-200'>Discuss About Our New Projects</h2>
+                    <div className='flex items-center rounded bg-green-900 list-none'>
+                        <li><IoPeopleOutline /></li>
+                        <li className='px-1 lg:px-3 text-sm'>37+ </li>
+                    </div>
+                </div>
+                <div className="tooltip mr-1 py-1 px-2 rounded text-white hover:bg-slate-700" data-tip={copySuccess ? copySuccess : 'COPY ID'}>
+                    <button className="text-gray-300" onClick={() => copyToClipBoard(`${data.roomId}`)}><small>ID: {data.roomId}</small></button>
                 </div>
             </div>
             <div className='text-gray-200 flex justify-between my-4'>
@@ -73,7 +79,7 @@ const Video = () => {
                     <li className='text-sm lg:text-md px-1 lg:px-2'>REQ : 00.02.36s </li>
                 </div>
                 <div className="id">
-                    {/* <p>Share Id{roomId}</p> */}
+                    <p>{data.identity}</p>
                 </div>
                 <div className='flex list-none items-center text-gray-200'>
                     <li className='bg-green-900 rounded-full cursor-pointer'><BsPlus /></li>
@@ -90,7 +96,6 @@ const Video = () => {
                 
                 <div className="flex justify-center items-baseline">
                     <img src={user} alt="Main user" className='p-4' />
-                    {/* <p>{roomId}</p> */}
                 </div>
 
                 <div className='grid grid-rows justify-center items-baseline pb-4'>

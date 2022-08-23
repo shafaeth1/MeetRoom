@@ -1,6 +1,6 @@
 import React from 'react';
 import Users from '../../../components/Users/Users';
-import ChatTab from '../../../components/ChatTab/ChatTab'
+import Participant from '../../../components/Participant/Participant';
 
 const UserConference = () => {
     return (
@@ -10,7 +10,10 @@ const UserConference = () => {
             </div>
             {/* ========Right Sidebar ========*/}
             <div className="md:w-12/12 lg:w-4/12">
-                <ChatTab></ChatTab>
+                <div className="text-gray-300 p-2">
+                    <h2 className='text-gray-200 bg-slate-800 text-center py-2 uppercase text-lg font-semibold rounded-md'>All Participents</h2>
+                <Participant></Participant>
+                </div>
             </div>
         </div>
     );
