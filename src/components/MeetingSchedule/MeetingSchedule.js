@@ -33,7 +33,7 @@ const MeetingSchedule = () => {
         <div className="card w-full mx-auto shadow-xl">
             <div className="pr-2 py-2">
                 <div className="card-actions flex justify-between lg:justify-end">
-                    <Link to="/room" className="btn rounded btn-sm">Cancel</Link>
+                    <Link to="/conference" className="btn rounded btn-sm">Cancel</Link>
                 </div>
                 <div className='card-actions justify-center lg:justify-start'>
                     <h1 className='text-lg lg:text-2xl text-gray-200 font-bold text-center lg:text-left mt-4 lg:mt-0'>Schedule Meeting</h1>
