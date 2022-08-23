@@ -11,7 +11,7 @@ const MeetingSchedule = () => {
     const { register, handleSubmit, } = useForm();
 
     const onSubmit = data => {
-        const url =`https://meetrooms.herokuapp.com/schedule`
+        const url =`http://localhost:5000/schedule`
         fetch(url,{
             method: 'POST',
             headers: {

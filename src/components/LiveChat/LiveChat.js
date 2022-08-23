@@ -14,7 +14,7 @@ const LiveChat = () => {
 
     const joinRoom = () => {
         if (username !== "" && room !== "") {
-            socket.emit("join_room", room);
+            socket.emit("join-room", room);
             setShowChat(true);
         }
     };

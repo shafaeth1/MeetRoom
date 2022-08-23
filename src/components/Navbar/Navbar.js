@@ -4,9 +4,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import logo from '../../assets/images/logo.png';
+import useAdmin from '../../hooks/useAdmin';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user);
     const logout = () => {
         signOut(auth);
 
@@ -42,7 +44,7 @@ const Navbar = () => {
                     </label>
 
 
-                    {!user && <Link to='/dashboard'>Dashboard</Link>}
+                    { admin && <Link to='/dashboard'>Dashboard</Link>}
                     <ul className="menu menu-horizontal p-0 text-gray-200">
                         <li>{user ? <button onClick={logout} className="">Sign out</button> : <Link to="/signIn">Sign in</Link>}</li>
                     </ul>

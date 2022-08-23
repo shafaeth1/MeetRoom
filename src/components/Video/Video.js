@@ -8,34 +8,37 @@ import * as webRTCHandler from "../../utils/webRTCHandler";
 import { useSelector } from 'react-redux';
 
 const Video = () => {
-    const roomId = useSelector(state => state.reducerData.roomId)
-    const identity = useSelector(state => state.reducerData.identity)
-    console.log(roomId, identity)
-
+    const data = useSelector(state => state);
+    const {isRoomHost, identity, roomId, connectOnlyWithAudio, showOverlay} = data;
+    // ============Copy to Clipboard=============
+    const [copySuccess, setCopySuccess] = useState('');
+    const copyToClipBoard = async copyMe => {
+        try {
+          await navigator.clipboard.writeText(copyMe);
+          <small>{setCopySuccess(`Copied!`)}</small>
+        } catch (err) {
+         setCopySuccess('Failed to copy!');
+        }
+    }
+    console.log(data )
     const [isLocalVideoDisabled, setIsLocalVideoDisabled] = useState(false);
     const [isMicMuted, setIsMicMuted] = useState(false);
 
-    
-
-    // useEffect(() => {
-    //         webRTCHandler.getLocalPreviewAndInitRoomConnection(
-    //         isRoomHost,
-    //         identity,
-    //         roomId,
-    //         connectOnlyWithAudio);
-    //     // if (!isRoomHost && !roomId) {
-    //     //   const siteUrl = window.location.origin +'/room';
-    //     //   window.location.href = siteUrl;
-    //     // } else {
-    //     //   webRTCHandler.getLocalPreviewAndInitRoomConnection(
-    //     //     isRoomHost,
-    //     //     identity,
-    //     //     roomId,
-    //     //     connectOnlyWithAudio
-    //     //   );
-    //     // }
-    //   }, []);
-
+    useEffect(() => {
+            webRTCHandler.getLocalPreviewAndInitRoomConnection(identity, roomId);
+        if (!isRoomHost && !roomId) {
+          const siteUrl = window.location.origin +'/room';
+          window.location.href = siteUrl;
+        } else {
+          webRTCHandler.getLocalPreviewAndInitRoomConnection(
+            isRoomHost,
+            identity,
+            roomId,
+            connectOnlyWithAudio
+          );
+        }
+      }, [identity]);
+      
     //=======Video Camera Button======
     const handleCameraButtonPressed = (e) => {
         e.prevent.default()
