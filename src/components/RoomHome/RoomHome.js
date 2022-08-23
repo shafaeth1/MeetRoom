@@ -1,9 +1,13 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import Clock from 'react-clock';
+import { Link } from 'react-router-dom';
+import CreateSingleRoom from '../../ConferenceRoom/ModalConference/CreateSingleRoom';
 import 'react-clock/dist/Clock.css';
 import 'react-calendar/dist/Calendar.css';
-import { Link } from 'react-router-dom';
+import CreateGroupRoom from '../../ConferenceRoom/ModalConference/CreateGroupRoom';
+import CreateChatRoom from '../../ConferenceRoom/ModalConference/CreateChatRoom';
+import CreateBroadcastRoom from '../../ConferenceRoom/ModalConference/CreateBroadcastRoom';
 
 const RoomHome = () => {
     const [value, setValue] = useState(new Date());
@@ -35,10 +39,7 @@ const RoomHome = () => {
                 <div className="card w-12/12 lg:w-4/12 bg-primary text-primary-content">
                     <div className="card-body">
                         <div className="flex justify-start gap-1">
-                            <div><i className="fal fa-video font-bold text-3xl bg-clock bg-transparent border border-slate-600 p-2"></i></div>
-                            <button class="choiceButton" onClick={() => window.location.replace("/CreateRoom")}>
-                                Get Started
-                             </button>
+                            <button><CreateSingleRoom/></button>
                         </div>
                         <h2 className="text-lg font-semibold">Single call</h2>
                         <p className='text-sm'>Start Calling</p>
@@ -50,13 +51,8 @@ const RoomHome = () => {
                  {/* ======Group Video Calling===== */}
                 <div className="card w-12/12 lg:w-6/12 bg-orange-500 text-primary-content ml-0">
                     <div className="card-body">
-                        <div className="flex justify-start">
-                            <div>
-                            <i className="fas fa-video-plus font-bold text-3xl bg-clock bg-transparent border border-slate-600 p-2"></i>
-                            </div>
-                            <button class="choiceButton" onClick={() => window.location.replace("/CreateRoomGroup")}>
-                                Get Started
-                            </button>
+                        <div className="flex justify-start gap-1">
+                            <button><CreateGroupRoom/></button>
                         </div>
                         <h2 className="text-lg font-semibold">Group Call</h2>
                         <p className='text-sm'>Start Group Calling</p>
@@ -66,13 +62,8 @@ const RoomHome = () => {
                  {/* ======Chatting Option===== */}
                 <div className="card w-12/12 lg:w-6/12 bg-lime-500 text-primary-content ml-0">
                     <div className="card-body">
-                        <div className="flex justify-start">
-                            <div>
-                                <i className="fas fa-sms font-bold text-3xl bg-clock bg-transparent border border-slate-600 p-2"></i>
-                            </div>
-                            <button class="choiceButton" onClick={() => window.location.replace("/ChatModes")}>
-                                Get Started
-                            </button>
+                        <div className="flex justify-start gap-1">
+                            <button><CreateChatRoom/></button>
                         </div>
                         <h2 className="text-lg font-semibold">Online Chat</h2>
                         <p className='text-sm'>Start Just Chatting</p>
@@ -82,13 +73,8 @@ const RoomHome = () => {
                  {/* ======Live BroadCast===== */}
                 <div className="card w-12/12 lg:w-6/12 bg-amber-500 text-primary-content ml-0">
                     <div className="card-body">
-                        <div className="flex justify-start">
-                            <div>
-                                <i className="far fa-signal-stream font-bold text-3xl bg-clock bg-transparent border border-slate-600 p-2"></i>
-                            </div>
-                            <button class="choiceButton" onClick={() => window.location.replace("/CreateRoomBroadcast")}>
-                                Get Started
-                            </button>
+                        <div className="flex justify-start gap-1">
+                            <button><CreateBroadcastRoom/></button>
                         </div>
                         <h2 className="text-lg font-semibold">Online Chat</h2>
                         <p className='text-sm'>Start Just Chatting</p>
@@ -100,7 +86,7 @@ const RoomHome = () => {
                 <div className="card w-12/12 lg:w-6/12 bg-lime-500 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="card-actions justify-start">
-                            <i className="fal fa-calendar-alt font-bold text-3xl bg-clock bg-transparent border border-slate-600 p-2"></i>
+                            <i className="fal fa-calendar-alt font-bold text-3xl bg-clock bg-transparent border border-gray-300  p-2"></i>
                         </div>
                         <Link to="/conference/schedule" className="text-lg font-semibold">Schedule</Link>
                         <p className='text-sm'>plan your meeting</p>
@@ -112,7 +98,7 @@ const RoomHome = () => {
                 <div className="card w-12/12 lg:w-6/12 bg-amber-500 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="card-actions justify-start">
-                            <i className="fal fa-desktop font-bold text-3xl bg-clock bg-transparent border border-slate-600 p-2"></i>
+                            <i className="fal fa-desktop font-bold text-3xl bg-clock bg-transparent border border-gray-300  p-2"></i>
                         </div>
                         <h2 className="text-lg font-semibold">Share Screen</h2>
                         <p className='text-sm'>show your interface</p>
