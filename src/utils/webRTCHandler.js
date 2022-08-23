@@ -12,21 +12,22 @@ const defaultConstraints = {
   },
 };
 
-// const onlyAudioConstraints = {
-//   audio: true,
-//   video: false,
-// };
+const onlyAudioConstraints = {
+  audio: true,
+  video: false,
+};
 
 let localStream;
 
 export const getLocalPreviewAndInitRoomConnection = async (
   isRoomHost,
   identity,
-  roomId = null,
+  roomId,
+  onlyAudio
 ) => {
   await fetchTURNCredentials();
 
-  const constraints = defaultConstraints;
+  const constraints = onlyAudio ? onlyAudioConstraints : defaultConstraints;
 
   navigator.mediaDevices
     .getUserMedia(constraints)
@@ -39,8 +40,8 @@ export const getLocalPreviewAndInitRoomConnection = async (
       store.dispatch(setShowOverlay(false));
 
       isRoomHost
-        ? wss.createNewRoom(identity)
-        : wss.joinRoom(identity, roomId);
+        ? wss.createNewRoom(identity, onlyAudio)
+        : wss.joinRoom(identity, roomId, onlyAudio);
     })
     .catch((err) => {
       console.log(
@@ -140,7 +141,7 @@ export const removePeerConnection = (data) => {
   }
 };
 
-//================UI Videos==================
+////////////////////////////////// UI Videos //////////////////////////////////
 const showLocalVideoPreview = (stream) => {
   const videosContainer = document.getElementById("videos_portal");
   videosContainer.classList.add("videos_portal_styles");
@@ -157,9 +158,9 @@ const showLocalVideoPreview = (stream) => {
 
   videoContainer.appendChild(videoElement);
 
-  // if (store.getState().connectOnlyWithAudio) {
-  //   videoContainer.appendChild(getAudioOnlyLabel());
-  // }
+  if (store.getState().connectOnlyWithAudio) {
+    videoContainer.appendChild(getAudioOnlyLabel());
+  }
 
   videosContainer.appendChild(videoContainer);
 };
@@ -194,30 +195,30 @@ const addStream = (stream, connUserSocketId) => {
   const participants = store.getState().participants;
 
   const participant = participants.find((p) => p.socketId === connUserSocketId);
-    videoContainer.style.position = "static";
   console.log(participant);
-  // if (participant?.onlyAudio) {
-  //   videoContainer.appendChild(getAudioOnlyLabel(participant.identity));
-  // } else {
-  //   videoContainer.style.position = "static";
-  // }
+  if (participant?.onlyAudio) {
+    videoContainer.appendChild(getAudioOnlyLabel(participant.identity));
+  } else {
+    videoContainer.style.position = "static";
+  }
 
   videosContainer.appendChild(videoContainer);
 };
 
-// const getAudioOnlyLabel = (identity = "") => {
-//   const labelContainer = document.createElement("div");
-//   // labelContainer.classList.add("label_only_audio_container");
+const getAudioOnlyLabel = (identity = "") => {
+  const labelContainer = document.createElement("div");
+  labelContainer.classList.add("label_only_audio_container");
 
-//   const label = document.createElement("p");
-//   label.classList.add("label_only_audio_text");
-//   label.innerHTML = `Only audio ${identity}`;
+  const label = document.createElement("p");
+  label.classList.add("label_only_audio_text");
+  label.innerHTML = `Only audio ${identity}`;
 
-//   labelContainer.appendChild(label);
-//   return labelContainer;
-// };
+  labelContainer.appendChild(label);
+  return labelContainer;
+};
 
-//================Buttons logic==================
+////////////////////////////////// Buttons logic //////////////////////////////////
+
 export const toggleMic = (isMuted) => {
   localStream.getAudioTracks()[0].enabled = isMuted ? true : false;
 };
@@ -257,7 +258,7 @@ const switchVideoTracks = (stream) => {
   }
 };
 
-//======================Messages=========================
+////////////////////////////////// Messages /////////////////////////////////////
 const appendNewMessage = (messageData) => {
   const messages = store.getState().messages;
   store.dispatch(setMessages([...messages, messageData]));

@@ -36,19 +36,16 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AddMember from './pages/Dashboard/AddMember';
 import ManageMember from './pages/Dashboard/ManageMember';
-import useAdmin from './hooks/useAdmin';
+import useAdmin from './hooks/useAdmin'
 
 
 function App() {
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
-  console.log(admin)
-  console.log(user)
-
   useEffect(() => connectWithSocketIOServer(), [])
   return (
     <>
-      {!user ? <Navbar /> : ''}
+      {admin && !user ? <Navbar /> : ''}
 
       <Routes>
         {/* ================Indivisual Route =================*/}
@@ -87,7 +84,7 @@ function App() {
         <Route path='*' element={<Error />}></Route>
       </Routes>
       <ToastContainer />
-      {!user ? <Footer /> : ''}
+      {admin && !user ? <Footer /> : ''}
     </>
   );
 }

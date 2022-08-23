@@ -5,7 +5,8 @@ const Contact = () => {
         <main>
         <section className="hero min-h-screen px-0 lg:px-8">
             <div className="flex justify-center flex-col lg:flex-row-reverse">
-                <div className="card shadow-2xl bg-base-100">
+                <div className="w-12/12 lg:6/12">
+                {/* <div className="card shadow-2xl bg-base-100"> */}
                     <div className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -22,10 +23,12 @@ const Contact = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Send</button>
                         </div>
-                    </div>
+                    {/* </div> */}
                 </div>
+                </div>
+                <div className="w-12/12 lg:6/12">
                 {/* End contact Form */}
-                <div className=" lex-shrink-0 w-full max-w-5xl text-center lg:text-left pt-4 lg:pt-0 px-2 lg:px-0">
+                {/* <div className=" lex-shrink-0 w-full max-w-5xl text-center lg:text-left pt-4 lg:pt-0 px-2 lg:px-0"> */}
                     <h1 className="text-lg lg:text-5xl font-bold">Contact now!</h1>
                     <p className="py-2 lg:py-6 pr-0 lg:pr-8 text-justify">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
 
@@ -54,8 +57,8 @@ const Contact = () => {
                             </div>
                     </div>
                 </div>
-                
             </div>
+            {/* </div> */}
         </section>
         {/* end contact section */}
         <section className='mb-8 px-0 lg:px-8'>

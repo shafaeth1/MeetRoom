@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
-import { setIdentity } from '../../../redux/actions';
+import { setIdentity, setIsRoomHost,setRoomId } from '../../../redux/actions';
 
 const NewMeetingModel = () => {
+    const data = useSelector(state => state);
+    const {roomId} = data;
+
     const [nameValue, setNameValue] = useState("");
     const identity = useSelector(state => state.reducerData.identity)
     console.log(nameValue)
@@ -11,18 +14,12 @@ const NewMeetingModel = () => {
 
     const dispatch = useDispatch()
 
-    const handleJoinRoom = (nameValue) => {
-    //   setIdentityAction(nameValue);
-        dispatch(setIdentity(nameValue))
-        createRoom();
-    };
-    
-    const handleNameValueChange = (event) => {
-        setNameValue(event.target.value);
+    const handleNameValueChange = (text) => {
+        setNameValue(text);
     };
 
-    const createRoom = () => {
-      navigate("/room/video", {replace:true})
+    const handleJoinRoom = () => { 
+        navigate("/room/video");
     };
 
     return (
@@ -41,8 +38,8 @@ const NewMeetingModel = () => {
                         <div class="modal-action">
                             <label for="my-modal-4" class="btn ">Cancel</label>
                         </div>
-                        <div class="modal-action">
-                            <button for="my-modal-4" class="btn btn-primary" onClick={()=>handleJoinRoom(nameValue)}>Start Now</button>
+                            <div className="modal-action">
+                            <button for="my-modal-4" className="btn btn-primary" onClick={()=>handleJoinRoom(dispatch(setIdentity(nameValue)), dispatch(setRoomId(roomId)), dispatch(setIsRoomHost(true)))}>Start Now</button>
                         </div>
                     </div>
                 </div>
