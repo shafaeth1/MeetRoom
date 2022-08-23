@@ -1,6 +1,6 @@
 import io from "socket.io-client";
 import { setRoomId, setParticipants } from "../redux/actions";
-import store from "../redux/actions";
+import store from "../redux/store";
 import * as webRTCHandler from "./webRTCHandler";
 
 const SERVER = "http://localhost:5000";
@@ -10,13 +10,13 @@ let socket = null;
 export const connectWithSocketIOServer = () => {
   const socket = io.connect(SERVER);
   socket.on("connect", () => {
-
     console.log("successfully connected with socket, ID: ", socket.id);
   });
 
   socket.on("room-id", (data) => {
     const { roomId } = data;
     store.dispatch(setRoomId(roomId));
+    console.log(roomId)
   });
 
   socket.on("room-update", (data) => {
