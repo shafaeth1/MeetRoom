@@ -307,6 +307,7 @@ const SingleRoom = (props) => {
             <div className="md:w-12/12 lg:w-8/12">
                 <SingleVideo 
                 userVideo={userVideo}
+                partnerVideo={partnerVideo}
                 peerRef={peerRef}
                 socketRef={socketRef}
                 otherUser={otherUser}
