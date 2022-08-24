@@ -1,6 +1,6 @@
 import React from 'react';
 import Notification from '../components/Notification/Notification';
-import Video from '../components/Video/Video';
+import VideoStyle from '../components/Video/VideoStyle';
 import Home from '../pages/Home/Home';
 
 const Alamin = () => {
@@ -27,7 +27,7 @@ const Alamin = () => {
                 {/* end col */}
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
                     <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>Desgin Video Component</h1>
-                    <Video></Video>
+                    <VideoStyle></VideoStyle>
                 </div>
                 {/* end col */}
             </div>
