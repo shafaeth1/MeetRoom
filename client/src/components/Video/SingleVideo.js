@@ -4,7 +4,7 @@ import { FaCreativeCommons } from "react-icons/fa";
 import { BsRecordCircle, BsPlus } from "react-icons/bs";
 import { IoPeopleOutline } from "react-icons/io5";
 
-const SingleVideo = ({userVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp, shareScreen, stopShare}) => {
+const SingleVideo = ({userVideo, partnerVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp, shareScreen, stopShare}) => {
     // peerRef, socketRef, otherUser, userStream, senders, sendChannel, localStream;
 
     return (
@@ -33,7 +33,7 @@ const SingleVideo = ({userVideo, getUrl, copySuccess, toggleAudio, toggleVideo, 
                 </div>
             </div>
 
-            <div className='rounded-xl bg-green-200 relative w-full'>
+            <div className='rounded-xl bg-green-200 relative gap-2'>
                 <div className='text-gray-200 list-none text-xl flex gap-3 justify-start p-4 absolute'>
                     <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl p-1 '><FaCreativeCommons /></li>
                     <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl p-1 '><AiOutlinePushpin /></li>
@@ -41,25 +41,17 @@ const SingleVideo = ({userVideo, getUrl, copySuccess, toggleAudio, toggleVideo, 
                 </div>
                 
                 {/* =======Video Player======= */}
-                <div className="flex justify-center rounded-xl">
-                    <div className="w-6/12">
+                <div className="flex w-full justify-center rounded-xl">
                     <video id="user" className="rounded-xl w-full" muted autoPlay ref = {userVideo} />
-                    </div>
-                    <div className="w-6/12">                    
-                    <video id="user" className="rounded-xl w-full" muted autoPlay ref = {partnerVideo} />
-                    </div>
-                </div>
-
-                <div className="flex justify-center rounded-xl">
-                    {/* <video id="user" className="rounded-xl w-full" muted autoPlay ref = {userVideo} /> */}
-                    <video id="user" className="rounded-xl w-full" muted autoPlay ref = {partnerVideo} />
-                    {/* <video id="peer" className="oneVideo" autoPlay ref = {partnerVideo} /> */}
+                    {/* <div className="w-4/12">                    
+                        <video id="user" className="rounded-xl w-full" muted autoPlay ref = {partnerVideo} />
+                    </div> */}
                 </div>
 
                  {/* =======Video Controller======= */}
-                <div className='grid grid-rows justify-center items-baseline pb-4'>
+                <div className='grid grid-rows justify-center items-baseline relative'>
                     {/* <h2 className='bg-green-400 text-white mb-2 p-1'>This is the week thats we can more presentation..</h2> */}
-                    <div className='flex gap-2 md:gap-4 justify-center place-items-end text-gray-200 font-bold cursor-pointer list-none'>
+                    <div className='flex gap-2 md:gap-4 justify-center place-items-end text-gray-200 font-bold cursor-pointer list-none absolute bottom-8 left-1/3'>
                         <button onClick = {toggleAudio}>
                             <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>
                                 <i className="fas fa-microphone-slash font-bold" id="btn-a"></i> 

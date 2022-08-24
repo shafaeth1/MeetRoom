@@ -1,7 +1,7 @@
 import React from 'react';
 // import Slider from 'react-slick';
 import ChatTab from '../../components/ChatTab/ChatTab';
-import Video from '../../components/Video/Video';
+import VideoStyle from '../../components/Video/VideoStyle';
 import Slider from '../../components/Slider/Slider';
 import Schedule from '../../components/Schedule/Schedule';
 
@@ -9,7 +9,7 @@ const VideoConference = () => {
     return (
         <div className="flex justify-center gap-1 flex-col lg:flex-row">
             <div className="md:w-12/12 lg:w-8/12">
-                <Video></Video>
+                <VideoStyle></VideoStyle>
                 <Slider></Slider>
             </div>
             {/* ========Right Sidebar ========*/}

@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Slider from 'react-slick';
 import io from "socket.io-client";
+import SingleVideo from '../../components/Video/SingleVideo';
 import SignleChat from '../../components/Chat/SignleChat';
-import Schedule from '../../components/Schedule/Schedule';
-import SingleVideo from '../../components/Video/Video';
+
 
 const SingleRoom = (props) => {
        // variables for different functionalities of video call
@@ -196,7 +195,7 @@ const SingleRoom = (props) => {
        // Toggle Video
        let isVideo = true;
        let iconVideo = 'fal fa-video-slash font-bold';
-       function toggleVideo() {
+       const toggleVideo =()=> {
            document.getElementById('btn-v').classList = iconVideo;
            if (isVideo) {
                iconVideo = 'fal fa-video font-bold';
@@ -285,8 +284,8 @@ const SingleRoom = (props) => {
        const renderMessage =(message, index) => {
            if (message.yours) {
                return (
-                   <div class="myRow" key={index}>
-                       <div class="myMSG">
+                   <div className="myRow" key={index}>
+                       <div className="myMSG">
                            {message.value}
                        </div>
                    </div>
@@ -294,8 +293,8 @@ const SingleRoom = (props) => {
            }
    
            return (
-               <div class="partnerRow" key={index}>
-                   <div class="partnerMSG">
+               <div className="partnerRow" key={index}>
+                   <div className="partnerMSG">
                        {message.value}
                    </div>
                </div>
@@ -308,13 +307,6 @@ const SingleRoom = (props) => {
                 <SingleVideo 
                 userVideo={userVideo}
                 partnerVideo={partnerVideo}
-                peerRef={peerRef}
-                socketRef={socketRef}
-                otherUser={otherUser}
-                userStream={userStream}
-                senders={senders}
-                sendChannel={sendChannel}
-                localStream={localStream}
                 getUrl={getUrl}
                 copySuccess={copySuccess}
                 hangUp={hangUp}
@@ -322,44 +314,53 @@ const SingleRoom = (props) => {
                 toggleVideo={toggleVideo}
                 shareScreen={shareScreen}
                 stopShare={stopShare}
+                // peerRef={peerRef}
+                // socketRef={socketRef}
+                // otherUser={otherUser}
+                // userStream={userStream}
+                // senders={senders}
+                // sendChannel={sendChannel}
+                // localStream={localStream}
                 />
 
                 {/* ======Participent Video===== */}
-                <Slider partnerVideo={partnerVideo}/>
+                {/* <Slider partnerVideo={partnerVideo}/> */}
             </div>
 
             {/* ========Right Sidebar ========*/}
             <div className="md:w-12/12 lg:w-4/12">
-
                 {/* ========Single Chat Options ========*/}
                 <div className='pl-0 lg:pl-2'>
                     <h2 className='text-md lg:text-xl font-semibold border p-2 mb-4 lg:mb-2 border-gray-600 rounded-md text-gray-400'>Live Chat</h2>
                     <SignleChat
-                        text={text}
-                        handleChange={handleChange}
-                        renderMessage = {renderMessage}
-                        sendMessage={sendMessage}
+                        // text={text}
+                        // handleChange={handleChange}
+                        // renderMessage = {renderMessage}
+                        // sendMessage={sendMessage}
                     />
-                </div>
-                
-
-                {/*====== Next Schedule===== */}
-                {/* <div className="mt-2">
-                    <h2 className='text-gray-300 font-semibold py-1 pl-3'>Next Schedule is:</h2>
-                    <div className="rounded-lg first-letter:mb-2 overflow-y-auto max-h-40 px-3 py-2 tab-bar">
-                    <Schedule></Schedule>
+                     <div className="chatBox">
+                    <div className="row text-area">
+                        {/* {messages?.map(renderMessage)} */}
                     </div>
-                </div> */}
+                    
+                    {/* <div className="row text-box">
+                        <textarea className="text" value={text} onChange={handleChange} placeholder="Say Something..."/>
+                        <button id="send" onClick={sendMessage}>Send</button>
+                    </div> */}
+
+                </div>
             </div>
-        {/* <div class="row">
-            <div class="col-12 col-md-3 chat">
-                <div class="chatBox">
-                    <div class="row text-area">
+                
+        </div>
+        {/* <div className="row">
+            <div className="col-12 col-md-3 chat">
+                <div className="chatBox">
+                    <div className="row text-area">
                         {messages.map(renderMessage)}
                     </div>
                     
-                    <div class="row text-box">
-                        <textarea class="text" value={text} onChange={handleChange} placeholder="Say Something..."/>
+                    <div className="row text-box">
+                        <textarea className="text" value={text} onChange={handleChange} placeholder="Say Something..."/>
                         <button id="send" onClick={sendMessage}>Send</button>
                     </div>
 
