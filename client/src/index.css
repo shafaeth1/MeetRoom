@@ -224,3 +224,8 @@ video {
   font-size: 18px;
   color: black;
 }
+
+/* =====Media Query==== */
+@media(max-width:767px){
+  /* code will here */
+}
