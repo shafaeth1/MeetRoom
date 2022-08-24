@@ -42,7 +42,17 @@ const SingleVideo = ({userVideo, getUrl, copySuccess, toggleAudio, toggleVideo, 
                 
                 {/* =======Video Player======= */}
                 <div className="flex justify-center rounded-xl">
+                    <div className="w-6/12">
                     <video id="user" className="rounded-xl w-full" muted autoPlay ref = {userVideo} />
+                    </div>
+                    <div className="w-6/12">                    
+                    <video id="user" className="rounded-xl w-full" muted autoPlay ref = {partnerVideo} />
+                    </div>
+                </div>
+
+                <div className="flex justify-center rounded-xl">
+                    {/* <video id="user" className="rounded-xl w-full" muted autoPlay ref = {userVideo} /> */}
+                    <video id="user" className="rounded-xl w-full" muted autoPlay ref = {partnerVideo} />
                     {/* <video id="peer" className="oneVideo" autoPlay ref = {partnerVideo} /> */}
                 </div>
 

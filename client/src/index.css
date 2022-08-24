@@ -226,7 +226,7 @@ video {
 }
 video {
   /* override other styles to make responsive */
-  width: 100%    !important;
+  width: 560px    !important;
   height: auto   !important;
   margin-bottom: 5px;
 }
