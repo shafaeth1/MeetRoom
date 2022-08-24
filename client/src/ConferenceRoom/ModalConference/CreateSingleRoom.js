@@ -11,13 +11,13 @@ const CreateSingleRoom = () => {
        singleRoom(`/conference/room/${id}`);
     }
 
-    // creating a room id for scheduling a call
-    const scheduleID =()=> {
-        const id = uuid();
-        var url = window.location.href;
-        var n = url.lastIndexOf('CreateRoom');
-        return url.substring(0, n - 1) + `/room/${id}`;
-    }
+    // // creating a room id for scheduling a call
+    // const scheduleID =()=> {
+    //     const id = uuid();
+    //     var url = window.location.href;
+    //     var n = url.lastIndexOf('CreateRoom');
+    //     return url.substring(0, n - 1) + `/room/${id}`;
+    // }
     
     // sending an email to the user
     // const sendEmail = (e)=> {
@@ -44,22 +44,22 @@ const CreateSingleRoom = () => {
     //         >
             
     //         <Modal.Header closeButton>
-    //             <Modal.Title id="contained-modal-title-vcenter" class="InvHeading">
+    //             <Modal.Title id="contained-modal-title-vcenter" className="InvHeading">
     //             Send an Email Invitation
     //             </Modal.Title>
     //         </Modal.Header>
             
     //         <Modal.Body>
     //             <form className="contact-form" onSubmit={sendEmail}>
-    //                 <div class="row">
-    //                     <div class="col-6">
+    //                 <div className="row">
+    //                     <div className="col-6">
     //                         <label>Name of Organiser</label>
     //                         <input type="text" name="from_name" />
 
     //                         <label>Email Address of Organiser</label>
     //                         <input type="email" name="from_email" />
     //                     </div>
-    //                     <div class="col-6">
+    //                     <div className="col-6">
     //                         <label>Name of Attendee</label>
     //                         <input type="text" name="to_name" />
 
@@ -68,28 +68,28 @@ const CreateSingleRoom = () => {
     //                     </div>
     //                 </div>
 
-    //                 <div class="row">
-    //                     <div class="col-6">
+    //                 <div className="row">
+    //                     <div className="col-6">
     //                         <label>Date of the Meeting</label> <br></br>
     //                         <input type="date" name="date" />
     //                     </div>
-    //                     <div class="col-6">
+    //                     <div className="col-6">
     //                         <label>Time of the Meeting</label> <br></br>
     //                         <input type="time" name="time" />
     //                     </div>
     //                 </div>
 
-    //                 <div class="row my-4">
-    //                     <div class="col-12">
+    //                 <div className="row my-4">
+    //                     <div className="col-12">
     //                         <label>Link to the Meeting</label> <br></br>
     //                         <input type="text" name = "id" value={id}></input>
     //                     </div>
     //                 </div>
 
-    //                 <div class="row">
-    //                     <div class="col-6">
-    //                         <input class="scheduleBtn" type="submit" value="Send" />
-    //                         <button class="scheduleBtn" onClick={props.onHide}> Close </button>
+    //                 <div className="row">
+    //                     <div className="col-6">
+    //                         <input className="scheduleBtn" type="submit" value="Send" />
+    //                         <button className="scheduleBtn" onClick={props.onHide}> Close </button>
     //                     </div>
     //                 </div>
 
@@ -113,7 +113,7 @@ const CreateSingleRoom = () => {
                         <div className="modal-action">
                             <label for="my-modal-1" className="btn">Cancel</label>
                             <div className="flex gap-2 items-center">
-                            {/* <button class="schedule" onClick={() => setModalShow(true)}> Schedule Call </button> */}
+                            {/* <button className="schedule" onClick={() => setModalShow(true)}> Schedule Call </button> */}
                             <Link to="/conference/schedule" className="btn">Schedule</Link>
                             <button className="btn"  onClick={()=>create()}> Single Call </button>
                             </div>
