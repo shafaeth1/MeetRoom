@@ -22,7 +22,7 @@ const SignIn = () => {
     let signInError;
     const navigate = useNavigate();
     const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
+    let from = location.state?.from?.pathname || "/conference";
 
     useEffect(() => {
         if (user || gUser || Fuser) {

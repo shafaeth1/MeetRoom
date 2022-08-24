@@ -13,7 +13,7 @@ const SignUp = () => {
     const navigate = useNavigate()
 
     const location = useLocation()
-    let from = location.state?.from?.pathname || "/";
+    let from = location.state?.from?.pathname || "/conference";
     const [
         createUserWithEmailAndPassword,
         user,
