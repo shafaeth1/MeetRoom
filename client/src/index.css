@@ -224,6 +224,12 @@ video {
   font-size: 18px;
   color: black;
 }
+video {
+  /* override other styles to make responsive */
+  width: 100%    !important;
+  height: auto   !important;
+  margin-bottom: 5px;
+}
 
 /* =====Media Query==== */
 @media(max-width:767px){

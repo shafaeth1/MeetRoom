@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import Clock from 'react-clock';
 import { Link } from 'react-router-dom';
 import CreateSingleRoom from '../../ConferenceRoom/ModalConference/CreateSingleRoom';
-import 'react-clock/dist/Clock.css';
-import 'react-calendar/dist/Calendar.css';
 import CreateGroupRoom from '../../ConferenceRoom/ModalConference/CreateGroupRoom';
 import CreateChatRoom from '../../ConferenceRoom/ModalConference/CreateChatRoom';
 import CreateBroadcastRoom from '../../ConferenceRoom/ModalConference/CreateBroadcastRoom';
+import 'react-clock/dist/Clock.css';
+import 'react-calendar/dist/Calendar.css';
 
 const RoomHome = () => {
     const [value, setValue] = useState(new Date());

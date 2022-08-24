@@ -4,7 +4,7 @@ import { FaCreativeCommons } from "react-icons/fa";
 import { BsRecordCircle, BsPlus } from "react-icons/bs";
 import { IoPeopleOutline } from "react-icons/io5";
 
-const Video = ({userVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp, shareScreen, stopShare}) => {
+const SingleVideo = ({userVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp, shareScreen, stopShare}) => {
     // peerRef, socketRef, otherUser, userStream, senders, sendChannel, localStream;
 
     return (
@@ -82,4 +82,4 @@ const Video = ({userVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp
     );
 };
 
-export default Video;
+export default SingleVideo;
