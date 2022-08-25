@@ -107,14 +107,12 @@
   background-color: transparent!important;
   /* --tw-bg-opacity: 0.1; */
 }
-
 /* override other styles to make responsive */
 .oneVideo {
   width: 100%    !important;
   height: auto   !important;
   border-radius: 10px;
 }
-
 .groupVideo {
   height: 100%;
   width: 100%;
