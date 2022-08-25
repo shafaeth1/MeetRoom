@@ -62,6 +62,7 @@ const SignleChat = ({text, handleChange, renderMessage, sendMessage}) => {
                 <button><i className="far fa-image text-3xl text-gray-200"></i></button>
                 <input type="text" placeholder="Type here" className="p-2 rounded-md border border-slate-600-none w-full px-2" />
                 <button> <i className="far fa-paper-plane text-2xl font-medium text-gray-200"></i> </button>
+
             </div>            
         </div>
 

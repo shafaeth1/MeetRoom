@@ -17,8 +17,8 @@ const CreateBroadcastRoom = () => {
             
             <div className="modal modal-bottom sm:modal-middle  ">
                 <div className="modal-box bg-chat h-auto  mx-auto  ">
-                    <h2 className="text-center text-2xl divide-y">Crate Room Broadcast</h2>
-                    <div className='flex justify-end gap-3'>
+                    <h2 className="text-center text-3xl divide-y font-semibold">Crate Room Broadcast</h2>
+                    <div className='flex justify-center gap-3'>
                         {/* Cancel Btn */}
                         <div className="modal-action">
                             <label for="my-modal-4" className="btn">Cancel</label>
@@ -26,6 +26,7 @@ const CreateBroadcastRoom = () => {
                             {/* <button className="schedule" onClick={() => setModalShow(true)}> Schedule Call </button> */}
                             <Link to="/conference/schedule" className="btn">Schedule</Link>
                             <button className="btn" onClick={()=>createbroadCastRooom()}> BroadCost</button>
+
                             </div>
                         </div>
                     </div>

@@ -4,6 +4,7 @@ import { FaCreativeCommons } from "react-icons/fa";
 import { BsRecordCircle } from "react-icons/bs";
 
 const SingleVideo = ({userVideo, partnerVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp, shareScreen, stopShare}) => {
+
     return (
         <div className='w-full mx-auto'>
             <div className='text-gray-200 flex justify-between'>
@@ -27,6 +28,7 @@ const SingleVideo = ({userVideo, partnerVideo, getUrl, copySuccess, toggleAudio,
                 <div className="flex w-full justify-center rounded-xl">
                     <video id="user" className="oneVideo" muted autoPlay playsInline ref = {userVideo ? userVideo : partnerVideo} />
                     {/* <video id="user" className="oneVideo" autoPlay playsInline ref = {partnerVideo} /> */}
+
                 </div>
                 
 

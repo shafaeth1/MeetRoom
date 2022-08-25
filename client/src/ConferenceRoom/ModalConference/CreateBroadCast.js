@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useRef } from 'react';
 
+
 const CreateBroadCast = () => {
     const userStream = useRef();
-    const started = false;
+    let started = false;
 
     window.onload = () => {
         document.getElementById('start').onclick = () => {
@@ -30,7 +31,7 @@ const CreateBroadCast = () => {
         });
         peer.onnegotiationneeded = () => handleNegotiationNeededEvent(peer);
         return peer;
-    }  
+    }
     async function handleNegotiationNeededEvent(peer) {
         const offer = await peer.createOffer();
         await peer.setLocalDescription(offer);
@@ -43,44 +44,77 @@ const CreateBroadCast = () => {
         peer.setRemoteDescription(desc).catch(e => console.log(e));
     }
 
-    function hangUp() {
+    const hangUp = () => {
         if (started) {
             userStream.current.getVideoTracks()[0].enabled = false;
         }
-        window.location.replace("/CreateRoomBroadcast");
+        window.location.replace("/conference");
     }
 
     let isVideo = true;
-    let colorVideo = '#bc1823';
-    function toggleVideo() {
-        document.getElementById('avv').style.backgroundColor = colorVideo;
+    let iconVideo = 'fal fa-video-slash font-bold';
+    const toggleVideo = () => {
+        document.getElementById('avv').style.backgroundColor = iconVideo;
         if (isVideo) {
-            colorVideo = '#302b70';
+            iconVideo = 'fal fa-video font-bold';
         } else {
-            colorVideo = '#bc1823';
+            iconVideo = 'fal fa-video-slash font-bold';
         }
         isVideo = !isVideo;
         userStream.current.getVideoTracks()[0].enabled = isVideo;
     }
-    
+
     let isAudio = true;
-    let colorAudio = '#bc1823';
-    function toggleAudio() {
-        document.getElementById('av').style.backgroundColor = colorAudio;
+    let iconAudio = 'fas fa-microphone font-bold';
+    const toggleAudio = () => {
+        document.getElementById('btn-a').classList = iconAudio;
         if (isAudio) {
-            colorAudio = '#302b70';
+            iconAudio = 'fal fa-microphone-slash font-bold';
         } else {
-            colorAudio = '#bc1823';
+            iconAudio = 'fas fa-microphone font-bold';
         }
         isAudio = !isAudio;
         userStream.current.getAudioTracks()[0].enabled = isAudio;
     }
-  
+
 
 
     return (
-        <div>
-            <h1>Broadcast</h1>
+        <div className='w-full mx-auto'>
+            <h2 className='text-center text-sm lg:text-2xl text-gray-200 font-semibold'>Stream Your Video</h2>
+            <div className='rounded-xl bg-green-200 relative w-full'>
+
+                {/* =======Video Player======= */}
+                <div className="flex justify-center rounded-xl">
+                    <video id="video" className="rounded-xl h-50 w-full" muted autoPlay />
+                </div>
+
+                {/* =======Video Controller======= */}
+                <div className='grid grid-rows justify-center items-baseline pb-4'>
+                    <div className='flex gap-2 md:gap-4 justify-center place-items-end text-gray-200 font-bold cursor-pointer list-none'>
+                        <button onClick={toggleAudio}>
+                            <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>
+                                <i className="fas fa-microphone-slash font-bold" id="btn-a"></i>
+                            </li>
+                        </button>
+                        <button id='start' onClick={init}>
+                            <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>
+                                <i class="fa-solid fa-phone"></i>
+                            </li>
+                        </button>
+                        <button onClick={toggleVideo}>
+                            <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>
+                                <i className="fal fa-video font-bold" id="avv"></i>
+                            </li>
+                        </button>
+                        <button onClick={hangUp}>
+                            <li className='bg-red-500 rounded-md text-lg lg:text-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-2 lg:py-2'>
+                                <i className="far fa-phone-alt font-bold" id="btn-phone"></i>
+                            </li>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
