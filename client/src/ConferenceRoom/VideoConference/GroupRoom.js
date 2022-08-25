@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import io from "socket.io-client";
 import Peer from "simple-peer";
-import GroupVideo from '../../components/Video/GroupVideo';
+import VideoStyle from '../../components/Video/VideoStyle';
 
 // Streaming Video of the user
 const Video = (props) => {
@@ -24,8 +24,8 @@ const videoConstraints = {
     width: window.innerWidth / 2
 };
 
-
 const GroupRoom = (props) => {
+    console.log(props.match.params)
     // variables for different functionalities of video call
     const [peers, setPeers] = useState([]);
     const socketRef = useRef();
@@ -33,107 +33,107 @@ const GroupRoom = (props) => {
     const peersRef = useRef([]);
     const senders = useRef([]);
     const userStream = useRef();
-    const roomID =  props.match.params.roomID;
+    // const roomID =  props.match.params.roomID;
 
-    useEffect(() => {
-        socketRef.current = io.connect("/");
+    // useEffect(() => {
+    //     socketRef.current = io.connect("/");
         
-        // asking for audio and video access
-        navigator.mediaDevices.getUserMedia({ audio: true, video: videoConstraints }).then(stream => {
+    //     // asking for audio and video access
+    //     navigator.mediaDevices.getUserMedia({ audio: true, video: videoConstraints }).then(stream => {
 
-            // streaming the audio and video
-            userVideo.current.srcObject = stream;
-            userStream.current = stream;
+    //         // streaming the audio and video
+    //         userVideo.current.srcObject = stream;
+    //         userStream.current = stream;
             
-            socketRef.current.emit("join room group", roomID);
+    //         socketRef.current.emit("join room group", roomID);
 
-            // getting all user for the new user joining in
-            socketRef.current.on("all users", users => {
-                const peers = [];
+    //         // getting all user for the new user joining in
+    //         socketRef.current.on("all users", users => {
+    //             const peers = [];
 
-                // adding the new user to the group
-                users.forEach(userID => {
-                    const peer = createPeer(userID, socketRef.current.id, stream);
-                    peersRef.current.push({
-                        peerID: userID,
-                        peer,
-                    })
-                    peers.push({
-                        peerID: userID,
-                        peer,
-                    });
-                })
-                setPeers(peers);
-            })
+    //             // adding the new user to the group
+    //             users.forEach(userID => {
+    //                 const peer = createPeer(userID, socketRef.current.id, stream);
+    //                 peersRef.current.push({
+    //                     peerID: userID,
+    //                     peer,
+    //                 })
+    //                 peers.push({
+    //                     peerID: userID,
+    //                     peer,
+    //                 });
+    //             })
+    //             setPeers(peers);
+    //         })
 
-            // sending signal to existing users after new user joined
-            socketRef.current.on("user joined", payload => {
-                const peer = addPeer(payload.signal, payload.callerID, stream);
-                peersRef.current.push({
-                    peerID: payload.callerID,
-                    peer,
-                })
+    //         // sending signal to existing users after new user joined
+    //         socketRef.current.on("user joined", payload => {
+    //             const peer = addPeer(payload.signal, payload.callerID, stream);
+    //             peersRef.current.push({
+    //                 peerID: payload.callerID,
+    //                 peer,
+    //             })
 
-                const peerObj = {
-                    peer,
-                    peerID: payload.callerID
-                }
+    //             const peerObj = {
+    //                 peer,
+    //                 peerID: payload.callerID
+    //             }
 
-                setPeers(users => [...users, peerObj]);
-            });
+    //             setPeers(users => [...users, peerObj]);
+    //         });
 
-            // exisisting users recieving the signal
-            socketRef.current.on("receiving returned signal", payload => {
-                const item = peersRef.current.find(p => p.peerID === payload.id);
-                item.peer.signal(payload.signal);
-            });
+    //         // exisisting users recieving the signal
+    //         socketRef.current.on("receiving returned signal", payload => {
+    //             const item = peersRef.current.find(p => p.peerID === payload.id);
+    //             item.peer.signal(payload.signal);
+    //         });
 
-            // handling user disconnecting
-            socketRef.current.on("user left", id => {
-                // finding the id of the peer who just left
-                const peerObj = peersRef.current.find(p => p.peerID === id);
-                if (peerObj) {
-                    peerObj.peer.destroy();
-                }
+    //         // handling user disconnecting
+    //         socketRef.current.on("user left", id => {
+    //             // finding the id of the peer who just left
+    //             const peerObj = peersRef.current.find(p => p.peerID === id);
+    //             if (peerObj) {
+    //                 peerObj.peer.destroy();
+    //             }
 
-                // removing the peer from the arrays and storing remaining peers in new array
-                const peers = peersRef.current.filter(p => p.peerID !== id);
-                peersRef.current = peers;
-                setPeers(peers);
-            })
-        })
-    }, []);
+    //             // removing the peer from the arrays and storing remaining peers in new array
+    //             const peers = peersRef.current.filter(p => p.peerID !== id);
+    //             peersRef.current = peers;
+    //             setPeers(peers);
+    //         })
+    //     })
+    // }, []);
 
-    // creating a peer object for newly joined user
-    function createPeer(userToSignal, callerID, stream) {
-        const peer = new Peer({
-            initiator: true,
-            trickle: false,
-            stream,
-        });       
+    // // creating a peer object for newly joined user
+    // function createPeer(userToSignal, callerID, stream) {
+    //     const peer = new Peer({
+    //         initiator: true,
+    //         trickle: false,
+    //         stream,
+    //     });       
 
-        peer.on("signal", signal => {
-            socketRef.current.emit("sending signal", { userToSignal, callerID, signal })
-        })
+    //     peer.on("signal", signal => {
+    //         socketRef.current.emit("sending signal", { userToSignal, callerID, signal })
+    //     })
 
-        return peer;
-    }
+    //     return peer;
+    // }
 
-    // adding the newly joined peer to the room
-    function addPeer(incomingSignal, callerID, stream) {
-        const peer = new Peer({
-            initiator: false,
-            trickle: false,
-            stream,
-        })
+    // // adding the newly joined peer to the room
+    // function addPeer(incomingSignal, callerID, stream) {
+    //     const peer = new Peer({
+    //         initiator: false,
+    //         trickle: false,
+    //         stream,
+    //     })
 
-        peer.on("signal", signal => {
-            socketRef.current.emit("returning signal", { signal, callerID })
-        })
+    //     peer.on("signal", signal => {
+    //         socketRef.current.emit("returning signal", { signal, callerID })
+    //     })
 
-        peer.signal(incomingSignal);
-        return peer;
-    }
+    //     peer.signal(incomingSignal);
+    //     return peer;
+    // }
 
     // Toggle Video
     let isVideo = true;
@@ -225,6 +225,7 @@ const GroupRoom = (props) => {
                  shareScreen={shareScreen}
                  stopShare={stopShare}
                 /> */}
+                <VideoStyle/>
 
                 {/* ======Participent Video===== */}
                 {/* <Slider partnerVideo={partnerVideo}/> */}

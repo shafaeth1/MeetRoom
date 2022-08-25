@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { v1 as uuid } from "uuid";
 
-const CreateGroupRoom = () => {
+const CreateGroupRoom = (props) => {
     
     // creating a room id
     // redirecting the user to the correct page

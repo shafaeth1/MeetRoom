@@ -1,7 +1,5 @@
 import React from 'react';
 import Schedule from '../components/Schedule/Schedule';
-import JoinMeetingModel from '../ConferenceRoom/ModalConference/JoinMeetingModel';
-import NewMeetingModel from '../ConferenceRoom/ModalConference/NewMeetingModel';
 import SignIn from '../pages/Register/SignIn';
 
 const Ariful = () => {
@@ -30,19 +28,19 @@ const Ariful = () => {
                     <Schedule></Schedule>
                 </div>
                 {/* end col */}
-                <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
+                {/* <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
                     <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>JoinMeetingModel</h1>
                     <JoinMeetingModel></JoinMeetingModel>
-                </div>
+                </div> */}
                 {/* end col */}
             </div>
             {/* end row */}
 
             <div className='flex flex-col lg:flex-row gap-4 p-4'>
-                <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
+                {/* <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
                     <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>NewMeetingModel</h1>
                     <NewMeetingModel></NewMeetingModel>
-                </div>
+                </div> */}
                 {/* end col */}
                 <div className='w-12/12 md:w-6/12 border p-2 overflow-y-scroll max-h-96'>
                     <h1 className='text-center py-2 border-b-2 font-semibold text-green-600'>your Second Col Code</h1>

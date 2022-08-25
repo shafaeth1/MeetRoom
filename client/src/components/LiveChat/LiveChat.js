@@ -5,8 +5,6 @@ import "./LiveChat.css";
 
 const socket = io.connect("https://meetsrooms.herokuapp.com");
 
-
-
 const LiveChat = () => {
     const [username, setUsername] = useState("");
     const [room, setRoom] = useState("");
