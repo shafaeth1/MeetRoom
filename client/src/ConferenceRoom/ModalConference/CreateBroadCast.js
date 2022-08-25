@@ -81,7 +81,7 @@ const CreateBroadCast = () => {
 
     return (
         <div className='w-full mx-auto'>
-                <h2 className='text-center text-sm lg:text-2xl text-gray-200 font-semibold'>Stream Your Video</h2>
+            <h2 className='text-center text-sm lg:text-2xl text-gray-200 font-semibold'>Stream Your Video</h2>
             <div className='rounded-xl bg-green-200 relative w-full'>
 
                 {/* =======Video Player======= */}
