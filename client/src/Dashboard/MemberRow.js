@@ -21,15 +21,15 @@ const MemberRow = ({ member, index, setRefetch }) => {
         <tr>
             <th>{index + 1}</th>
             <td>
-                <div class="avatar">
-                    <div class="w-8 rounded">
+                <div className="avatar">
+                    <div className="w-8 rounded">
                         <img src={img} alt={name} />
                     </div>
                 </div>
             </td>
             <td>{name}</td>
             <td>{specialty}</td>
-            <td><button onClick={() => handleDelete(email)} class="btn btn-xs">Deleted</button></td>
+            <td><button onClick={() => handleDelete(email)} className="btn btn-xs">Deleted</button></td>
         </tr>
     );
 };

@@ -6,7 +6,7 @@ const SettingRow = ({ eUser, index, setRefetch }) => {
         <tr>
             <th> {index + 1}</th>
             <td>{email}</td>
-            <td><button class="btn btn-xs">{role}</button></td>
+            <td><button className="btn btn-xs">{role}</button></td>
 
 
         </tr>

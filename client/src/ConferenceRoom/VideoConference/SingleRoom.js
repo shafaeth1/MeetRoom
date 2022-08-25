@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import io from "socket.io-client";
 import SingleVideo from '../../components/Video/SingleVideo';
 import SignleChat from '../../components/Chat/SignleChat';
+import { useParams } from 'react-router-dom';
 
 
 const SingleRoom = (props) => {
-       // variables for different functionalities of video call
+    const { roomID } = useParams()
+    // variables for different functionalities of video call
        const userVideo = useRef();
        const partnerVideo = useRef();
        const peerRef = useRef();
@@ -28,11 +30,11 @@ const SingleRoom = (props) => {
                userStream.current = stream;
                localStream = stream;
    
-               document.getElementById('stop-s').style.display = 'none';
+               document.getElementById('btn-stop').classList = 'far fa-ban font-bold';
                
                // grabbing the room id from the url and then sending it to the socket io server
                socketRef.current = io.connect("/");
-               socketRef.current.emit("join room", props.match.params.roomID);
+               socketRef.current.emit("join room", roomID);
    
                // user a is joining 
                socketRef.current.on('other user', userID => {

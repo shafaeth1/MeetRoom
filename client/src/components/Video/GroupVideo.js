@@ -45,16 +45,16 @@ const GroupVideo = ({userVideo, peers, Video, getUrl, copySuccess, hangUp, toggl
                     {/* <video id="peer" className="oneVideo" autoPlay ref = {partnerVideo} /> */}
                     {peers?.map((peer) => {
                         return (
-                            <Video class="groupVideo" key={peer?.peerID} peer={peer?.peer} />
+                            <Video className="groupVideo" key={peer?.peerID} peer={peer?.peer} />
                         );
                     })}
                 </div>
 
-                {/* <div class="videos">
-                    <video class="groupVideo" muted ref={userVideo} autoPlay playsInline />
+                {/* <div className="videos">
+                    <video className="groupVideo" muted ref={userVideo} autoPlay playsInline />
                     {peers.map((peer) => {
                         return (
-                            <Video class="groupVideo" key={peer.peerID} peer={peer.peer} />
+                            <Video className="groupVideo" key={peer.peerID} peer={peer.peer} />
                         );
                     })}
                 </div> */}
