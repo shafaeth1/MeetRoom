@@ -2,12 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import io from "socket.io-client";
 import Peer from "simple-peer";
-import VideoStyle from '../../components/Video/VideoStyle';
+import Slider from "../../components/Slider/Slider";
+import GroupVideo from '../../components/Video/GroupVideo';
+import GroupChat from '../../components/Chat/GroupChat';
 
 // Streaming Video of the user
 const Video = (props) => {
     const ref = useRef();
-
     useEffect(() => {
         props.peer.on("stream", stream => {
             ref.current.srcObject = stream;
@@ -214,7 +215,7 @@ const GroupRoom = () => {
     return (
         <div className="flex justify-center gap-1 flex-col lg:flex-row">
             <div className="md:w-12/12 lg:w-8/12">
-                {/* <GroupVideo
+                <GroupVideo
                  userVideo={userVideo}
                  peers={peers}
                  Video={Video}
@@ -225,18 +226,30 @@ const GroupRoom = () => {
                  toggleVideo={toggleVideo}
                  shareScreen={shareScreen}
                  stopShare={stopShare}
-                /> */}
-                <VideoStyle/>
-
+                />
+    
                 {/* ======Participent Video===== */}
-                {/* <Slider partnerVideo={partnerVideo}/> */}
+                {/* <div className="flex items-center justify-center px-4">
+                    <div class="videos">
+                        {peers.map((peer) => {
+                            return (
+                                <Video class="groupVideo" key={peer.peerID} peer={peer.peer} />
+                            );
+                        })}
+                    </div>
+                </div> */}
+                <Slider 
+                peers={peers}
+                Video={Video}
+                /> 
             </div>
 
             {/* ========Right Sidebar ========*/}
             <div className="md:w-12/12 lg:w-4/12">
                 {/* ========Single Chat Options ========*/}
                 <div className='pl-0 lg:pl-2'>
-                    <h2 className='text-md lg:text-xl font-semibold border p-2 mb-4 lg:mb-2 border-gray-600 rounded-md text-gray-400'>Live Chat</h2>
+                    <h2 className='text-md lg:text-xl text-center uppercase font-semibold p-2 border border-green-700 rounded-md text-gray-400'>Live Chat</h2>
+                    <GroupChat/>
                 </div>
             </div>
                     

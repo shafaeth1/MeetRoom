@@ -323,24 +323,23 @@ const SingleRoom = (props) => {
             <div className="md:w-12/12 lg:w-4/12">
                 {/* ========Single Chat Options ========*/}
                 <div className='pl-0 lg:pl-2'>
-                    <h2 className='text-md lg:text-xl font-semibold border p-2 mb-4 lg:mb-2 border-gray-600 rounded-md text-gray-400'>Live Chat</h2>
+                    <h2 className='text-md lg:text-xl text-center uppercase font-semibold p-2 border border-green-700 rounded-md text-gray-400'>Live Chat</h2>
                     <SignleChat
-                        // text={text}
-                        // handleChange={handleChange}
-                        // renderMessage = {renderMessage}
-                        // sendMessage={sendMessage}
+                        text={text}
+                        handleChange={handleChange}
+                        messages={messages}
+                        renderMessage = {renderMessage}
+                        sendMessage={sendMessage}
                     />
-                     <div className="chatBox">
-                    <div className="row text-area">
-                        {/* {messages?.map(renderMessage)} */}
-                    </div>
-                    
-                    {/* <div className="row text-box">
-                        <textarea className="text" value={text} onChange={handleChange} placeholder="Say Something..."/>
-                        <button id="send" onClick={sendMessage}>Send</button>
+                     {/* <div className="chatBox">
+                        <div className="row text-area">
+                            {messages?.map(renderMessage)}
+                        </div> 
+                        <div className="row text-box">
+                            <textarea className="text" value={text} onChange={handleChange} placeholder="Say Something..."/>
+                            <button id="send" onClick={sendMessage}>Send</button>
+                        </div>
                     </div> */}
-
-                </div>
             </div>
                 
         </div>

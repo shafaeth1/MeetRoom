@@ -5,22 +5,21 @@ import { BsRecordCircle, BsPlus } from "react-icons/bs";
 import { IoPeopleOutline } from "react-icons/io5";
 
 const GroupVideo = ({userVideo, peers, Video, getUrl, copySuccess, hangUp, toggleAudio, toggleVideo, shareScreen, stopShare}) => {
-    // peerRef, socketRef, otherUser, userStream, senders, sendChannel, localStream; {userVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp, shareScreen, stopShare}
     return (
         <div className='w-full mx-auto'>
             <div className='flex items-center justify-between text-gray-200'>
                 <div className="flex gap-0 lg:gap-1">
-                    <h2 className='text-sm lg:text-xl text-gray-200'>Discuss About Our New Projects</h2>
+                    {/* <h2 className='text-sm lg:text-xl text-gray-200'>Now: </h2> */}
                     <div className='flex items-center rounded bg-green-900 list-none'>
-                        <li><IoPeopleOutline /></li>
-                        <li className='px-1 lg:px-3 text-sm'>4+ </li>
+                        <li className='px-2 text-lg text-semibold'><IoPeopleOutline /></li>
+                        <li className='pr-1 text-md'>4+ </li>
                     </div>
                 </div>
                 <div className="tooltip mr-1 py-1 px-2 rounded text-white hover:bg-slate-700" data-tip={copySuccess ? copySuccess : 'COPY ID'}>
                     <button className="text-gray-300" onClick={() => {getUrl()}}><small>Copy Link</small></button>
                 </div>
             </div>
-            <div className='text-gray-200 flex justify-between my-4'>
+            <div className='text-gray-200 flex justify-between my-2'>
                 <div className='flex list-none items-center'>
                     <li className='bg-red-500 rounded-full'><BsRecordCircle /></li>
                     <li className='text-sm lg:text-md px-1 lg:px-2'>REQ : 00.02.36s </li>
@@ -32,7 +31,7 @@ const GroupVideo = ({userVideo, peers, Video, getUrl, copySuccess, hangUp, toggl
                 </div>
             </div>
 
-            <div className='rounded-xl bg-green-200 relative w-full'>
+            <div className='rounded-xl bg-slate-800 relative w-full'>
                 <div className='text-gray-200 list-none text-xl flex gap-3 justify-start p-4 absolute'>
                     <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl p-1 '><FaCreativeCommons /></li>
                     <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl p-1 '><AiOutlinePushpin /></li>
@@ -41,28 +40,27 @@ const GroupVideo = ({userVideo, peers, Video, getUrl, copySuccess, hangUp, toggl
                 
                 {/* =======Video Player======= */}
                 <div className="flex justify-center rounded-xl">
-                    <video id="user" className="rounded-xl w-full" muted autoPlay ref = {userVideo} playsInline />
-                    {/* <video id="peer" className="oneVideo" autoPlay ref = {partnerVideo} /> */}
-                    {peers?.map((peer) => {
-                        return (
-                            <Video className="groupVideo" key={peer?.peerID} peer={peer?.peer} />
-                        );
-                    })}
-                </div>
-
-                {/* <div className="videos">
-                    <video className="groupVideo" muted ref={userVideo} autoPlay playsInline />
+                    {/* <video className="groupVideo" muted ref={userVideo} autoPlay playsInline />
                     {peers.map((peer) => {
                         return (
                             <Video className="groupVideo" key={peer.peerID} peer={peer.peer} />
                         );
-                    })}
-                </div> */}
+                    })} */}
+
+                    <div className="flex items-center justify-center">
+                        <video className="oneVideo" muted ref={userVideo} autoPlay playsInline />
+                        {peers.map((peer) => {
+                            console.log(peer)
+                            return (
+                                <Video className="groupVideo" key={peer.peerID} peer={peer} />
+                            );
+                        })}
+                    </div>
+                </div>
 
 
                  {/* =======Video Controller======= */}
-                <div className='grid grid-rows justify-center items-baseline pb-4'>
-                    {/* <h2 className='bg-green-400 text-white mb-2 p-1'>This is the week thats we can more presentation..</h2> */}
+                 <div className='grid grid-rows justify-center items-baseline py-2'>
                     <div className='flex gap-2 md:gap-4 justify-center place-items-end text-gray-200 font-bold cursor-pointer list-none'>
                         <button onClick = {toggleAudio}>
                             <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>

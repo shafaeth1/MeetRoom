@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { connect, useSelector } from 'react-redux';
 import user from "../../assets/images/user.png"
 import useSchedules from '../../hooks/useSchedules';
 import Loading from '../../pages/Register/Loading';
@@ -8,7 +7,6 @@ const Schedule = () => {
     const [copySuccess, setCopySuccess] = useState('');
     const {schedules, isLoad} =  useSchedules();
     const posts = [...schedules].reverse();
-    const data = useSelector(state=>state);
     const copyToClipBoard = async copyMe => {
         try {
           await navigator.clipboard.writeText(copyMe);
@@ -46,7 +44,7 @@ const Schedule = () => {
                             </div>
                             <div className="flex">
                                 <div className="tooltip mr-1 py-1 px-2 rounded text-white hover:bg-slate-700" data-tip={copySuccess ? copySuccess : 'COPY ID'}>
-                                    <button className="text-gray-300" onClick={() => copyToClipBoard(`${data.roomId}`)}><small>{data.roomId}</small></button>
+                                    <button className="text-gray-300" onClick={() => copyToClipBoard(`xsks-2exk-2klse`)}><small>xsks-2exk-2klse</small></button>
                                 </div>
                                 <button className="ml-1 bg-green-600 py-1 px-2 rounded shadow-green-200 text-gray-200 hover:bg-blue-500"> Start</button>
                             </div>
@@ -59,10 +57,5 @@ const Schedule = () => {
     );
 };
 
-const mapStoreStateToProps = (state) => {
-    return {
-      ...state,
-    };
-};
 
-export default connect(mapStoreStateToProps)(Schedule);
+export default Schedule;

@@ -26,6 +26,18 @@ import Slider from "react-slick";
 //   }
 
 export default class Responsive extends Slider {
+    constructor({peers}) {
+        // console.log(peers)
+        super(peers);
+        this.next = this.next.bind(this);
+        this.previous = this.previous.bind(this);
+      }
+      next() {
+        this.slider.slickNext();
+      }
+        previous() {
+        this.slider.slickPrev();
+      }
     render() {
         var settings = {
             dots: true,

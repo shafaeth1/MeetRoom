@@ -109,12 +109,17 @@
 }
 
 /* override other styles to make responsive */
-video {
+.oneVideo {
   width: 100%    !important;
   height: auto   !important;
   border-radius: 10px;
 }
 
+.groupVideo {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
 /* =====Media Query==== */
 @media(max-width:767px){
   /* code will here */
