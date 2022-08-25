@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { v1 as uuid } from "uuid";
 
-const CreateSingleRoom = () => {
+const CreateSingleRoom = (props) => {
     // creating a room id
     // redirecting the user to the correct page
     const singleRoom = useNavigate();
@@ -107,8 +107,8 @@ const CreateSingleRoom = () => {
             
             <div className="modal modal-bottom sm:modal-middle  ">
                 <div className="modal-box bg-chat h-auto  mx-auto  ">
-                    <h2 className="text-center text-2xl divide-y">Single Video Calling</h2>
-                    <div className='flex justify-end gap-3'>
+                    <h2 className="text-center text-3xl divide-y font-semibold">Single Video Calling</h2>
+                    <div className='flex justify-center gap-3'>
                         {/* Cancel Btn */}
                         <div className="modal-action">
                             <label for="my-modal-1" className="btn">Cancel</label>

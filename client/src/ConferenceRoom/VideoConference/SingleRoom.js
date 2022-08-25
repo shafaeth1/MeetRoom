@@ -314,17 +314,7 @@ const SingleRoom = (props) => {
                 toggleVideo={toggleVideo}
                 shareScreen={shareScreen}
                 stopShare={stopShare}
-                // peerRef={peerRef}
-                // socketRef={socketRef}
-                // otherUser={otherUser}
-                // userStream={userStream}
-                // senders={senders}
-                // sendChannel={sendChannel}
-                // localStream={localStream}
                 />
-
-                {/* ======Participent Video===== */}
-                {/* <Slider partnerVideo={partnerVideo}/> */}
             </div>
 
             {/* ========Right Sidebar ========*/}
