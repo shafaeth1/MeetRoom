@@ -45,15 +45,15 @@ const CreateGroupRoom = (props) => {
     //         >
             
     //         <Modal.Header closeButton>
-    //             <Modal.Title id="contained-modal-title-vcenter" className="InvHeading">
+    //             <Modal.Title id="contained-modal-title-vcenter" class="InvHeading">
     //             Send an Email Invitation
     //             </Modal.Title>
     //         </Modal.Header>
             
     //         <Modal.Body>
     //             <form className="contact-form" onSubmit={sendEmail}>
-    //                 <div className="row">
-    //                     <div className="col-6">
+    //                 <div class="row">
+    //                     <div class="col-6">
     //                         <label>Name of Organiser</label>
     //                         <input type="text" name="from_name" />
 
@@ -67,7 +67,8 @@ const CreateGroupRoom = (props) => {
     //                         <input type="text" name="to_name_3" />
                             
     //                     </div>
-    //                     <div className="col-6">
+
+    //                     <div class="col-6">
 
     //                         <label>Email Address of Organiser</label>
     //                         <input type="email" name="from_email" />
@@ -83,28 +84,26 @@ const CreateGroupRoom = (props) => {
     //                     </div>
     //                 </div>
 
-    //                 <div className="row">
-    //                     <div className="col-6">
+    //                 <div class="row">
+    //                     <div class="col-6">
     //                         <label>Date of the Meeting</label> <br></br>
     //                         <input type="date" name="date" />
     //                     </div>
-    //                     <div className="col-6">
+    //                     <div class="col-6">
     //                         <label>Time of the Meeting</label> <br></br>
     //                         <input type="time" name="time" />
     //                     </div>
     //                 </div>
-
-    //                 <div className="row my-4">
-    //                     <div className="col-12">
+    //                 <div class="row my-4">
+    //                     <div class="col-12">
     //                         <label>Link to the Meeting</label> <br></br>
     //                         <input type="text" name = "id" value={id}></input>
     //                     </div>
     //                 </div>
-
-    //                 <div className="row">
-    //                     <div className="col-6">
-    //                         <input className="scheduleBtn" type="submit" value="Send" />
-    //                         <button className="scheduleBtn" onClick={props.onHide}> Close </button>
+    //                 <div class="row">
+    //                     <div class="col-6">
+    //                         <input class="scheduleBtn" type="submit" value="Send" />
+    //                         <button class="scheduleBtn" onClick={props.onHide}> Close </button>
     //                     </div>
     //                 </div>
 

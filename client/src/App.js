@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
 import Hasan from './Indivisual/Hasan';
 import Roctim from './Indivisual/Roctim';
 import Alamin from './Indivisual/Alamin';
@@ -43,6 +43,7 @@ import CreateBroadCast from './ConferenceRoom/ModalConference/CreateBroadCast';
 
 function App() {
   const [user] = useAuthState(auth);
+  const { roomGroupID, roomID} = useParams(); 
   return (
     <>
       {!user ? <Navbar /> : ''}
@@ -76,7 +77,9 @@ function App() {
         <Route path="/conference" element={<RequireAuth><ConferenceRoom /></RequireAuth>}>
           <Route index element={<HomeConference />}></Route>
           <Route path="users" element={<UserConference />}></Route>
-          <Route path="video" element={<VideoConference />}></Route>
+          
+          <Route path="video" element={<SingleRoom />}></Route>
+          
           {/* single room */}
           <Route path="room/:roomID" element={<SingleRoom/>} />
           {/* group room */}

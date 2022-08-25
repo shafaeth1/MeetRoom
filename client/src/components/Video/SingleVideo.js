@@ -4,7 +4,7 @@ import { FaCreativeCommons } from "react-icons/fa";
 import { BsRecordCircle } from "react-icons/bs";
 
 const SingleVideo = ({userVideo, partnerVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp, shareScreen, stopShare}) => {
-    console.log(userVideo, partnerVideo)
+
     return (
         <div className='w-full mx-auto'>
             <div className='text-gray-200 flex justify-between'>
@@ -17,7 +17,7 @@ const SingleVideo = ({userVideo, partnerVideo, getUrl, copySuccess, toggleAudio,
                 </div>
             </div>
 
-            <div className='rounded-xl bg-green-200 relative gap-2'>
+            <div className='rounded-xl bg-green-200 relative gap-2 mt-2'>
                 <div className='text-gray-200 list-none text-xl flex gap-3 justify-start p-4 absolute'>
                     <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl p-1 '><FaCreativeCommons /></li>
                     <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl p-1 '><AiOutlinePushpin /></li>
@@ -26,8 +26,9 @@ const SingleVideo = ({userVideo, partnerVideo, getUrl, copySuccess, toggleAudio,
                 
                 {/* =======Video Player======= */}
                 <div className="flex w-full justify-center rounded-xl">
-                    <video id="user" className="oneVideo" muted autoPlay ref = {userVideo ? userVideo : partnerVideo} />
-                    {/* <video id="user" className="oneVideo" autoPlay ref = {partnerVideo} /> */}
+                    <video id="user" className="oneVideo" muted autoPlay playsInline ref = {userVideo ? userVideo : partnerVideo} />
+                    {/* <video id="user" className="oneVideo" autoPlay playsInline ref = {partnerVideo} /> */}
+
                 </div>
                 
 

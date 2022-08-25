@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const LeftNavbar = () => {
     const logout = () => {
         signOut(auth);
-       
       };
     return (
         <div className="drawer-side">

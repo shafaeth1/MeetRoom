@@ -5,7 +5,7 @@ import { BsRecordCircle, BsPlus } from "react-icons/bs";
 import { IoPeopleOutline } from "react-icons/io5";
 import user from "../../assets/images/user.png";
 
-const SingleVideo = () => {
+const VideoStyle = () => {
 
     return (
         <div className='w-full mx-auto'>
@@ -51,12 +51,13 @@ const SingleVideo = () => {
                     <div className='flex gap-2 md:gap-4 justify-center place-items-end text-gray-200 font-bold cursor-pointer list-none'>
                         <button >
                         <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>
-                            
+                            <i className="fal fa-microphone font-bold"></i>
                             {/* {isMicMuted? <i className="fal fa-microphone font-bold"></i>: <i className="fas fa-microphone-slash font-bold"></i>}     */}
                         </li>
                         </button>
                         <button >
                             <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>
+                            <i className="fal fa-video font-bold"></i>
                                 {/* {isLocalVideoDisabled ? <i className="fal fa-video font-bold"></i> : <i className="fas fa-video-slash font-bold"></i>} */}
                             </li>
                         </button>
@@ -72,4 +73,4 @@ const SingleVideo = () => {
     );
 };
 
-export default SingleVideo;
+export default VideoStyle;
