@@ -18,7 +18,7 @@
     "wrtc": "^0.4.7"
   },
   "scripts": {
-    "start": "PROD=true node server.js",
+    "start": "node server.js",
     "postinstall": "cd ./client && yarn"
   }
 }

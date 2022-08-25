@@ -76,8 +76,8 @@ const RoomHome = () => {
                         <div className="flex justify-start gap-1">
                             <button><CreateBroadcastRoom/></button>
                         </div>
-                        <h2 className="text-lg font-semibold">BroadCast</h2>
-                        <p className='text-sm'>Start Just BroadCast</p>
+                        <h2 className="text-lg font-semibold">Broadcast</h2>
+                        <p className='text-sm'>Start Just Chatting</p>
 
                     </div>
                 </div>
