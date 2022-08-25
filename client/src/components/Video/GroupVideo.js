@@ -4,9 +4,8 @@ import { FaCreativeCommons } from "react-icons/fa";
 import { BsRecordCircle, BsPlus } from "react-icons/bs";
 import { IoPeopleOutline } from "react-icons/io5";
 
-const Video = ({userVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp, shareScreen, stopShare}) => {
-    // peerRef, socketRef, otherUser, userStream, senders, sendChannel, localStream;
-
+const GroupVideo = ({userVideo, peers, Video, getUrl, copySuccess, hangUp, toggleAudio, toggleVideo, shareScreen, stopShare}) => {
+    // peerRef, socketRef, otherUser, userStream, senders, sendChannel, localStream; {userVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp, shareScreen, stopShare}
     return (
         <div className='w-full mx-auto'>
             <div className='flex items-center justify-between text-gray-200'>
@@ -42,9 +41,24 @@ const Video = ({userVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp
                 
                 {/* =======Video Player======= */}
                 <div className="flex justify-center rounded-xl">
-                    <video id="user" className="rounded-xl w-full" muted autoPlay ref = {userVideo} />
+                    <video id="user" className="rounded-xl w-full" muted autoPlay ref = {userVideo} playsInline />
                     {/* <video id="peer" className="oneVideo" autoPlay ref = {partnerVideo} /> */}
+                    {peers?.map((peer) => {
+                        return (
+                            <Video class="groupVideo" key={peer?.peerID} peer={peer?.peer} />
+                        );
+                    })}
                 </div>
+
+                {/* <div class="videos">
+                    <video class="groupVideo" muted ref={userVideo} autoPlay playsInline />
+                    {peers.map((peer) => {
+                        return (
+                            <Video class="groupVideo" key={peer.peerID} peer={peer.peer} />
+                        );
+                    })}
+                </div> */}
+
 
                  {/* =======Video Controller======= */}
                 <div className='grid grid-rows justify-center items-baseline pb-4'>
@@ -82,4 +96,4 @@ const Video = ({userVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp
     );
 };
 
-export default Video;
+export default GroupVideo;

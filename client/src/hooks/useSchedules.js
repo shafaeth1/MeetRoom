@@ -4,7 +4,7 @@ const useSchedules = () => {
     const [schedules, setSchedules] = useState([]);
     const [isLoad, setIsLoad] = useState(true)
     useEffect(()=>{
-        fetch('http://localhost:5000/schedule')
+        fetch('https://meetsrooms.herokuapp.com/schedule')
 			.then(res => res.json())
 			.then(data => setSchedules(data, setIsLoad(false)))
 	}, [schedules, isLoad]);

@@ -3,7 +3,7 @@ import { setRoomId, setParticipants } from "../redux/actions";
 import store from "../redux/store";
 import * as webRTCHandler from "./webRTCHandler";
 
-const SERVER = "http://localhost:5000";
+const SERVER = "https://meetsrooms.herokuapp.com";
 
 let socket = null;
 
