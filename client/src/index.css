@@ -113,6 +113,12 @@ video {
   width: 100%    !important;
   height: auto   !important;
 }
+.oneVideo {
+  width: 30vw;
+  height: 20vw;
+  background: rgb(19, 37, 64, 0.8);
+  border-radius: 10px;
+} 
 
 /* =====Media Query==== */
 @media(max-width:767px){

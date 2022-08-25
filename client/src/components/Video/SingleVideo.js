@@ -5,7 +5,6 @@ import { BsRecordCircle, BsPlus } from "react-icons/bs";
 import { IoPeopleOutline } from "react-icons/io5";
 
 const SingleVideo = ({userVideo, partnerVideo, getUrl, copySuccess, toggleAudio, toggleVideo, hangUp, shareScreen, stopShare}) => {
-    // peerRef, socketRef, otherUser, userStream, senders, sendChannel, localStream;
 
     return (
         <div className='w-full mx-auto'>
@@ -42,10 +41,8 @@ const SingleVideo = ({userVideo, partnerVideo, getUrl, copySuccess, toggleAudio,
                 
                 {/* =======Video Player======= */}
                 <div className="flex w-full justify-center rounded-xl">
-                    <video id="user" className="rounded-xl w-full" muted autoPlay ref = {userVideo} />
-                    {/* <div className="w-4/12">                    
-                        <video id="user" className="rounded-xl w-full" muted autoPlay ref = {partnerVideo} />
-                    </div> */}
+                    <video id="user" className="oneVideo" muted autoPlay ref = {userVideo} />
+                    {/* <video id="peer" className="oneVideo" autoPlay ref = {partnerVideo} /> */}
                 </div>
 
                  {/* =======Video Controller======= */}

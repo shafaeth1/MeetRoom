@@ -5,7 +5,7 @@ const MemberRow = ({ member, index, setRefetch }) => {
     const { name, specialty, img, email } = member;
 
     const handleDelete = email => {
-        fetch(`http://localhost:5000/member/${email}`, {
+        fetch(`https://meetsrooms.herokuapp.com/member/${email}`, {
             method: 'DELETE',
         }).then(res => res.json())
             .then(data => {

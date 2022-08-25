@@ -41,7 +41,7 @@ const RoomHome = () => {
                         <div className="flex justify-start gap-1">
                             <button><CreateSingleRoom/></button>
                         </div>
-                        <h2 className="text-lg font-semibold">Single call</h2>
+                        <h2 className="text-xl font-semibold">Single call</h2>
                         <p className='text-sm'>Start Calling</p>
                     </div>
                 </div>
@@ -59,7 +59,7 @@ const RoomHome = () => {
                     </div>
                 </div>
 
-                 {/* ======Chatting Option===== */}
+                {/* ======Chatting Option===== */}
                 <div className="card w-12/12 lg:w-6/12 bg-lime-500 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="flex justify-start gap-1">
