@@ -9,15 +9,15 @@ const AllUser = () => {
     // const [refetch, setRefetch] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://meetsrooms.herokuapp.com/user')
             .then(res => res.json())
             .then(data => setUsers(data, setIsLoad(false), setRefetch(false)))
     }, [isLoad, refetch]);
     return (
         <div>
             <h2>AllUser:{users.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>

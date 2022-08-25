@@ -6,7 +6,7 @@ const UserRow = ({ user, index, setRefetch }) => {
 
     const { email, role } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://meetsrooms.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'
@@ -21,7 +21,7 @@ const UserRow = ({ user, index, setRefetch }) => {
             })
     }
     const handleDelete = email => {
-        fetch(`http://localhost:5000/user/${email}`, {
+        fetch(`https://meetsrooms.herokuapp.com/user/${email}`, {
             method: 'DELETE',
         }).then(res => res.json())
             .then(data => {
@@ -38,8 +38,8 @@ const UserRow = ({ user, index, setRefetch }) => {
         <tr>
             <th>{index + 1}</th>
             <td>{email}</td>
-            <td>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button>}</td>
-            <td><button onClick={() => handleDelete(email)} class="btn btn-xs">Remove Admin</button></td>
+            <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
+            <td><button onClick={() => handleDelete(email)} className="btn btn-xs">Remove Admin</button></td>
 
         </tr>
 

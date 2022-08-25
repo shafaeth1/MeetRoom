@@ -25,7 +25,7 @@ const MyReview = () => {
             toast('Please give a valid rating')
             return
         }
-        fetch(`http://localhost:5000/review`, {
+        fetch(`https://meetsrooms.herokuapp.com/review`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -49,7 +49,7 @@ const MyReview = () => {
         <div>
             <h2 className='text-center'>Please Provide Your Review</h2>
             <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-5 justify-items-center mt-3'>
-                <textarea name="review" class="textarea textarea-accent" placeholder="Bio"></textarea>
+                <textarea name="review" className="textarea textarea-accent" placeholder="Bio"></textarea>
 
                 <input type="text" name="rating" placeholder="Give Your Rating(Out of 5)" className="input input-bordered w-full max-w-xs" />
 

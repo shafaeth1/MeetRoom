@@ -8,7 +8,7 @@ const ManageMember = () => {
     // const [refetch, setRefetch] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:5000/member')
+        fetch('https://meetsrooms.herokuapp.com/member')
             .then(res => res.json())
             .then(data => setMembers(data, setIsLoad(false), setRefetch(false)))
     }, [isLoad, refetch]);
@@ -16,8 +16,8 @@ const ManageMember = () => {
         <div>
             <h2>ManageMember:{members.length}</h2>
 
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>

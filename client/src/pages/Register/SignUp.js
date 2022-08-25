@@ -3,7 +3,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWith
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import useToken from '../../hooks/useToken';
+// import useToken from '../../hooks/useToken';
 import Loading from './Loading';
 
 const SignUp = () => {
@@ -30,7 +30,7 @@ const SignUp = () => {
     if (gUser || user || Fuser) {
         navigate(from, { replace: true });
     }
-    const [token] = useToken(user || gUser || Fuser)
+    // const [token] = useToken(user || gUser || Fuser)
     let errorMessage;
     if (error || gError || UpError || Ferror) {
         errorMessage = <p className='text-red-600'>{error?.message}|| {UpError?.message}</p>

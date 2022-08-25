@@ -8,15 +8,15 @@ const CreateChatRoom = () => {
 
             <input type="checkbox" id="my-modal-3" className="modal-toggle" />
             
-            <div className="modal modal-bottom sm:modal-middle  ">
-                <div className="modal-box bg-chat h-auto  mx-auto  ">
-                    <h2 className="text-center text-2xl divide-y">Create Chat Room</h2>
-                    <div className='flex justify-end gap-3'>
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box bg-chat h-auto  mx-auto">
+                    <h2 className="text-center text-3xl divide-y font-semibold">Create Chat Room</h2>
+                    <div className='flex justify-center gap-3'>
                         {/* Cancel Btn */}
                         <div className="modal-action">
                             <label for="my-modal-3" className="btn">Cancel</label>
                             <div className="flex gap-2 items-center">
-                            {/* <button class="schedule" onClick={() => setModalShow(true)}> Schedule Call </button> */}
+                            {/* <button className="schedule" onClick={() => setModalShow(true)}> Schedule Call </button> */}
                             <Link to="/conference/schedule" className="btn">Schedule</Link>
                             <button className="btn"> Instant Chat </button>
                             </div>

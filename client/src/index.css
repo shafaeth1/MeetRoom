@@ -112,6 +112,7 @@
 video {
   width: 100%    !important;
   height: auto   !important;
+  border-radius: 10px;
 }
 
 /* =====Media Query==== */

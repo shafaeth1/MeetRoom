@@ -82,25 +82,15 @@ function App() {
           {/* group room */}
           <Route path="roomGroup/:roomGroupID" element={<GroupRoom/>} />
           {/* live broadcast */}
+          <Route path="createBroadcast" element={<CreateBroadCast />} />
           <Route path="liveCast" element={<LiveBroadCast/>} />
+
           {/* just chat live */}
           <Route path="ChatLive" element={<ChatLive/>} />
 
           <Route path="schedule" element={<ScheduleConference />}></Route>
           <Route path="notifications" element={<NotificationConference />}></Route>
           <Route path="settings" element={<SettingConference />}></Route>
-          {/*Broadcast live */}
-          <Route path="createBroadcast" element={<CreateBroadCast />} />
-
-          {/* <Route path="/" exact element={Mode} />
-          <Route path="/createRoom" element={CreateRoom} />
-          <Route path="/room/:roomID" element={Room} />
-          <Route path="/createRoomGroup" element={CreateRoomGroup} />
-          <Route path="/roomGroup/:roomGroupID" element={RoomGroup} />
-          
-          <Route path="/joinBroadcast" element={JoinBroadcast} />
-          <Route path="/ChatModes" element={ChatModes} />
-          <Route path="/ChatRoomOne/:ChatRoomOneID" element={ChatRoomOne} /> */}
 
         </Route>
 
