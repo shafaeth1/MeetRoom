@@ -38,6 +38,7 @@ import GroupRoom from './ConferenceRoom/VideoConference/GroupRoom';
 import LiveBroadCast from './ConferenceRoom/VideoConference/LiveBroadCast';
 import ChatLive from './ConferenceRoom/VideoConference/ChatLive';
 import 'react-toastify/dist/ReactToastify.css';
+import CreateBroadCast from './ConferenceRoom/ModalConference/CreateBroadCast';
 
 
 function App() {
@@ -88,14 +89,15 @@ function App() {
           <Route path="schedule" element={<ScheduleConference />}></Route>
           <Route path="notifications" element={<NotificationConference />}></Route>
           <Route path="settings" element={<SettingConference />}></Route>
+          {/*Broadcast live */}
+          <Route path="createBroadcast" element={<CreateBroadCast />} />
 
           {/* <Route path="/" exact element={Mode} />
           <Route path="/createRoom" element={CreateRoom} />
           <Route path="/room/:roomID" element={Room} />
           <Route path="/createRoomGroup" element={CreateRoomGroup} />
           <Route path="/roomGroup/:roomGroupID" element={RoomGroup} />
-          <Route path="/createRoomBroadcast" element={CreateRoomBroadcast} />
-          <Route path="/createBroadcast" element={CreateBroadcast} />
+          
           <Route path="/joinBroadcast" element={JoinBroadcast} />
           <Route path="/ChatModes" element={ChatModes} />
           <Route path="/ChatRoomOne/:ChatRoomOneID" element={ChatRoomOne} /> */}
