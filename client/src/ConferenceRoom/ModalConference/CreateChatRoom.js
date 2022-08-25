@@ -16,7 +16,7 @@ const CreateChatRoom = () => {
                         <div className="modal-action">
                             <label for="my-modal-3" className="btn">Cancel</label>
                             <div className="flex gap-2 items-center">
-                            {/* <button class="schedule" onClick={() => setModalShow(true)}> Schedule Call </button> */}
+                            {/* <button className="schedule" onClick={() => setModalShow(true)}> Schedule Call </button> */}
                             <Link to="/conference/schedule" className="btn">Schedule</Link>
                             <button className="btn"> Instant Chat </button>
                             </div>
