@@ -8,7 +8,7 @@ const CreateBroadCast = () => {
 
     window.onload = () => {
         document.getElementById('start').onclick = () => {
-            init();
+            init()
         }
     }
     async function init() {
