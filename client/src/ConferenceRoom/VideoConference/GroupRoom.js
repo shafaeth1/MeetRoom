@@ -5,6 +5,7 @@ import Peer from "simple-peer";
 import Slider from "../../components/Slider/Slider";
 import GroupVideo from '../../components/Video/GroupVideo';
 import GroupChat from '../../components/Chat/GroupChat';
+import Schedule from '../../components/Schedule/Schedule';
 
 // Streaming Video of the user
 const Video = (props) => {
@@ -246,10 +247,18 @@ const GroupRoom = () => {
 
             {/* ========Right Sidebar ========*/}
             <div className="md:w-12/12 lg:w-4/12">
-                {/* ========Single Chat Options ========*/}
+                {/* ========Group Chat Options ========*/}
                 <div className='pl-0 lg:pl-2'>
                     <h2 className='text-md lg:text-xl text-center uppercase font-semibold p-2 border border-green-700 rounded-md text-gray-400'>Live Chat</h2>
                     <GroupChat/>
+
+                    {/*====== Next Schedule===== */}
+                    <div className="mt-2">
+                        <h2 className='text-gray-300 font-semibold py-1 pl-3'>Next Schedule is:</h2>
+                        <div className="rounded-lg first-letter:mb-2 overflow-y-auto max-h-40 px-3 py-2 tab-bar">
+                        <Schedule></Schedule>
+                        </div>
+                    </div>
                 </div>
             </div>
                     

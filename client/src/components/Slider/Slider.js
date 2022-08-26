@@ -80,7 +80,7 @@ export default class Responsive extends Slider {
             ]
           };
         return (
-            <div className="p-4 lg:p-8">
+            <div className="p-4 lg:p-6">
                 <Slider {...settings}>
                     <div className="avatar">
                         <div className="w-full px-0 lg:px-2">

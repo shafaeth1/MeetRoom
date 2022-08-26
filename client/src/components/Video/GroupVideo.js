@@ -40,29 +40,28 @@ const GroupVideo = ({userVideo, peers, Video, getUrl, copySuccess, hangUp, toggl
                 
                 {/* =======Video Player======= */}
                 <div className="flex justify-center rounded-xl">
-                    {/* <video className="groupVideo" muted ref={userVideo} autoPlay playsInline />
+                    <video className="groupVideo" muted ref={userVideo} autoPlay playsInline />
                     {peers.map((peer) => {
                         return (
                             <Video className="groupVideo" key={peer.peerID} peer={peer.peer} />
                         );
-                    })} */}
-
+                    })}
+{/* 
                     <div className="flex items-center justify-center">
                         <video className="oneVideo" muted ref={userVideo} autoPlay playsInline />
                         {peers.map((peer) => {
-                            console.log(peer)
                             return (
-                                <Video className="groupVideo" key={peer.peerID} peer={peer} />
+                                <Video className="oneVideo" key={peer.peerID} peer={peer.peer} />
                             );
                         })}
-                    </div>
+                    </div> */}
                 </div>
 
 
                  {/* =======Video Controller======= */}
-                 <div className='grid grid-rows justify-center items-baseline py-2'>
-                    <div className='flex gap-2 md:gap-4 justify-center place-items-end text-gray-200 font-bold cursor-pointer list-none'>
-                        <button onClick = {toggleAudio}>
+                <div className='grid grid-rows justify-center items-baseline relative'>
+                    <div className='flex gap-2 md:gap-4 justify-center place-items-end text-gray-200 font-bold cursor-pointer list-none absolute bottom-8 left-1/3'>
+                       <button onClick = {toggleAudio}>
                             <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>
                                 <i className="fas fa-microphone-slash font-bold" id="btn-a"></i> 
                             </li>

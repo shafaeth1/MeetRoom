@@ -1,11 +1,11 @@
 
 import React from 'react';
-import user from "../../assets/images/user.png"
+import user from "../../assets/images/user.png";
 
 const SignleChat = ({text, handleChange, renderMessage, sendMessage}) => {
     return (
         <div className='w-full border-x border-b border-green-700'>
-            <div className='rounded-lg mb-2 tab-bar overflow-y-auto max-h-96 h-96'>
+            <div className='rounded-lg mb-2 tab-bar overflow-y-auto max-h-96 h-80'>
 
                 <div className='flex items-center py-1 mb-1 justify-start gap-y-1'>
                     <img src={user} alt="Main user" className='w-12 h-12 p-1 border border-slate-600 mr-1 rounded-full' />

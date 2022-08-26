@@ -2,8 +2,6 @@
   "name": "meetroom",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/hasan-mia/MeetRoom.git",
-  "author": "HappyCoders <info.happycoder@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
@@ -18,7 +16,9 @@
     "wrtc": "^0.4.7"
   },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "herou-postbuild": "YARN_PRODUCTION=false yarn install --prefix client && yarn run build --prefix client",
     "postinstall": "cd ./client && yarn"
   }
 }
