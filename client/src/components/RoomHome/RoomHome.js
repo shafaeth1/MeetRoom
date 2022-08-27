@@ -49,7 +49,7 @@ const RoomHome = () => {
 
             <div className="flex flex-col lg:flex-row gap-2 py-2">
                 {/* ======Group Video Calling===== */}
-                <div className="card w-12/12 lg:w-6/12 bg-orange-500 text-primary-content ml-0">
+                <div className="card w-12/12 lg:w-6/12 bg-fuchsia-800 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="flex justify-start gap-1">
                             <button><CreateGroupRoom /></button>
@@ -60,7 +60,7 @@ const RoomHome = () => {
                 </div>
 
                 {/* ======Chatting Option===== */}
-                <div className="card w-12/12 lg:w-6/12 bg-lime-500 text-primary-content ml-0">
+                <div className="card w-12/12 lg:w-6/12 bg-pink-700 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="flex justify-start gap-1">
                             <button><CreateChatRoom /></button>
@@ -71,7 +71,7 @@ const RoomHome = () => {
                 </div>
 
                 {/* ======Live BroadCast===== */}
-                <div className="card w-12/12 lg:w-6/12 bg-amber-500 text-primary-content ml-0">
+                <div className="card w-12/12 lg:w-6/12 bg-sky-600 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="flex justify-start gap-1">
                             <button><CreateBroadcastRoom /></button>
@@ -83,7 +83,7 @@ const RoomHome = () => {
                 </div>
 
                 {/* ======Schedule Option===== */}
-                <div className="card w-12/12 lg:w-6/12 bg-lime-500 text-primary-content ml-0">
+                <div className="card w-12/12 lg:w-6/12 bg-cyan-700 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="card-actions justify-start">
                             <i className="fal fa-calendar-alt font-bold text-3xl bg-clock bg-transparent border border-gray-300  p-2"></i>
@@ -95,7 +95,7 @@ const RoomHome = () => {
                 </div>
 
                 {/* ======Share Screen===== */}
-                <div className="card w-12/12 lg:w-6/12 bg-amber-500 text-primary-content ml-0">
+                <div className="card w-12/12 lg:w-6/12 bg-violet-600	 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="card-actions justify-start">
                             <i className="fal fa-desktop font-bold text-3xl bg-clock bg-transparent border border-gray-300  p-2"></i>

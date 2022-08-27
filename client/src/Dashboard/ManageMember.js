@@ -14,7 +14,7 @@ const ManageMember = () => {
     }, [isLoad, refetch]);
     return (
         <div>
-            <h2>ManageMember:{members.length}</h2>
+            <h2 className='text-center py-2 my-4 text-gray-200 bg-green-600 font-semibold text-xl'>ManageMember: <span className='text-green-900 bg-gray-100 p-2 m-2 rounded-full'>{members.length}</span></h2>
 
             <div className="overflow-x-auto">
                 <table className="table w-full">

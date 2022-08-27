@@ -1,6 +1,11 @@
 import axios from 'axios';
 import React, { useRef } from 'react';
 
+// setting the constraints of video box
+const videoConstraints = {
+    height: window.innerHeight / 2,
+    width: window.innerWidth / 2
+};
 
 const CreateBroadCast = () => {
     const userStream = useRef();
@@ -8,7 +13,7 @@ const CreateBroadCast = () => {
 
     window.onload = () => {
         document.getElementById('start').onclick = () => {
-            init()
+            init();
         }
     }
     async function init() {
@@ -54,7 +59,7 @@ const CreateBroadCast = () => {
     let isVideo = true;
     let iconVideo = 'fal fa-video-slash font-bold';
     const toggleVideo = () => {
-        document.getElementById('avv').style.backgroundColor = iconVideo;
+        document.getElementById('avv').classList = iconVideo;
         if (isVideo) {
             iconVideo = 'fal fa-video font-bold';
         } else {
@@ -78,19 +83,18 @@ const CreateBroadCast = () => {
     }
 
 
-
     return (
         <div className='w-full mx-auto'>
             <h2 className='text-center text-sm lg:text-2xl text-gray-200 font-semibold'>Stream Your Video</h2>
-            <div className='rounded-xl bg-green-200 relative w-full'>
+                <div className='rounded-xl relative'>
 
                 {/* =======Video Player======= */}
                 <div className="flex justify-center rounded-xl">
-                    <video id="video" className="rounded-xl h-50 w-full" muted autoPlay />
+                    <video id="video" className="streamvideo" muted autoPlay />
                 </div>
 
                 {/* =======Video Controller======= */}
-                <div className='grid grid-rows justify-center items-baseline pb-4'>
+                <div className='grid grid-rows justify-center items-baseline absolute bottom-8 left-40'>
                     <div className='flex gap-2 md:gap-4 justify-center place-items-end text-gray-200 font-bold cursor-pointer list-none'>
                         <button onClick={toggleAudio}>
                             <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>
@@ -99,7 +103,7 @@ const CreateBroadCast = () => {
                         </button>
                         <button id='start' onClick={init}>
                             <li className='bg-green-400 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>
-                                <i class="fa-solid fa-phone"></i>
+                            <i className="far fa-signal-stream font-bold-"></i>
                             </li>
                         </button>
                         <button onClick={toggleVideo}>
@@ -108,8 +112,8 @@ const CreateBroadCast = () => {
                             </li>
                         </button>
                         <button onClick={hangUp}>
-                            <li className='bg-red-500 rounded-md text-lg lg:text-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-2 lg:py-2'>
-                                <i className="far fa-phone-alt font-bold" id="btn-phone"></i>
+                            <li className='bg-red-500 rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 px-2 lg:px-4 py-1 lg:py-2 font-bold'>
+                                <i className="fad fa-stop font-bold" id="btn-phone"></i>
                             </li>
                         </button>
                     </div>

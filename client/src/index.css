@@ -118,7 +118,18 @@
   width: 100%;
   border-radius: 5px;
 }
+.streamvideo{
+  width: 60vw    !important;
+  height: 100%   !important;
+  border-radius: 10px;
+}
+
+.left-40{
+  left: 40%;
+}
 /* =====Media Query==== */
 @media(max-width:767px){
-  /* code will here */
+  .rm-m{
+    display: none;
+  }
 }
