@@ -23,7 +23,8 @@ const Navbar = () => {
                         </label>
                         <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 lg:p-2 shadow bg-base-100 rounded-box w-52">
                             <li className='hover:bg-gray-600 hover:text-gray-200 transition-all'><Link to='/'>Home</Link></li>
-                            <li className='hover:bg-gray-600 hover:text-gray-200 transition-all'><Link to='/liveChat'>Chat</Link></li>
+                            <li className='hover:bg-gray-600 hover:text-gray-200 transition-all'><Link to='/about'>About</Link></li>
+                            <li className='hover:bg-gray-600 hover:text-gray-200 transition-all'><Link to='/contact'>Contact</Link></li>
                             <li className='hover:bg-gray-600 hover:text-gray-200 transition-all'><Link to='/support'>Support</Link></li>
                         </ul>
                     </div>
