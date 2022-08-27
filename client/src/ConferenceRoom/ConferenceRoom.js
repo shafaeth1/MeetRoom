@@ -8,9 +8,9 @@ const ConferenceRoom = () => {
     let width = window.innerWidth;
     return (
         <section className='bg-green-400' style={{maxWidth: {width}, maxHeight:{height}}}>
-            <div className="flex justify-between px-2 md:hidden text-gray-900">
+            <div className="flex justify-between px-2 md:hidden text-slate-100">
                 <div className="flex display-flex">
-                    <Link to="/" className="flex items-center lg:pl-6 gap-1 normal-case md:text-xl font-semibold"><img src={logo} alt='Logo' className='w-1/6 text-left'/> MeetRoom</Link>
+                    <Link to="/" className="flex items-center position:hidden lg:pl-6 gap-1 normal-case md:text-xl font-semibold"><img src={logo} alt='Logo' className='w-1/6 text-left'/> MeetRoom</Link>
                 </div>
                 <label for="my-drawer-2" className="btn btn-ghost ml-2 border">
                     <i className="fad fa-align-left text-2xl"></i>

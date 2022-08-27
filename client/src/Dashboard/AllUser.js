@@ -14,8 +14,8 @@ const AllUser = () => {
             .then(data => setUsers(data, setIsLoad(false), setRefetch(false)))
     }, [isLoad, refetch]);
     return (
-        <div>
-            <h2>AllUser:{users.length}</h2>
+        <div className='pt-0'>
+            <h2 className='text-center py-2 my-4 text-gray-200 bg-green-600 font-semibold text-xl'>All user: <span className='text-green-900 bg-gray-100 p-2 m-2 rounded-full'>{users.length}</span></h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* <!-- head --> */}

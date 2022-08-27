@@ -47,8 +47,9 @@ const AddMember = () => {
             })
     };
     return (
-        <div className=''>
-            <h2>Add a new Member</h2>
+        <div className='w-full'>
+            <h2 className='text-center py-2 my-4 text-gray-200 bg-green-600 font-semibold text-xl'>Add New Team</h2>
+            <div className='flex justify-center items-center'>
             <form onSubmit={handleSubmit(onSubmit)} className="mx-auto">
 
                 <div className="form-control w-full max-w-xs">
@@ -140,7 +141,8 @@ const AddMember = () => {
                 </div>
 
                 <input className='btn w-full max-w-xs text-gray-200' type="submit" value="AddMember" />
-            </form>
+                </form>
+            </div>
         </div>
     );
 };

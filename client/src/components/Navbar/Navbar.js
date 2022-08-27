@@ -39,11 +39,6 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <label tabindex="1" for="my-drawer-2" className="btn btn-ghost lg:hidden">
-                        <i className="fad fa-align-left text-2xl text-gray-200"></i>
-                    </label>
-
-
                     { admin && <Link to='/dashboard'>Dashboard</Link>}
                     <ul className="menu menu-horizontal p-0 text-gray-200">
                         <li>{user ? <button onClick={logout} className="">Sign out</button> : <Link to="/signIn">Sign in</Link>}</li>

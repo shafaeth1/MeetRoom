@@ -70,7 +70,7 @@ function App() {
           <Route path='dashboard/users' element={<><AllUser></AllUser></>}> </Route>
           <Route path='dashboard/addMembers' element={<><AddMember></AddMember></>}> </Route>
           <Route path='dashboard/manageMembers' element={<><ManageMember></ManageMember></>}> </Route>
-          <Route index element={<MyReview></MyReview>}></Route>
+          <Route index element={<AllUser></AllUser>}></Route>
         </Route>
 
         {/* ================VideoConference Room Route =================*/}
@@ -89,7 +89,7 @@ function App() {
           <Route path="liveCast" element={<LiveBroadCast/>} />
 
           {/* just chat live */}
-          <Route path="ChatLive" element={<ChatLive/>} />
+          <Route path="ChatLive" element={<LiveChat/>} />
 
           <Route path="schedule" element={<ScheduleConference />}></Route>
           <Route path="notifications" element={<NotificationConference />}></Route>
