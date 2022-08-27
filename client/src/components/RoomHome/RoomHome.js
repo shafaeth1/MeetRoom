@@ -29,7 +29,7 @@ const RoomHome = () => {
                 <div className="card w-12/12 lg:w-8/12 bg-base-100 shadow-xl h-full" style={{ backgroundImage: 'url(https://placeimg.com/400/225/arch)', backgroundSize: 'cover' }}>
                     <div className="card-body bg-clock text-gray-300">
                         <div className="flex flex-col md:flex-row justify-center lg:justify-between mx-auto">
-                            <Clock value={value}/>
+                            <Clock value={value} />
                             <h2 className="card-title text-md lg:text-4xl p-2">{date}</h2>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ const RoomHome = () => {
                 <div className="card w-12/12 lg:w-4/12 bg-primary text-primary-content">
                     <div className="card-body">
                         <div className="flex justify-start gap-1">
-                            <button><CreateSingleRoom/></button>
+                            <button><CreateSingleRoom /></button>
                         </div>
                         <h2 className="text-xl font-semibold">Single call</h2>
                         <p className='text-sm'>Start Calling</p>
@@ -48,11 +48,11 @@ const RoomHome = () => {
             </div>
 
             <div className="flex flex-col lg:flex-row gap-2 py-2">
-                 {/* ======Group Video Calling===== */}
+                {/* ======Group Video Calling===== */}
                 <div className="card w-12/12 lg:w-6/12 bg-orange-500 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="flex justify-start gap-1">
-                            <button><CreateGroupRoom/></button>
+                            <button><CreateGroupRoom /></button>
                         </div>
                         <h2 className="text-lg font-semibold">Group Call</h2>
                         <p className='text-sm'>Start Group Calling</p>
@@ -63,18 +63,18 @@ const RoomHome = () => {
                 <div className="card w-12/12 lg:w-6/12 bg-lime-500 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="flex justify-start gap-1">
-                            <button><CreateChatRoom/></button>
+                            <button><CreateChatRoom /></button>
                         </div>
-                        <h2 className="text-lg font-semibold">Online Chat</h2>
+                        <Link to='/liveChat'><h2 className="text-lg font-semibold">Online Chat</h2></Link>
                         <p className='text-sm'>Start Just Chatting</p>
                     </div>
                 </div>
 
-                 {/* ======Live BroadCast===== */}
+                {/* ======Live BroadCast===== */}
                 <div className="card w-12/12 lg:w-6/12 bg-amber-500 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="flex justify-start gap-1">
-                            <button><CreateBroadcastRoom/></button>
+                            <button><CreateBroadcastRoom /></button>
                         </div>
 
                         <h2 className="text-lg font-semibold">BroadCast</h2>
@@ -94,7 +94,7 @@ const RoomHome = () => {
                     </div>
                 </div>
 
-                 {/* ======Share Screen===== */}
+                {/* ======Share Screen===== */}
                 <div className="card w-12/12 lg:w-6/12 bg-amber-500 text-primary-content ml-0">
                     <div className="card-body">
                         <div className="card-actions justify-start">

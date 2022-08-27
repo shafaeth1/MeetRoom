@@ -6,9 +6,9 @@ const CreateSingleRoom = (props) => {
     // creating a room id
     // redirecting the user to the correct page
     const singleRoom = useNavigate();
-    const create =()=> {
+    const create = () => {
         const id = uuid();
-       singleRoom(`/conference/room/${id}`);
+        singleRoom(`/conference/room/${id}`);
     }
 
     // // creating a room id for scheduling a call
@@ -18,7 +18,7 @@ const CreateSingleRoom = (props) => {
     //     var n = url.lastIndexOf('CreateRoom');
     //     return url.substring(0, n - 1) + `/room/${id}`;
     // }
-    
+
     // sending an email to the user
     // const sendEmail = (e)=> {
     //     e.preventDefault();
@@ -30,25 +30,25 @@ const CreateSingleRoom = (props) => {
     //             console.log(error.text);
     //         });
     // }
-    
+
     // // modal for scheduling details
     // const MyVerticallyCenteredModal = (props)=> {
     //     var id = scheduleID();
     //     return (
-            
+
     //         <Modal
     //             {...props}
     //             size="lg"
     //             aria-labelledby="contained-modal-title-vcenter"
     //             centered
     //         >
-            
+
     //         <Modal.Header closeButton>
     //             <Modal.Title id="contained-modal-title-vcenter" className="InvHeading">
     //             Send an Email Invitation
     //             </Modal.Title>
     //         </Modal.Header>
-            
+
     //         <Modal.Body>
     //             <form className="contact-form" onSubmit={sendEmail}>
     //                 <div className="row">
@@ -104,7 +104,7 @@ const CreateSingleRoom = (props) => {
             <label for="my-modal-1" className="hover:cursor-pointer"><i className="fal fa-video font-bold text-3xl bg-clock bg-transparent border border-slate-600 p-2"></i></label>
 
             <input type="checkbox" id="my-modal-1" className="modal-toggle" />
-            
+
             <div className="modal modal-bottom sm:modal-middle  ">
                 <div className="modal-box bg-chat h-auto  mx-auto  ">
                     <h2 className="text-center text-3xl divide-y font-semibold">Single Video Calling</h2>
@@ -113,9 +113,9 @@ const CreateSingleRoom = (props) => {
                         <div className="modal-action">
                             <label for="my-modal-1" className="btn">Cancel</label>
                             <div className="flex gap-2 items-center">
-                            {/* <button className="schedule" onClick={() => setModalShow(true)}> Schedule Call </button> */}
-                            <Link to="/conference/schedule" className="btn">Schedule</Link>
-                            <button className="btn"  onClick={()=>create()}> Single Call </button>
+                                {/* <button className="schedule" onClick={() => setModalShow(true)}> Schedule Call </button> */}
+                                <Link to="/conference/schedule" className="btn">Schedule</Link>
+                                <button className="btn" onClick={() => create()}> Single Call </button>
                             </div>
                         </div>
                     </div>

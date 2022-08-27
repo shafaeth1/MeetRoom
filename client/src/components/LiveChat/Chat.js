@@ -33,7 +33,7 @@ const Chat = ({ socket, username, room }) => {
 
 
     return (
-        <div className='w-full'>
+        <div className='w-6/12 max-h-screen'>
             <div className='rounded-lg mb-2 tab-bar overflow-y-auto max-h-96 '>
                 <ScrollToBottom className="message-container">
                     {messageList.map((messageContent) => {

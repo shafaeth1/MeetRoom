@@ -13,7 +13,6 @@ const webrtc = require('wrtc');
 let senderStream;
 
 /* ------ CREATING AND JOINING ROOMS FOR CONNECTION BETWEEN USERS ------ */
-
 // room object to store the created room IDs
 const rooms = {};
 const users = {};
@@ -21,10 +20,10 @@ const socketToRoom = {};
 
 // when the user is forming a connection with socket.io
 io.on("connection", socket => {
-    
+
     // handling one on one video call
     socket.on("join room", roomID => {
-        
+
         // if the room is already created, that means a person has already joined the room
         // then take the new user and push them into the same room
         // else create a new room
@@ -74,7 +73,7 @@ io.on("connection", socket => {
         } else {
             users[roomID] = [socket.id];
         }
-        
+
         // returning new room with all the attendees after new attendee joined
         socketToRoom[socket.id] = roomID;
         const usersInThisRoom = users[roomID].filter(id => id !== socket.id);
@@ -93,11 +92,11 @@ io.on("connection", socket => {
 
     // handling user disconnect in group call
     socket.on('disconnect', () => {
-        
+
         // getting the room array with all the participants
         const roomID = socketToRoom[socket.id];
         let room = users[roomID];
-        
+
         if (room) {
             // finding the person who left the room
             // creating a new array with the remaining people
@@ -109,6 +108,8 @@ io.on("connection", socket => {
         socket.broadcast.emit('user left', socket.id);
     });
 });
+
+
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -168,13 +169,15 @@ function handleTrackEvent(e, peer) {
 // }
 
 
-if (process.env.NODE_ENV=='production') {
+if (process.env.NODE_ENV == 'production') {
     app.use(express.static('client/build'));
     const path = require("path");
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
+
+
 
 const port = process.env.PORT || 8000;
 server.listen(port, () => console.log(`the web server is running on port ${port}`));
