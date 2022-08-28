@@ -31,7 +31,7 @@ const GroupVideo = ({userVideo, peers, Video, getUrl, copySuccess, hangUp, toggl
                 </div>
             </div>
 
-            <div className='rounded-xl bg-slate-800 relative w-full'>
+            <div className='rounded-xl bg-green-600 relative w-full'>
                 <div className='text-gray-200 list-none text-xl flex gap-3 justify-start p-4 absolute'>
                     <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl p-1 '><FaCreativeCommons /></li>
                     <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl p-1 '><AiOutlinePushpin /></li>
@@ -39,7 +39,7 @@ const GroupVideo = ({userVideo, peers, Video, getUrl, copySuccess, hangUp, toggl
                 </div>
                 
                 {/* =======Video Player======= */}
-                <div className="grid grid-cols-2 rounded-xl">
+                <div className="grid grid-cols-2 rounded-xl gap-2 p-2">
                     <video className="groupVideo" muted ref={userVideo} autoPlay playsInline />
                     {peers.map((peer) => {
                         return (

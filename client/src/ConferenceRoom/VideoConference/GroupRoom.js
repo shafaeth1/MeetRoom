@@ -23,8 +23,8 @@ const Video = (props) => {
 
 // setting the constraints of video box
 const videoConstraints = {
-    height: window.innerHeight / 2,
-    width: window.innerWidth / 2
+    height: window.innerHeight,
+    width: window.innerWidth
 };
 
 const GroupRoom = () => {
