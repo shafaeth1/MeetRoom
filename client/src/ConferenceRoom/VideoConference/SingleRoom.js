@@ -24,8 +24,7 @@ const SingleRoom = (props) => {
            // asking for audio and video access
            navigator.mediaDevices.getUserMedia({ audio: true, video: true }).then(stream => {
                
-               // streaming the audio and video
-               // storing the local stream
+               // streaming the audio and video and storing the local stream
                userVideo.current.srcObject = stream;
                userStream.current = stream;
                localStream = stream;
@@ -91,11 +90,32 @@ const SingleRoom = (props) => {
                    { urls: 'stun:stun2.l.google.com:19302' },
                    { urls: 'stun:stun3.l.google.com:19302' },
                    { urls: 'stun:stun4.l.google.com:19302' },
+                   { urls: "stun:openrelay.metered.ca:80" },
                    {
                        urls: 'turn:numb.viagenie.ca',
-                       credential: '',
-                       username: ''
+                       credential: 'muazkh',
+                       username: 'webrtc@live.com'
                    },
+                   {
+                    url: 'turn:turn.anyfirewall.com:443?transport=tcp',
+                    credential: 'webrtc',
+                    username: 'webrtc'
+                    },
+                    {
+                    urls: "turn:openrelay.metered.ca:80",
+                    username: "openrelayproject",
+                    credential: "openrelayproject",
+                    },
+                    {
+                    urls: "turn:openrelay.metered.ca:443",
+                    username: "openrelayproject",
+                    credential: "openrelayproject",
+                    },
+                    {
+                    urls: "turn:openrelay.metered.ca:443?transport=tcp",
+                    username: "openrelayproject",
+                    credential: "openrelayproject",
+                  },
                ]
            });
    

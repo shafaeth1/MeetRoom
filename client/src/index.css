@@ -129,7 +129,7 @@
 }
 /* =====Media Query==== */
 @media(max-width:767px){
-  .rm-m{
+  .hide-m{
     display: none;
   }
 }

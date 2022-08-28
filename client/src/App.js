@@ -66,7 +66,7 @@ function App() {
         <Route path="/contact" element={<Contact />}> </Route>
         <Route path="/liveChat" element={<LiveChat />}> </Route>
         <Route path="/schedule" element={<MeetingSchedule />}> </Route>
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
           <Route path='dashboard/users' element={<><AllUser></AllUser></>}> </Route>
           <Route path='dashboard/addMembers' element={<><AddMember></AddMember></>}> </Route>
           <Route path='dashboard/manageMembers' element={<><ManageMember></ManageMember></>}> </Route>
