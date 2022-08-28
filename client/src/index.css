@@ -108,19 +108,15 @@
   /* --tw-bg-opacity: 0.1; */
 }
 /* override other styles to make responsive */
-.oneVideo {
-  width: 100%    !important;
-  height: auto   !important;
+.oneVideo,.groupVideo {
+  width: 100%!important;
+  height: auto!important;
   border-radius: 10px;
 }
-.groupVideo {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
+
 .streamvideo{
-  width: 60vw    !important;
-  height: 100%   !important;
+  width: 60vw!important;
+  height: 100%!important;
   border-radius: 10px;
 }
 

@@ -17,7 +17,7 @@ const SingleVideo = ({userVideo, partnerVideo, getUrl, copySuccess, toggleAudio,
                 </div>
             </div>
 
-            <div className='rounded-xl bg-green-200 relative gap-2 mt-2'>
+            <div className='rounded-xl bg-green-600 relative gap-2 mt-2'>
                 <div className='text-gray-200 list-none text-xl flex gap-3 justify-start p-4 absolute'>
                     <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl p-1 '><FaCreativeCommons /></li>
                     <li className='bg-green-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 rounded-xl p-1 '><AiOutlinePushpin /></li>
@@ -25,7 +25,7 @@ const SingleVideo = ({userVideo, partnerVideo, getUrl, copySuccess, toggleAudio,
                 </div>
                 
                 {/* =======Video Player======= */}
-                <div className="grid grid-cols-2 justify-center rounded-xl">
+                <div className="grid grid-cols-2 gap-2 justify-center rounded-xl p-2">
                     <video id="user" className="oneVideo" muted autoPlay playsInline ref = {userVideo} />
                     <video id="user" className="oneVideo" autoPlay playsInline ref = {partnerVideo} />
 
