@@ -25,9 +25,9 @@ const SingleVideo = ({userVideo, partnerVideo, getUrl, copySuccess, toggleAudio,
                 </div>
                 
                 {/* =======Video Player======= */}
-                <div className="flex w-full justify-center rounded-xl">
-                    <video id="user" className="oneVideo" muted autoPlay playsInline ref = {userVideo ? userVideo : partnerVideo} />
-                    {/* <video id="user" className="oneVideo" autoPlay playsInline ref = {partnerVideo} /> */}
+                <div className="grid grid-cols-2 justify-center rounded-xl">
+                    <video id="user" className="oneVideo" muted autoPlay playsInline ref = {userVideo} />
+                    <video id="user" className="oneVideo" autoPlay playsInline ref = {partnerVideo} />
 
                 </div>
                 

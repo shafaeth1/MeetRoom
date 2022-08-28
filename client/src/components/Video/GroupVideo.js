@@ -39,7 +39,7 @@ const GroupVideo = ({userVideo, peers, Video, getUrl, copySuccess, hangUp, toggl
                 </div>
                 
                 {/* =======Video Player======= */}
-                <div className="flex justify-center rounded-xl">
+                <div className="grid grid-cols-2 rounded-xl">
                     <video className="groupVideo" muted ref={userVideo} autoPlay playsInline />
                     {peers.map((peer) => {
                         return (

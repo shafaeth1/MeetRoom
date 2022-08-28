@@ -3,9 +3,13 @@ import io from "socket.io-client";
 import SingleVideo from '../../components/Video/SingleVideo';
 import SignleChat from '../../components/Chat/SignleChat';
 import { useParams } from 'react-router-dom';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import userPic from "../../assets/images/user.png";
 
 const SingleRoom = (props) => {
+    const [user] = useAuthState(auth);
+    const userImg = user?.photoURL ? user?.photoURL : userPic;
     const { roomID } = useParams()
     // variables for different functionalities of video call
        const userVideo = useRef();
@@ -18,7 +22,7 @@ const SingleRoom = (props) => {
        const sendChannel = useRef();
        const [text, setText] = useState("");
        const [messages, setMessages] = useState([]);
-       var localStream;
+       let localStream;
 
        useEffect(() => {
            // asking for audio and video access
@@ -306,18 +310,23 @@ const SingleRoom = (props) => {
        const renderMessage =(message, index) => {
            if (message.yours) {
                return (
-                   <div className="myRow" key={index}>
-                       <div className="myMSG">
-                           {message.value}
-                       </div>
-                   </div>
+                <div className='flex items-center py-1 mb-1 flex-row-reverse text-right pr-1 gap-y-1'>
+                <img src={user} alt="Main user" className='w-12 h-12 p-1 border border-slate-600 ml-1 rounded-full' />
+                <div >
+                    <h2 className='text-md font-medium text-slate-200'>{user?.displayName}</h2>
+                    <p className='text-sm bg-slate-200 p-1 rounded'>{message.value}</p>
+                </div>
+            </div>
+                   
                )
            }
    
            return (
-               <div className="partnerRow" key={index}>
-                   <div className="partnerMSG">
-                       {message.value}
+            <div key={index} className='flex items-center py-1 mb-1 justify-start gap-y-1'>
+                   <img src={userPic} alt={user?.displayName} className='w-12 h-12 p-1 border border-slate-600 mr-1 rounded-full' />
+                   <div>
+                       <h2 className='text-md font-medium text-slate-200'>{user?.displayName}</h2>
+                       <p className='text-sm bg-slate-200 p-1 rounded'>{message.value}</p>
                    </div>
                </div>
            )
@@ -351,33 +360,9 @@ const SingleRoom = (props) => {
                         renderMessage = {renderMessage}
                         sendMessage={sendMessage}
                     />
-                     {/* <div className="chatBox">
-                        <div className="row text-area">
-                            {messages?.map(renderMessage)}
-                        </div> 
-                        <div className="row text-box">
-                            <textarea className="text" value={text} onChange={handleChange} placeholder="Say Something..."/>
-                            <button id="send" onClick={sendMessage}>Send</button>
-                        </div>
-                    </div> */}
             </div>
                 
         </div>
-        {/* <div className="row">
-            <div className="col-12 col-md-3 chat">
-                <div className="chatBox">
-                    <div className="row text-area">
-                        {messages.map(renderMessage)}
-                    </div>
-                    
-                    <div className="row text-box">
-                        <textarea className="text" value={text} onChange={handleChange} placeholder="Say Something..."/>
-                        <button id="send" onClick={sendMessage}>Send</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>          */}
                     
         </div> 
     );

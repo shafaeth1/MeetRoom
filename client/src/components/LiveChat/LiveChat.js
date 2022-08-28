@@ -1,28 +1,20 @@
 import React, { useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-// import { useNavigate } from 'react-router-dom';
 import { io } from 'socket.io-client';
-import auth from '../../firebase.init';
-// import { v1 as uuid } from "uuid";
 import Chat from './Chat';
 import "./LiveChat.css";
 
 const socket = io.connect("https://meetsrooms.herokuapp.com");
 
 const LiveChat = () => {
-    // const chatRomm = useNavigate();
     const [username, setUsername] = useState("");
     const [room, setRoom] = useState("");
     const [showChat, setShowChat] = useState(false);
 
     const joinRoom = () => {
-    //    const id = uuid();
-    //    setRoom(id);
         if (username !== "" && room !== "") {
             socket.emit("join-room", room);
             setShowChat(true);
         }
-        // chatRomm(`/conference/ChatLive/${id}`);
     };
  
     return (

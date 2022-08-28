@@ -11,7 +11,7 @@ const Dashboard = () => {
     const [admin] = useAdmin(user)
     const logout = () => {
         signOut(auth);
-      };
+    };
     return (
         <navbar>
          <div className="flex justify-between px-2 text-gray-900 bg-green-700">

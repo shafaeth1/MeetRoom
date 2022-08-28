@@ -36,14 +36,13 @@ import ManageMember from './Dashboard/ManageMember';
 import SingleRoom from './ConferenceRoom/VideoConference/SingleRoom';
 import GroupRoom from './ConferenceRoom/VideoConference/GroupRoom';
 import LiveBroadCast from './ConferenceRoom/VideoConference/LiveBroadCast';
-import ChatLive from './ConferenceRoom/VideoConference/ChatLive';
 import 'react-toastify/dist/ReactToastify.css';
 import CreateBroadCast from './ConferenceRoom/ModalConference/CreateBroadCast';
 
 
 function App() {
   const [user] = useAuthState(auth);
-  const { roomGroupID, roomID} = useParams(); 
+  console.log(user)
   return (
     <>
       {!user ? <Navbar /> : ''}
