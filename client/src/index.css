@@ -114,8 +114,8 @@
   border-radius: 10px;
 }
 .groupVideo {
-  width: 25vw;
-  height: 15vw;
+  width: 100%;
+  height: auto;
   border-radius: 5px;
 }
 .streamvideo{
