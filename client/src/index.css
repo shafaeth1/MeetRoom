@@ -108,11 +108,26 @@
   /* --tw-bg-opacity: 0.1; */
 }
 /* override other styles to make responsive */
+
 .oneVideo {
-  width: 100%!important;
-  height: auto!important;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
 }
+
+#user {
+  height: auto;
+  width: 15vw!important;
+  top: 15%;
+  left: 2%;
+  border: 2px solid green;
+}
+
+#peer {
+  height: auto;
+  width: 100vw!important;
+}
+
 .groupVideo {
   width: 100%!important;
   height: auto!important;
