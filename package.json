@@ -15,7 +15,6 @@
     "simple-peer": "^9.6.2",
     "socket.io": "^4.1.2",
     "styled-components": "^5.3.5",
-    "swiper": "^8.3.2",
     "wrtc": "^0.4.7"
   },
   "scripts": {
