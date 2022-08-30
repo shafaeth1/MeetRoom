@@ -108,12 +108,23 @@
   /* --tw-bg-opacity: 0.1; */
 }
 /* override other styles to make responsive */
-.oneVideo,.groupVideo {
+.oneVideo {
   width: 100%!important;
   height: auto!important;
   border-radius: 10px;
 }
+.groupVideo {
+  width: 100%!important;
+  height: auto!important;
+  padding: 5px;
+  border-radius: 10px;
+}
 
+.group-one{
+  width: 100%!important;
+  height: 100%!important;
+  border-radius: 10px;
+}
 .streamvideo{
   width: 60vw!important;
   height: 100%!important;

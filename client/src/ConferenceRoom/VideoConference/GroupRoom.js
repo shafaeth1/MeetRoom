@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import io from "socket.io-client";
 import Peer from "simple-peer";
-import Slider from "../../components/Slider/Slider";
+import ParticipantSlide from "../../components/Slider/ParticipantSlide";
 import GroupVideo from '../../components/Video/GroupVideo';
-import GroupChat from '../../components/Chat/GroupChat';
 import Schedule from '../../components/Schedule/Schedule';
+// import GroupChat from '../../components/Chat/GroupChat';
 
 // Streaming Video of the user
 const Video = (props) => {
@@ -154,13 +154,13 @@ const GroupRoom = () => {
 
     // Toggle Audio
     let isAudio = true;
-    let iconAudio = 'fas fa-microphone font-bold';
+    let iconAudio = 'fas fa-microphone-slash font-bold';
     function toggleAudio() {
         document.getElementById('btn-a').classList = iconAudio;
         if (isAudio) {
-            iconAudio = 'fal fa-microphone-slash font-bold';
+            iconAudio = 'fal fa-microphone font-bold';
         } else {
-            iconAudio = 'fas fa-microphone font-bold';
+            iconAudio = 'fas fa-microphone-slash font-bold';
         }
         isAudio = !isAudio;
         userStream.current.getAudioTracks()[0].enabled = isAudio;
@@ -218,8 +218,8 @@ const GroupRoom = () => {
             <div className="md:w-12/12 lg:w-8/12">
                 <GroupVideo
                  userVideo={userVideo}
-                 peers={peers}
-                 Video={Video}
+                //  peers={peers}
+                //  Video={Video}
                  getUrl={getUrl}
                  copySuccess={copySuccess}
                  hangUp={hangUp}
@@ -239,19 +239,19 @@ const GroupRoom = () => {
                         })}
                     </div>
                 </div> */}
-                <Slider 
-                peers={peers}
-                Video={Video}
+                <div className='py-2'>
+                    <ParticipantSlide 
+                    peers={peers}
+                    Video={Video}
                 /> 
+                </div>
             </div>
 
             {/* ========Right Sidebar ========*/}
             <div className="md:w-12/12 lg:w-4/12">
                 {/* ========Group Chat Options ========*/}
                 <div className='pl-0 lg:pl-2'>
-                    <h2 className='text-md lg:text-xl text-center uppercase font-semibold p-2 border border-green-700 rounded-md text-gray-400'>Live Chat</h2>
-                    <GroupChat/>
-
+                    {/* <h2 className='text-md lg:text-xl text-center uppercase font-semibold p-2 border border-green-700 rounded-md text-gray-400'>Live Chat</h2> */}
                     {/*====== Next Schedule===== */}
                     <div className="mt-2">
                         <h2 className='text-gray-300 font-semibold py-1 pl-3'>Next Schedule is:</h2>
