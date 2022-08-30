@@ -25,22 +25,18 @@ const ParticipantSlide = ({peers, Video}) => {
             spaceBetween={0}
             pagination={true}
             modules={[Navigation, Grid, Pagination, Mousewheel, Keyboard]}
-            className="mySwiper"
+            className="mySwiper relative"
         >
       
-        <SwiperSlide>
                 {peers.map((peer) => {
                     return (
-                        <div className="w-full px-0 lg:px-2">
+                        <SwiperSlide>
                             <Video class="groupVideo" key={peer.peerID} peer={peer.peer} />
                             <i className="fal fa-microphone font-bold text-md text-gray-200 bg-green-400 p-1 absolute bottom-4 right-4 rounded-md"></i>
-                        </div>
-                                    
+                        </SwiperSlide>                                    
                     );
                 })}
             
-        </SwiperSlide>
-
       </Swiper>
 
         </>
