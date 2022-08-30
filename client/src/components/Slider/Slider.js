@@ -3,32 +3,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-// function SampleNextArrow(props) {
-//     const { className, style, onClick } = props;
-//     return (
-//       <div
-//         className={className}
-//         style={{ ...style, display: "block", color: "green" }}
-//         onClick={onClick}
-//       />
-//     );
-//   }
-  
-//   function SamplePrevArrow(props) {
-//     const { className, style, onClick } = props;
-//     return (
-//       <div
-//         className={className}
-//         style={{ ...style, display: "block", color: "green" }}
-//         onClick={onClick}
-//       />
-//     );
-//   }
+
 
 export default class Responsive extends Slider {
-    constructor({peers}) {
+    constructor({peers, Video}) {
         // console.log(peers)
         super(peers);
+        this.state = {
+          peers: [...peers]
+        };
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
       }
@@ -82,6 +65,7 @@ export default class Responsive extends Slider {
         return (
             <div className="p-4 lg:p-6">
                 <Slider {...settings}>
+                  {console.log(this.state.peers)}
                     <div className="avatar">
                         <div className="w-full px-0 lg:px-2">
                             <img src="https://placeimg.com/192/192/people" alt="Slide user" className="rounded-xl" />

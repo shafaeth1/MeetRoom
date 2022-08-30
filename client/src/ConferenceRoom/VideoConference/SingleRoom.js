@@ -234,13 +234,13 @@ const SingleRoom = (props) => {
    
        // Toggle Audio
        let isAudio = true;
-       let iconAudio = 'fas fa-microphone font-bold';
+       let iconAudio = 'fas fa-microphone-slash font-bold';
        const toggleAudio = ()=> {
            document.getElementById('btn-a').classList = iconAudio;
            if (isAudio) {
-                iconAudio = 'fal fa-microphone-slash font-bold';
+                iconAudio = 'fal fa-microphone font-bold';
            } else {
-                iconAudio = 'fas fa-microphone font-bold';
+                iconAudio = 'fas fa-microphone-slash font-bold';
            }
            isAudio = !isAudio;
            userStream.current.getAudioTracks()[0].enabled = isAudio;
