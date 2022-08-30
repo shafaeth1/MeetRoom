@@ -4,7 +4,7 @@ import React from 'react';
 const SignleChat = ({text, handleChange, messages, renderMessage, sendMessage}) => {
     return (
         <div className='w-full border-x border-b border-green-700'>
-            <div className='rounded-lg mb-2 tab-bar overflow-y-auto max-h-80 h-80 px-2'>
+            <div className='rounded-lg mb-2 tab-bar overflow-y-auto chat-h px-2'>
                 
                 { messages?.map(renderMessage)}
     

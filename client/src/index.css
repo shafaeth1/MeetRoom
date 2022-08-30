@@ -109,6 +109,10 @@
 }
 /* override other styles to make responsive */
 
+.chat-h{
+  max-height: 77vh;
+  height: 100vh;
+}
 .oneVideo {
   width: 100%;
   height: 100%;
@@ -153,5 +157,9 @@
 @media(max-width:767px){
   .hide-m{
     display: none;
+  }
+  .chat-h{
+    max-height: 60vh;
+    height: 100vh;
   }
 }
