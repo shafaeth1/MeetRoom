@@ -23,6 +23,7 @@ const Video = (props) => {
 
 // setting the constraints of video box
 const videoConstraints = {
+    video: true,
     height: window.innerHeight / 2,
     width: window.innerWidth / 2
 };
@@ -42,7 +43,7 @@ const GroupRoom = () => {
         socketRef.current = io.connect("/");
         
         // asking for audio and video access
-        navigator.mediaDevices.getUserMedia({ audio: true, video: true }).then(stream => {
+        navigator.mediaDevices.getUserMedia({ audio: true, video: videoConstraints }).then(stream => {
 
             // streaming the audio and video
             userVideo.current.srcObject = stream;
@@ -110,9 +111,90 @@ const GroupRoom = () => {
     // creating a peer object for newly joined user
     function createPeer(userToSignal, callerID, stream) {
         const peer = new Peer({
+            
             initiator: true,
             trickle: false,
+            config: { iceServers: [
+                { urls: 'stun:stun.l.google.com:19302' }, 
+                { urls: 'stun:stun1.l.google.com:19302' },
+                { urls: 'stun:stun2.l.google.com:19302' },
+                { urls: 'stun:stun3.l.google.com:19302' },
+                { urls: 'stun:stun4.l.google.com:19302' },
+                { urls: "stun:openrelay.metered.ca:80" },
+                { urls: 'stun:global.stun.twilio.com:3478?transport=udp' },
+                {
+                    url: 'turn:192.158.29.39:3478?transport=udp',
+                    credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+                    username: '28224511:1379330808'
+                },
+                {
+                    "urls": [
+                    "turn:13.250.13.83:3478?transport=udp"
+                    ],
+                    "username": "YzYNCouZM1mhqhmseWk6",
+                    "credential": "YzYNCouZM1mhqhmseWk6"
+                },
+                {
+                    urls: 'turn:numb.viagenie.ca',
+                    credential: 'muazkh',
+                    username: 'webrtc@live.com'
+                },
+                {
+                    url: 'turn:turn.anyfirewall.com:443?transport=tcp',
+                    credential: 'webrtc',
+                    username: 'webrtc'
+                },
+                {
+                    urls: "turn:openrelay.metered.ca:80",
+                    username: "openrelayproject",
+                    credential: "openrelayproject",
+                },
+                {
+                    urls: "turn:openrelay.metered.ca:443",
+                    username: "openrelayproject",
+                    credential: "openrelayproject",
+                },
+                {
+                    urls: "turn:openrelay.metered.ca:443?transport=tcp",
+                    username: "openrelayproject",
+                    credential: "openrelayproject",
+                }
+            ]},
             stream,
+            // // connecting the two servers
+            // iceServers: [
+            //     { urls: 'stun:stun.l.google.com:19302' },
+            //     { urls: 'stun:stun1.l.google.com:19302' },
+            //     { urls: 'stun:stun2.l.google.com:19302' },
+            //     { urls: 'stun:stun3.l.google.com:19302' },
+            //     { urls: 'stun:stun4.l.google.com:19302' },
+            //     { urls: "stun:openrelay.metered.ca:80" },
+            //     {
+            //         urls: 'turn:numb.viagenie.ca',
+            //         credential: 'muazkh',
+            //         username: 'webrtc@live.com'
+            //     },
+            //     {
+            //      url: 'turn:turn.anyfirewall.com:443?transport=tcp',
+            //      credential: 'webrtc',
+            //      username: 'webrtc'
+            //      },
+            //      {
+            //      urls: "turn:openrelay.metered.ca:80",
+            //      username: "openrelayproject",
+            //      credential: "openrelayproject",
+            //      },
+            //      {
+            //      urls: "turn:openrelay.metered.ca:443",
+            //      username: "openrelayproject",
+            //      credential: "openrelayproject",
+            //      },
+            //      {
+            //      urls: "turn:openrelay.metered.ca:443?transport=tcp",
+            //      username: "openrelayproject",
+            //      credential: "openrelayproject",
+            //    },
+            // ]
         });       
 
         peer.on("signal", signal => {
@@ -127,6 +209,52 @@ const GroupRoom = () => {
         const peer = new Peer({
             initiator: false,
             trickle: false,
+            config: { iceServers: [
+                { urls: 'stun:stun.l.google.com:19302' }, 
+                { urls: 'stun:stun1.l.google.com:19302' },
+                { urls: 'stun:stun2.l.google.com:19302' },
+                { urls: 'stun:stun3.l.google.com:19302' },
+                { urls: 'stun:stun4.l.google.com:19302' },
+                { urls: "stun:openrelay.metered.ca:80" },
+                { urls: 'stun:global.stun.twilio.com:3478?transport=udp' },
+                {
+                    url: 'turn:192.158.29.39:3478?transport=udp',
+                    credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+                    username: '28224511:1379330808'
+                },
+                {
+                    "urls": [
+                    "turn:13.250.13.83:3478?transport=udp"
+                    ],
+                    "username": "YzYNCouZM1mhqhmseWk6",
+                    "credential": "YzYNCouZM1mhqhmseWk6"
+                },
+                {
+                    urls: 'turn:numb.viagenie.ca',
+                    credential: 'muazkh',
+                    username: 'webrtc@live.com'
+                },
+                {
+                    url: 'turn:turn.anyfirewall.com:443?transport=tcp',
+                    credential: 'webrtc',
+                    username: 'webrtc'
+                },
+                {
+                    urls: "turn:openrelay.metered.ca:80",
+                    username: "openrelayproject",
+                    credential: "openrelayproject",
+                },
+                {
+                    urls: "turn:openrelay.metered.ca:443",
+                    username: "openrelayproject",
+                    credential: "openrelayproject",
+                },
+                {
+                    urls: "turn:openrelay.metered.ca:443?transport=tcp",
+                    username: "openrelayproject",
+                    credential: "openrelayproject",
+                }
+            ]},
             stream,
         })
 
