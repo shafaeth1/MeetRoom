@@ -161,40 +161,6 @@ const GroupRoom = () => {
                 }
             ]},
             stream,
-            // // connecting the two servers
-            // iceServers: [
-            //     { urls: 'stun:stun.l.google.com:19302' },
-            //     { urls: 'stun:stun1.l.google.com:19302' },
-            //     { urls: 'stun:stun2.l.google.com:19302' },
-            //     { urls: 'stun:stun3.l.google.com:19302' },
-            //     { urls: 'stun:stun4.l.google.com:19302' },
-            //     { urls: "stun:openrelay.metered.ca:80" },
-            //     {
-            //         urls: 'turn:numb.viagenie.ca',
-            //         credential: 'muazkh',
-            //         username: 'webrtc@live.com'
-            //     },
-            //     {
-            //      url: 'turn:turn.anyfirewall.com:443?transport=tcp',
-            //      credential: 'webrtc',
-            //      username: 'webrtc'
-            //      },
-            //      {
-            //      urls: "turn:openrelay.metered.ca:80",
-            //      username: "openrelayproject",
-            //      credential: "openrelayproject",
-            //      },
-            //      {
-            //      urls: "turn:openrelay.metered.ca:443",
-            //      username: "openrelayproject",
-            //      credential: "openrelayproject",
-            //      },
-            //      {
-            //      urls: "turn:openrelay.metered.ca:443?transport=tcp",
-            //      username: "openrelayproject",
-            //      credential: "openrelayproject",
-            //    },
-            // ]
         });       
 
         peer.on("signal", signal => {
@@ -309,14 +275,14 @@ const GroupRoom = () => {
                document.getElementById('btn-share').classList = 'fal fa-share-square font-bold';
                senders.current.find(sender => sender.track.kind === 'video').replaceTrack(screenTrack);
                
-               document.getElementById('btn-share').style.display = 'none';
+               document.getElementById('btn-share').classList = 'fal fa-share-square font-bold';
                document.getElementById('btn-stop').classList = 'fal fa-share-square font-bold';
-               document.getElementById('btn-stop').style.display = 'inline';
+               document.getElementById('btn-stop').classList = 'far fa-ban font-bold';
    
                // when the screenshare is turned off, replace the displayed screen with the video of the user
                screenTrack.onended = function() {
                    senders.current.find(sender => sender.track.kind === "video").replaceTrack(userStream.current.getTracks()[1]);
-                   document.getElementById('btn-share').classList = 'far fa-ban font-bold';
+                   document.getElementById('btn-share').classList = 'fal fa-share-square font-bold';
                }
            });
        }
