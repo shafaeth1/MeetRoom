@@ -17,7 +17,7 @@ const LiveBroadCast = () => {
         }
     }
     async function init() {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: true });
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
         document.getElementById("video").srcObject = stream;
         userStream.current = stream;
         started = true;
