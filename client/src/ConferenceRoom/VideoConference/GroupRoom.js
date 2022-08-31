@@ -23,8 +23,8 @@ const Video = (props) => {
 
 // setting the constraints of video box
 const videoConstraints = {
-    height: window.innerHeight,
-    width: window.innerWidth
+    height: window.innerHeight / 2,
+    width: window.innerWidth / 2
 };
 
 const GroupRoom = () => {
@@ -255,7 +255,7 @@ const GroupRoom = () => {
                     {/*====== Next Schedule===== */}
                     <div className="mt-2">
                         <h2 className='text-gray-300 font-semibold py-1 pl-3'>Next Schedule is:</h2>
-                        <div className="rounded-lg first-letter:mb-2 overflow-y-auto max-h-40 px-3 py-2 tab-bar">
+                        <div className="rounded-lg first-letter:mb-2 overflow-y-auto max-h-screen px-3 py-2">
                         <Schedule></Schedule>
                         </div>
                     </div>
